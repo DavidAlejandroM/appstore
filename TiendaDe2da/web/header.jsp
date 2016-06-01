@@ -17,6 +17,7 @@
         <script src="javascript/header.js" type="text/javascript"></script>
         <script src="javascript/materialize.js" type="text/javascript"></script>
         <script src="javascript/itemProducoPublicidad.js" type="text/javascript"></script>
+        <script src="javascript/scriptsAdmin.js" type="text/javascript"></script>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
         <link href="css/materialize.css" rel="stylesheet" type="text/css"/>
         <link href="iconos/css3/font-awesome.css" rel="stylesheet" type="text/css"/>

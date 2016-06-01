@@ -8,14 +8,14 @@ and open the template in the editor.
     Author     : HP VPRO
 */
 
-
+/*
 .contendor{
     background-color: #4dd0e1;
     display: inline-block;
     padding-left: 30px;
     padding-top: 30px;
     width: 80%;
-}
+}*/
 #fotoGrande{
 
     background-color: #ffffff;
@@ -51,13 +51,13 @@ div.itemProducto {
     background-color: white;
 }
 
-
+/*
 #categoriaBar{
     height: auto;
     float: left;
     width: 20%;
     padding-top: 10px;
-}
+}*/
 
 .itemProducto #descripcion{
     display: inline-block;
@@ -91,18 +91,18 @@ div.itemProducto {
     float: left;
     
 }
-
+/*
 #categoria{
     padding-top: 10px;   
     margin-top: 1px;
-}
+}*/
 
 .collapsible-body{
     
       padding-top: 10px;   
     margin-top: 1px; 
 }
-
+/*
   body {
     display: flex;
     min-height: 100vh;
@@ -112,42 +112,38 @@ div.itemProducto {
   main {
     flex: 1 0 auto;
   }
+*/
 
-  
-  /********CSS BY ALEJANDRO**************************************************/
+/********CSS BY ALEJANDRO**************************************************/
 
-#formAddGame{
 
+#formAddGame , #formListar, #formListarEliminar{
     padding-top: 30px;
-    padding-left: 30px;
-    width: 60%;
     display: none;
-}
 
-#formAddUser{
-    display: inline-block;
-    padding-top: 30px;
-    padding-left: 30px;
-    width: 60%;
-  
-}
-
-#formLoguin, #divPaint{
-    display: inline-block;
-    padding-top: 30px;
-    padding-left: 30px;
-    width: 60%;
-    
-}
-
-.adminJuego p{
-    margin-top: 10px;
 }
 
 .btnAdmin
 {
     width: 90%;
     margin-left: 10%;
+    background-color: white !important;
+    color: black !important;
+
+}
+.btnAdmin:hover
+{
+    background-color: #e0e0e0 !important;
 }
 
- /********END CSS BY ALEJANDRO**************************************************/
+.mouseColor{
+    -webkit-transition: background-color 1s;
+    cursor: pointer !important;
+}
+
+.mouseColor:hover
+{
+    background-color: #e0e0e0;
+
+}
+/********END CSS BY ALEJANDRO**************************************************/
