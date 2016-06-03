@@ -92,9 +92,11 @@ public class ProductoDAO {
         String categoria = null;
         try {
             conn = conexion.getConexion();
-            String query = "SELECT * FROM categoria WHERE id = '"+cat+"'";
+            String query = "SELECT * FROM categoria WHERE id='?'";
             ps = conn.prepareStatement(query);
+            ps.setString(1,cat);
             rs = ps.executeQuery();
+            
                               
             categoria = rs.getString("nombre");
             
@@ -107,13 +109,19 @@ public class ProductoDAO {
         }
         return categoria;
     }
-    
+    /**
+     * ARREGLAR******************ARREGLAR******************ARREGLAR******************
+     * ARREGLAR******************ARREGLAR******************ARREGLAR******************
+     * ARREGLAR******************ARREGLAR******************ARREGLAR******************
+     * @param plat
+     * @return 
+     */
     public String obtenerNombrePlataforma(String plat)
     {
         String plataforma = null;
         try {
             conn = conexion.getConexion();
-            String query = "SELECT * FROM plataforma WHERE id = '"+plat+"'";
+            String query = "SELECT * FROM plataforma WHERE id ="+plat;
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
                               
