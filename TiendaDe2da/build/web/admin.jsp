@@ -33,8 +33,19 @@
                         <th data-field="price">Precio</th>
                     </tr>
                     </thead>
-
                     <tbody>
+                        <c:forEach items="${juegos}" var="juego">
+                            <tr class="mouseColor tableItemUpdate" id="$(juego.getId())">
+                            <td>$(juego.getNombre())</td>
+                            <td>$(juego.getNombreCategoria)</td>
+                            <td >Pc</td>
+                            <td>$ 100000</td>
+                        </tr>
+                        </c:forEach>
+                        
+                           
+<!--
+                   
                     <tr class="mouseColor tableItemUpdate" id="1">
                         <td>Call of Duty Black Ops</td>
                         <td>Accion</td>
@@ -47,7 +58,7 @@
                         <td>PS4</td>
                         <td>$ 80000</td>
                     </tr>
-
+-->
                     </tbody>
                 </table>
             </div>

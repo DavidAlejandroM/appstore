@@ -14,17 +14,16 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Alejandro
+ * @author HP VPRO
  */
-public class JuegoDAO {
-    
+public class ProductoDAO {
+
     PreparedStatement ps = null;
     ResultSet rs = null;
     Connection conn = null;
     DB conexion = null;
-    
-    
-    public void agregarJuego(Juego j)
+
+   public void agregarJuego(Producto j)
     {
 
          try {
@@ -32,12 +31,11 @@ public class JuegoDAO {
             String query = "INSERT INTO producto (nombre, detalle, precio, categoria, imagen, plataforma) values (?, ?, ?, ?, ?, ?)";
             ps = conn.prepareStatement(query);
             ps.setString(1, j.getNombre());
-            ps.setString(2, j.getDescripcion());
+            ps.setString(2, j.getDetalle());
             ps.setString(3, j.getPrecio());
-            ps.setInt(4, j.getCategoria());
+            ps.setInt(4, Integer.parseInt(j.getCategoria()));
             ps.setString(5, j.getImagen());
-            ps.setInt(6, j.getPlataforma());
-            ps.setInt(7, j.getId());
+            ps.setInt(6, Integer.parseInt(j.getPlataforma()));
             ps.executeUpdate();
             //ps.executeUpdate(query);
                     
@@ -50,39 +48,46 @@ public class JuegoDAO {
             } catch (Exception e) { /* ignored */ }
         }
     }
-    
-    public ArrayList<Juego> obtenerProductos() {
-        ArrayList<Juego> juegos = new ArrayList<Juego>();
+
+    public ArrayList<Producto> obtenerProductos() {
+        ArrayList<Producto> productos = new ArrayList<Producto>();
+       
         try {
-            conn = conexion.getConexion();
-            String query = "SELECT * FROM producto";
+            conn = DB.getConexion();
+            String query = "SELECT pr.id,pr.nombre,pr.detalle,pr.precio,pr.imagen,c.id,c.nombre,p.id,p.nombre FROM producto pr "
+                    + "inner join categoria c on pr.categoria = c.id  "
+                    + "inner join plataforma p on pr.plataforma = p.id";
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             Blob img = null;
 
             while (rs.next()) {
+                Producto producto = new Producto();
+                producto.setId(rs.getInt("pr.id"));
+                producto.setNombre(rs.getString("pr.nombre"));
+                producto.setDetalle(rs.getString("pr.detalle"));
+                producto.setPrecio(rs.getString("pr.precio"));
+                producto.setImagen(rs.getString("pr.imagen"));
+                producto.setCategoria(rs.getString("c.id"));
+                producto.setNameCategoria(rs.getString("c.nombre"));
+                producto.setPlataforma(rs.getString("p.id"));
+                producto.setNamePlataforma(rs.getString("p.nombre"));
+                productos.add(producto);
                 
-                Juego juego = new Juego();
                 
-                juego.setId(rs.getInt("id"));
-                juego.setNombre(rs.getString("nombre"));
-                juego.setDescripcion(rs.getString("detalle"));
-                juego.setPrecio(rs.getString("precio"));
-                juego.setImagen(rs.getString("imagen"));
-                juego.setCategoria(rs.getInt("categoria"));
-                juego.setPlataforma(rs.getInt("plataforma"));
                 
-                juegos.add(juego);
+                
             }
 
         } catch (Exception e) {
             System.out.println(e);
         }
 
-        return juegos;
+        return productos;
     }
 
-    public Juego obtenerJuego(int id) {
+    public Producto obtenerProducto(int id) {
         return null;
     }
+
 }

@@ -27,7 +27,9 @@ public class AdminServlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
     throws ServletException, IOException { 
         //Despliega fomulario para mostrar
+        
         RequestDispatcher view = request.getRequestDispatcher("admin.jsp");
+        request.setAttribute("juegos", juegoDAO.obtenerProductos());
         view.forward(request, response);
     } 
 

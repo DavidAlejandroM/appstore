@@ -1,5 +1,6 @@
 
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -7,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import models.Juego;
 import models.JuegoDAO;
+import models.Producto;
+import models.ProductoDAO;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,37 +22,33 @@ import models.JuegoDAO;
  * @author HP VPRO
  */
 public class SaveGameServlet extends HttpServlet{
+    Producto producto = new Producto();
+    ProductoDAO productoDAO = new ProductoDAO();
     
-    JuegoDAO juegoDAO = new JuegoDAO();
-    Juego juego = new Juego();
+    //JuegoDAO productoDAO = new JuegoDAO();
+    //Juego producto = new Juego();
     
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) 
-    throws ServletException, IOException { 
-        //Despliega fomulario para mostrar
-        RequestDispatcher view = request.getRequestDispatcher("admin.jsp");
-        view.forward(request, response);
-    } 
+    
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String nombre = req.getParameter("nom");
-        int categoria = Integer.parseInt(req.getParameter("cat"));
-        int plataforma = Integer.parseInt(req.getParameter("plat"));
+        String categoria = req.getParameter("cat");
+        String plataforma = req.getParameter("plat");
         String descripcion = req.getParameter("des");
         String precio = req.getParameter("prec");
         String imagen = req.getParameter("img");
         
         System.out.println(nombre);
         
-        juego.setNombre(nombre);
-        juego.setCategoria(1);
-        juego.setPlataforma(1);
-        juego.setDescripcion(descripcion);
-        juego.setPrecio(precio);
-        juego.setImagen(imagen);
+        producto.setNombre(nombre);
+        producto.setCategoria(categoria);
+        producto.setPlataforma(plataforma);
+        producto.setDetalle(descripcion);
+        producto.setPrecio(precio);
+        producto.setImagen(imagen);
         
-        juegoDAO.agregarJuego(juego);
+        productoDAO.agregarJuego(producto);
         resp.getWriter().write("yes");
         
     }
