@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `factura_producto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `factura_producto` (
-  `id` bigint(20) NOT NULL DEFAULT '1',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `idProducto` bigint(20) NOT NULL,
   `idFactura` bigint(20) NOT NULL,
   PRIMARY KEY (`id`),

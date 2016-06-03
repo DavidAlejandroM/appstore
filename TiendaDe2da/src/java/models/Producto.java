@@ -11,6 +11,8 @@ package models;
  */
 public class Producto {
 
+    private ProductoDAO productoDAO = new ProductoDAO();
+    
     private Integer id;
     private String nombre;
     private String detalle;
@@ -29,25 +31,15 @@ public class Producto {
         return namePlataforma;
     }
 
-    public void setNameCategoria(String nameCategoria) {
-        this.nameCategoria = nameCategoria;
-    }
-
-    public void setNamePlataforma(String namePlataforma) {
-        this.namePlataforma = namePlataforma;
-    }
-    
-
     public String getPlataforma() {
         return plataforma;
     }
 
     public void setPlataforma(String plataforma) {
+        this.namePlataforma = productoDAO.obtenerNombrePlataforma(plataforma);
         this.plataforma = plataforma;
     }
     
-    
-
     public Integer getId() {
         return id;
     }
@@ -77,6 +69,7 @@ public class Producto {
     }
 
     public void setCategoria(String categoria) {
+        this.nameCategoria = productoDAO.obtenerNombreCategoria(categoria);
         this.categoria = categoria;
     }
 

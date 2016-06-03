@@ -35,9 +35,9 @@
                     </thead>
                     <tbody>
                         <c:forEach items="${juegos}" var="juego">
-                            <tr class="mouseColor tableItemUpdate" id="$(juego.getId())">
-                            <td>$(juego.getNombre())</td>
-                            <td>$(juego.getNombreCategoria)</td>
+                            <tr class="mouseColor tableItemUpdate" id="${juego.getId()}">
+                            <td>${juego.getNombre()}</td>
+                            <td>asdf</td>
                             <td >Pc</td>
                             <td>$ 100000</td>
                         </tr>

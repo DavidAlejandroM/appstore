@@ -69,13 +69,10 @@ public class ProductoDAO {
                 producto.setPrecio(rs.getString("pr.precio"));
                 producto.setImagen(rs.getString("pr.imagen"));
                 producto.setCategoria(rs.getString("c.id"));
-                producto.setNameCategoria(rs.getString("c.nombre"));
+                //producto.setNameCategoria(rs.getString("c.nombre"));
                 producto.setPlataforma(rs.getString("p.id"));
-                producto.setNamePlataforma(rs.getString("p.nombre"));
+                //producto.setNamePlataforma(rs.getString("p.nombre"));
                 productos.add(producto);
-                
-                
-                
                 
             }
 
@@ -88,6 +85,48 @@ public class ProductoDAO {
 
     public Producto obtenerProducto(int id) {
         return null;
+    }
+    
+    public String obtenerNombreCategoria(String cat)
+    {
+        String categoria = null;
+        try {
+            conn = conexion.getConexion();
+            String query = "SELECT * FROM categoria WHERE id = '"+cat+"'";
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+                              
+            categoria = rs.getString("nombre");
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                rs.close();
+            } catch (Exception e) { /* ignored */ }
+        }
+        return categoria;
+    }
+    
+    public String obtenerNombrePlataforma(String plat)
+    {
+        String plataforma = null;
+        try {
+            conn = conexion.getConexion();
+            String query = "SELECT * FROM plataforma WHERE id = '"+plat+"'";
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+                              
+            plataforma = rs.getString("nombre");
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                rs.close();
+            } catch (Exception e) { /* ignored */ }
+        }
+        return plataforma;
     }
 
 }

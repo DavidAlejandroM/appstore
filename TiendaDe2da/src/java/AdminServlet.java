@@ -5,8 +5,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import models.Juego;
+import models.*;
 import models.JuegoDAO;
+import models.ProductoDAO;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,9 +20,9 @@ import models.JuegoDAO;
  * @author HP VPRO
  */
 public class AdminServlet extends HttpServlet{
+    ProductoDAO productoDAO = new ProductoDAO();
+    Producto producto = new Producto();
     
-    JuegoDAO juegoDAO = new JuegoDAO();
-    Juego juego = new Juego();
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
@@ -29,7 +30,7 @@ public class AdminServlet extends HttpServlet{
         //Despliega fomulario para mostrar
         
         RequestDispatcher view = request.getRequestDispatcher("admin.jsp");
-        request.setAttribute("juegos", juegoDAO.obtenerProductos());
+        request.setAttribute("juegos", productoDAO.obtenerProductos());
         view.forward(request, response);
     } 
 
