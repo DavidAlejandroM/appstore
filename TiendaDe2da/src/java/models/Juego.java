@@ -76,6 +76,6 @@ public class Juego {
     public void setPlataforma(int plataforma) {
         this.plataforma = plataforma;
     }
-    
+
     
 }

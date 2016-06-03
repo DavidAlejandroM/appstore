@@ -5,8 +5,8 @@
 --%>
 
 <%@ include file="header.jsp" %>
-
-<div class="row">
+<div id="contenedorAdmin">
+    <div class="row" id="contenedor">
         <div class="col s3" id="categoriaBar">
             <ul class="collapsible" data-collapsible="accordion">
                 <li>
@@ -159,4 +159,10 @@
             </div>
         </div>
     </div>
-<%@ include file="footer.jsp" %>
+</div>
+    
+<div id="footerAdmin">
+    Bienvenido al Modulo de Administración
+</div>
+</body>
+</html>

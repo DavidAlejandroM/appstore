@@ -23,6 +23,7 @@ public class JuegoDAO {
     
     public void agregarJuego(Juego j)
     {
+
          try {
             conn = conexion.getConexion();
             String query = "INSERT INTO producto (nombre, detalle, precio, categoria, imagen, plataforma) values (?, ?, ?, ?, ?, ?)";
@@ -33,7 +34,8 @@ public class JuegoDAO {
             ps.setInt(4, j.getCategoria());
             ps.setString(5, j.getImagen());
             ps.setInt(6, j.getPlataforma());
-            ps.executeUpdate();
+
+       
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
