@@ -21,6 +21,7 @@ public class JuegoDAO {
     Connection conn = null;
     DB conexion = null;
     
+    
     public void agregarJuego(Juego j)
     {
 
@@ -34,7 +35,9 @@ public class JuegoDAO {
             ps.setInt(4, j.getCategoria());
             ps.setString(5, j.getImagen());
             ps.setInt(6, j.getPlataforma());
-
+            ps.executeUpdate();
+            //ps.executeUpdate(query);
+                    
        
         } catch (Exception e) {
             e.printStackTrace();

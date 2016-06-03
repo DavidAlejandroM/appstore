@@ -40,6 +40,8 @@ public class SaveGameServlet extends HttpServlet{
         String precio = req.getParameter("prec");
         String imagen = req.getParameter("img");
         
+        System.out.println(nombre);
+        
         juego.setNombre(nombre);
         juego.setCategoria(1);
         juego.setPlataforma(1);
@@ -49,7 +51,7 @@ public class SaveGameServlet extends HttpServlet{
         
         juegoDAO.agregarJuego(juego);
         resp.getWriter().write("yes");
-        System.out.println(nombre);
+        
     }
     
     
