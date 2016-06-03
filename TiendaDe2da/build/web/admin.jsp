@@ -88,14 +88,13 @@
             </div>
 
      <!--AGREGAR JUEGO  ----------------------------------------------------------------------------------->
-
-            <div id="formAddGame">
+         <div id="formAddGame">
                 <div class="row">
                     <div class="col s8">
                         <div class="row">
                             <div class="input-field col s6">
                                 <select id="select_categoria">
-                                    <option value="" disabled selected>Elija una opción</option>
+                                    <option value="0" disabled selected>Elija una opción</option>
                                     <option value="1">Accion</option>
                                     <option value="2">Estrategia</option>
                                     <option value="3">Roll</option>
@@ -127,7 +126,6 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <form action="#">
                                     <div class="file-field input-field">
                                         <div class="btn">
                                             <span>Imagen</span>
@@ -137,7 +135,6 @@
                                             <input class="file-path validate" type="text" placeholder="Seleciona una Imagen" id="pathImagen" onchange="mostrarImagenMiniatura('caratula','pathImagen')" >
                                         </div>
                                     </div>
-                                </form>
                             </div>
 
                         </div>
@@ -155,7 +152,7 @@
                 </div>
                 <div class="row">
                     <div class="col s2 offset-s6">
-                        <a class="waves-effect waves-light btn">Guardar</a>
+                        <a class="waves-effect waves-light btn" onclick="guardarJuego()">Guardar</a>
                     </div>
                 </div>
 
