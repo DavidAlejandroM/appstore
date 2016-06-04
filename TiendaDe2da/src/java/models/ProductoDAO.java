@@ -10,6 +10,7 @@ import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
@@ -92,13 +93,15 @@ public class ProductoDAO {
         String categoria = null;
         try {
             conn = conexion.getConexion();
-            String query = "SELECT * FROM categoria WHERE id='?'";
-            ps = conn.prepareStatement(query);
-            ps.setString(1,cat);
-            rs = ps.executeQuery();
+            String query = "SELECT * FROM categoria WHERE id="+cat;
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
             
-                              
-            categoria = rs.getString("nombre");
+            while (rs.next()) {                
+                System.err.println(rs.getInt("id"));
+                System.err.println(rs.getString("nombre"));
+                categoria = rs.getString("nombre");
+            }
             
         } catch (Exception e) {
             e.printStackTrace();
@@ -121,11 +124,21 @@ public class ProductoDAO {
         String plataforma = null;
         try {
             conn = conexion.getConexion();
-            String query = "SELECT * FROM plataforma WHERE id ="+plat;
-            ps = conn.prepareStatement(query);
-            rs = ps.executeQuery();
-                              
-            plataforma = rs.getString("nombre");
+            String query = "SELECT * FROM plataforma WHERE id="+plat;
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            
+            while (rs.next()) {                
+                System.err.println(rs.getInt("id"));
+                System.err.println(rs.getString("nombre"));
+                plataforma = rs.getString("nombre");
+            }
+            
+            //ps = conn.prepareStatement(query);
+            //ps.setString(1, plat);
+            //rs = ps.executeQuery();
+//            rs = ps.executeQuery(query);
+//            plataforma = rs.getString("nombre");
             
         } catch (Exception e) {
             e.printStackTrace();
