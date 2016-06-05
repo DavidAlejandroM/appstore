@@ -84,8 +84,34 @@ public class ProductoDAO {
         return productos;
     }
 
-    public Producto obtenerProducto(int id) {
-        return null;
+    public Producto obtenerProducto(String id) {
+        Producto producto = new Producto();
+        try {
+            conn = conexion.getConexion();
+            String query = "SELECT * FROM producto WHERE id="+id;
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            
+            while (rs.next()) {
+                
+                producto.setId(rs.getInt("id"));
+                producto.setNombre(rs.getString("nombre"));
+                producto.setDetalle(rs.getString("detalle"));
+                producto.setPrecio(rs.getString("precio"));
+                producto.setImagen(rs.getString("imagen"));
+                producto.setCategoria(rs.getString("categoria"));
+                producto.setPlataforma(rs.getString("plataforma"));
+                
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                rs.close();
+            } catch (Exception e) { /* ignored */ }
+        }
+        return producto;
     }
     
     public String obtenerNombreCategoria(String cat)
@@ -98,8 +124,6 @@ public class ProductoDAO {
             ResultSet rs = st.executeQuery(query);
             
             while (rs.next()) {                
-                System.err.println(rs.getInt("id"));
-                System.err.println(rs.getString("nombre"));
                 categoria = rs.getString("nombre");
             }
             
@@ -127,8 +151,6 @@ public class ProductoDAO {
             ResultSet rs = st.executeQuery(query);
             
             while (rs.next()) {                
-                System.err.println(rs.getInt("id"));
-                System.err.println(rs.getString("nombre"));
                 plataforma = rs.getString("nombre");
             }
       

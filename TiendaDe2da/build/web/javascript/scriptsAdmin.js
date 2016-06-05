@@ -140,12 +140,15 @@ function guardarJuego(){
 } 
 
 function obtenerJuego(id){
+
+    
     $.ajax({
-  method: "GET",
-  url: "./saveGame",
-  data: { cat : categoria, plat: plataforma, prec: precio, nom: nombre, img: imagen, des: descripcion },
+  method: "POST",
+  url: "./getGame",
+  data: { id : id },
   succes : function(response){
       alert(response);
   } 
 });
-}
+    //location.reload();
+} 
