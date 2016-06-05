@@ -114,12 +114,9 @@ public class ProductoDAO {
                 rs.close();
             } catch (Exception e) { /* ignored */ }
         }
-<<<<<<< HEAD
-        //kks
-        return producto;
-=======
+
         return json;
->>>>>>> refs/remotes/origin/alejandro
+
     }
     
     public String obtenerNombreCategoria(String cat)
