@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: dbstore
+-- Host: localhost    Database: dbstore
 -- ------------------------------------------------------
 -- Server version	5.7.12-log
 
@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `factura`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `factura` (
-  `id` bigint(20) NOT NULL DEFAULT '1',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `fecha` varchar(100) NOT NULL,
   `hora` varchar(100) NOT NULL,
   `idCliente` bigint(20) NOT NULL,
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-01 12:10:55
+-- Dump completed on 2016-06-04 20:55:44
