@@ -149,7 +149,7 @@ function obtenerJuego(id){
   data: { id : id },
   success : function(response){
       
-      enviardato(response);
+      llenarForUpdate(response);
   } 
 });
     //location.reload();
@@ -160,7 +160,8 @@ function actualizarJuego(){
     alert("se esta Actualizando");
 }
 
-function enviardato(dato)
-{
-    console.log(dato);
+function llenarForUpdate(dato)
+{   
+    document.getElementById('select_categoriaU').selectedIndex = dato.categoria;
+    document.getElementById('nombre_gameU').value = dato.nombre;
 }

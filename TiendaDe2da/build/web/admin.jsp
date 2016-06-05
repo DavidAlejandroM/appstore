@@ -87,7 +87,7 @@
 
                             </div><div class="input-field col s6">
                                 <select id="select_plataformaU">
-                                    <option value="" disabled selected>Elija una opción</option>
+                                    <option value="0" disabled selected>Elija una opción</option>
                                     <option value="1">PC</option>
                                     <option value="2">Xbox One</option>
                                     <option value="3">PS4</option>
