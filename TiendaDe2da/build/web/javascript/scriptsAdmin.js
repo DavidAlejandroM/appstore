@@ -107,6 +107,10 @@ function hiddenDivs()
 $(document).ready(function() {
     $('.tableItemUpdate').click(function() {
         console.log(this.id);
+        hiddenDivs();
+        alert(this.id);
+        showDiv('formAddGame')
+        var juego = obtenerJuego(this.id);
     });
 });
 
@@ -134,3 +138,14 @@ function guardarJuego(){
 });
     location.reload();
 } 
+
+function obtenerJuego(id){
+    $.ajax({
+  method: "GET",
+  url: "./saveGame",
+  data: { cat : categoria, plat: plataforma, prec: precio, nom: nombre, img: imagen, des: descripcion },
+  succes : function(response){
+      alert(response);
+  } 
+});
+}
