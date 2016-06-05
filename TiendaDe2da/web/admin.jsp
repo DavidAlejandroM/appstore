@@ -5,8 +5,8 @@
 --%>
 
 <%@ include file="header.jsp" %>
-
-<div class="row">
+<div id="contenedorAdmin">
+    <div class="row" id="contenedor">
         <div class="col s3" id="categoriaBar">
             <ul class="collapsible" data-collapsible="accordion">
                 <li>
@@ -33,8 +33,19 @@
                         <th data-field="price">Precio</th>
                     </tr>
                     </thead>
-
                     <tbody>
+                        <c:forEach items="${juegos}" var="juego">
+                            <tr class="mouseColor tableItemUpdate" id="${juego.getId()}">
+                            <td>${juego.getNombre()}</td>
+                            <td>${juego.getNameCategoria()}</td>
+                            <td >${juego.getNamePlataforma()}</td>
+                            <td>${juego.getPrecio()}</td>
+                        </tr>
+                        </c:forEach>
+                        
+                           
+<!--
+                   
                     <tr class="mouseColor tableItemUpdate" id="1">
                         <td>Call of Duty Black Ops</td>
                         <td>Accion</td>
@@ -47,7 +58,7 @@
                         <td>PS4</td>
                         <td>$ 80000</td>
                     </tr>
-
+-->
                     </tbody>
                 </table>
             </div>
@@ -88,14 +99,13 @@
             </div>
 
      <!--AGREGAR JUEGO  ----------------------------------------------------------------------------------->
-
-            <div id="formAddGame">
+         <div id="formAddGame">
                 <div class="row">
                     <div class="col s8">
                         <div class="row">
                             <div class="input-field col s6">
                                 <select id="select_categoria">
-                                    <option value="" disabled selected>Elija una opción</option>
+                                    <option value="0" disabled selected>Elija una opción</option>
                                     <option value="1">Accion</option>
                                     <option value="2">Estrategia</option>
                                     <option value="3">Roll</option>
@@ -127,7 +137,6 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <form action="#">
                                     <div class="file-field input-field">
                                         <div class="btn">
                                             <span>Imagen</span>
@@ -137,7 +146,6 @@
                                             <input class="file-path validate" type="text" placeholder="Seleciona una Imagen" id="pathImagen" onchange="mostrarImagenMiniatura('caratula','pathImagen')" >
                                         </div>
                                     </div>
-                                </form>
                             </div>
 
                         </div>
@@ -155,11 +163,17 @@
                 </div>
                 <div class="row">
                     <div class="col s2 offset-s6">
-                        <a class="waves-effect waves-light btn">Guardar</a>
+                        <a class="waves-effect waves-light btn" onclick="guardarJuego()">Guardar</a>
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
-<%@ include file="footer.jsp" %>
+</div>
+    
+<div id="footerAdmin">
+    Bienvenido al Modulo de Administración
+</div>
+</body>
+</html>

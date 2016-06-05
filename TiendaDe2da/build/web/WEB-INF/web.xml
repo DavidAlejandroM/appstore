@@ -22,4 +22,14 @@
         <servlet-name>AdminServlet</servlet-name>
         <url-pattern>/admin</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>SaveGameServlet</servlet-name>
+        <servlet-class>SaveGameServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SaveGameServlet</servlet-name>
+        <url-pattern>/saveGame</url-pattern>
+    </servlet-mapping>
+    
 </web-app>

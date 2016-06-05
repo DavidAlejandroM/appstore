@@ -7,14 +7,14 @@
 <%@ include file="header.jsp" %>
     <div id="formAddUser">
                 <div class="row col s6 offset-s4">
-                    <h3>REGISTRO</h3>
+                    <h3 id="titleH3">REGISTRO</h3>
 
                 </div>
 
                 <div class="row col s12 divider"></div>
 
                 <div class="row">
-                    <div class="col s12">
+                    <div class="col s6 offset-s3">
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="nombre_usuario" type="text" class="validate">

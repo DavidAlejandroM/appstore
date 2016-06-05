@@ -10,10 +10,7 @@
     <head>
         <meta charset="utf-8">
         <title>Tienda De2da</title>
-        
-        
- 
-        <script src="javascript/jquery-2.2.4.min.js" type="text/javascript"></script>
+        <script src="javascript/jquery-2.2.4.min.js" type="text/javascript"></script>   
         <script src="javascript/header.js" type="text/javascript"></script>
         <script src="javascript/materialize.js" type="text/javascript"></script>
         <script src="javascript/itemProducoPublicidad.js" type="text/javascript"></script>
