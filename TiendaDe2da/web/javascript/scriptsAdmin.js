@@ -132,8 +132,5 @@ function guardarJuego(){
       alert(response);
   } 
 });
+    location.reload();
 } 
-
-$( "button" ).click(function() {
- // $( this ).replaceWith( "<div>" + $( this ).text() + "</div>" );
-});

@@ -5,19 +5,13 @@
 --%>
 
 <%@ include file="header.jsp" %>
-<div id="divDinamico">
-    hola
-</div>
+
 <div id="contenedorAdmin">
     <div class="row" id="contenedor">
         <div class="col s3" id="categoriaBar">
             <ul class="collapsible" data-collapsible="accordion">
                 <li>
-<<<<<<< HEAD
                     <div class="collapsible-header"><i class="material-icons">Juegos</i></div>
-=======
-                    <div class="collapsible-header"><i class="material-icons">Administrar Juegos</i></div>
->>>>>>> refs/remotes/origin/master
                     <div class="collapsible-body adminJuego">
                         <a class="waves-effect waves-red btn btnAdmin" onclick="showDiv('formAddGame')">Registrar</a><br>
                         <a class="waves-effect waves-red btn btnAdmin" onclick="showDiv('formListar')">Actualizar</a><br>
@@ -49,24 +43,7 @@
                                 <td>${juego.getPrecio()}</td>
                             </tr>
                         </c:forEach>
-                        
-                           
-<!--
-                   
-                    <tr class="mouseColor tableItemUpdate" id="1">
-                        <td>Call of Duty Black Ops</td>
-                        <td>Accion</td>
-                        <td >Pc</td>
-                        <td>$ 100000</td>
-                    </tr>
-                    <tr class="mouseColor tableItemUpdate" id="2">
-                        <td>World of Warcraft</td>
-                        <td>Roll</td>
-                        <td>PS4</td>
-                        <td>$ 80000</td>
-                    </tr>
--->
-                    </tbody>
+                     </tbody>
                 </table>
             </div>
 <!----TABLA LISTAR ELIMINAR-->
