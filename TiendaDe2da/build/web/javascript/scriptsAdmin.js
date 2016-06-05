@@ -132,8 +132,11 @@ function guardarJuego(){
       alert(response);
   } 
 });
+location.reload();
 } 
 
-$( "button" ).click(function() {
+function cambiarDivDinamico(){
+    console.log("asdf");
+    //document.getElementById("divDinamico").innerHTML = "<h3>hola mundo</h3>"
  // $( this ).replaceWith( "<div>" + $( this ).text() + "</div>" );
-});
+}
