@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: dbstore
+-- Host: localhost    Database: dbstore
 -- ------------------------------------------------------
 -- Server version	5.7.12-log
 
@@ -16,35 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `producto`
+-- Table structure for table `cliente`
 --
 
-DROP TABLE IF EXISTS `producto`;
+DROP TABLE IF EXISTS `cliente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `producto` (
-  `id` bigint(20) NOT NULL DEFAULT '1',
+CREATE TABLE `cliente` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) NOT NULL,
-  `detalle` varchar(500) NOT NULL,
-  `precio` varchar(200) NOT NULL,
-  `categoria` bigint(20) NOT NULL,
-  `imagen` varchar(500) NOT NULL,
-  `plataforma` bigint(20) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `categoria` (`categoria`),
-  KEY `plataforma` (`plataforma`),
-  CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`id`),
-  CONSTRAINT `producto_ibfk_2` FOREIGN KEY (`plataforma`) REFERENCES `plataforma` (`id`)
+  `apellido` varchar(100) NOT NULL,
+  `correo` varchar(100) DEFAULT NULL,
+  `telefono` varchar(100) DEFAULT NULL,
+  `usuario` varchar(100) NOT NULL,
+  `contrasena` varchar(10) NOT NULL,
+  `tipo` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `producto`
+-- Dumping data for table `cliente`
 --
 
-LOCK TABLES `producto` WRITE;
-/*!40000 ALTER TABLE `producto` DISABLE KEYS */;
-/*!40000 ALTER TABLE `producto` ENABLE KEYS */;
+LOCK TABLES `cliente` WRITE;
+/*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -56,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-01 12:10:54
+-- Dump completed on 2016-06-04 20:55:43

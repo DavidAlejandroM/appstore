@@ -123,6 +123,7 @@ function guardarJuego(){
     var precio = document.getElementById('precio_game').value;
     var nombre = document.getElementById('nombre_game').value;
     var imagen = document.getElementById('pathImagen').value;
+    imagen = "images/caratulas/"+imagen
     var descripcion= document.getElementById('text_area_descripcion').value;
     $.ajax({
   method: "POST",

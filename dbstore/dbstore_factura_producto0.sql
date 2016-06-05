@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: dbstore
+-- Host: localhost    Database: dbstore
 -- ------------------------------------------------------
 -- Server version	5.7.12-log
 
@@ -16,32 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `cliente`
+-- Table structure for table `factura_producto`
 --
 
-DROP TABLE IF EXISTS `cliente`;
+DROP TABLE IF EXISTS `factura_producto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `cliente` (
-  `id` bigint(20) NOT NULL DEFAULT '1',
-  `nombre` varchar(100) NOT NULL,
-  `apellido` varchar(100) NOT NULL,
-  `correo` varchar(100) DEFAULT NULL,
-  `telefono` varchar(100) DEFAULT NULL,
-  `usuario` varchar(100) NOT NULL,
-  `contrasena` varchar(10) NOT NULL,
-  `tipo` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE `factura_producto` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `idProducto` bigint(20) NOT NULL,
+  `idFactura` bigint(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idProducto` (`idProducto`),
+  KEY `idFactura` (`idFactura`),
+  CONSTRAINT `factura_producto_ibfk_1` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`id`),
+  CONSTRAINT `factura_producto_ibfk_2` FOREIGN KEY (`idFactura`) REFERENCES `factura` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `cliente`
+-- Dumping data for table `factura_producto`
 --
 
-LOCK TABLES `cliente` WRITE;
-/*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
+LOCK TABLES `factura_producto` WRITE;
+/*!40000 ALTER TABLE `factura_producto` DISABLE KEYS */;
+/*!40000 ALTER TABLE `factura_producto` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-01 12:10:54
+-- Dump completed on 2016-06-04 20:55:43
