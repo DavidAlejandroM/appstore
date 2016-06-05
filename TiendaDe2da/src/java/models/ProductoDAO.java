@@ -113,9 +113,7 @@ public class ProductoDAO {
         return categoria;
     }
     /**
-     * ARREGLAR******************ARREGLAR******************ARREGLAR******************
-     * ARREGLAR******************ARREGLAR******************ARREGLAR******************
-     * ARREGLAR******************ARREGLAR******************ARREGLAR******************
+     * 
      * @param plat
      * @return 
      */
@@ -133,13 +131,7 @@ public class ProductoDAO {
                 System.err.println(rs.getString("nombre"));
                 plataforma = rs.getString("nombre");
             }
-            
-            //ps = conn.prepareStatement(query);
-            //ps.setString(1, plat);
-            //rs = ps.executeQuery();
-//            rs = ps.executeQuery(query);
-//            plataforma = rs.getString("nombre");
-            
+      
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
