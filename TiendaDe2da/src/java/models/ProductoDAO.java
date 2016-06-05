@@ -111,6 +111,7 @@ public class ProductoDAO {
                 rs.close();
             } catch (Exception e) { /* ignored */ }
         }
+        //kks
         return producto;
     }
     
