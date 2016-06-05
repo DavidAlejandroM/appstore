@@ -10,7 +10,7 @@
         <div class="col s3" id="categoriaBar">
             <ul class="collapsible" data-collapsible="accordion">
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">Administrar_Juegos</i></div>
+                    <div class="collapsible-header"><i class="material-icons">Administrar Juegos</i></div>
                     <div class="collapsible-body adminJuego">
                         <a class="waves-effect waves-red btn btnAdmin" onclick="showDiv('formAddGame')">Registrar</a><br>
                         <a class="waves-effect waves-red btn btnAdmin" onclick="showDiv('formListar')">Actualizar</a><br>

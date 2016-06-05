@@ -18,14 +18,14 @@
             </li>
             <li>
                 <div class="collapsible-header"><i class="fa fa-braille" aria-hidden="true"></i>Plataforma</div>
-                
+
                 <div class="collapsible-body"><p>XBOX</p></div>
                 <div class="collapsible-body"><p>PC</p></div>
                 <div class="collapsible-body"><p>PS4</p></div>
             </li>
             <li>
                 <div class="collapsible-header"><i class="fa fa-shopping-cart"></i>Compra</div>
-             
+
             </li>
         </ul>
     </div>
@@ -37,62 +37,49 @@
         </div>
 
         <!-- Modal Structure -->
-        <div id="modal1" class="modal modal-fixed-footer">
-            <div class="modal-content">
-                <div class="row">
-                <h5 class="col s12">LOL</h5>
-                <div  class="col s4" id="imagenDescripcion"> <img src="images/caratulas/Call-of-Duty-Black-Ops-III.jpg" alt="Norway" id="imagenItem"> </div>
-                <div class="col s8" id="descripcion">
-                    <h6>Descripción:</h6>
-                    <p>What are material icons?
-                        Material design system icons are simple, modern, 
-                        friendly, and sometimes quirky. Each icon is created 
-                        using our design guidelines to depict in simple and minimal
-                        <br>Precio: $50.000
-                    </p>
-                    <div class="input-field col s6">
-                        <input id="cantidad" type="number" class="validate">
-                        <label for="cantidad" id="cantidad">Cantidad</label>
+        <c:if test="${!empty productos}">
+            <div id="modal1" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                    <div class="row">
+                        <h5 id="nombre-producto-modal" class="col s12"></h5>
+                        <div  class="col s4"> <img src="" alt="Norway" id="imagenItem"> </div>
+                        <div class="col s8" id="descripcion">
+                            <h6>Detalle:</h6>
+                            <p id="detalle-producto-modal"></p>
+                            <h6>Precio:</h6>
+                            <p id="precio-producto-modal"></p>
+                            <h6>Plataforma:</h6>
+                            <p id="plataforma-producto-modal"></p>
+                            <h6>Categoria:</h6>
+                            <p id="categoria-producto-modal"></p>
+                        </div>
                     </div>
                 </div>
+                <div class="modal-footer">
+                    <a class="waves-effect waves-light btn"><i class="fa fa-shopping-cart"></i>Comprar</a>
+                    <a class="waves-effect waves-light btn" id="botonCancelar"></i>Cancelar</a>
                 </div>
             </div>
-            <div class="modal-footer">
-                <a class="waves-effect waves-light btn"><i class="fa fa-shopping-cart"></i>Comprar</a>
-                <a class="waves-effect waves-light btn" id="botonCancelar"></i>Cancelar</a>
+            <div class="row">
+                <div style="margin-right:10%; margin-left: 10%"> 
+                    <c:forEach items="${productos}" var="pro">
+                    <div style="float: left;" class="itemProducto">
+                        <img src="${pro.getImagen()}" alt="Norway" id="imagenItem">
+                        <div style="text-align:center;" class="container">
+                            <h5>${pro.getPrecio()}</h5>
+                            <p class="p-description">${pro.getNombre()}</p>
+                            <p>${pro.getNameCategoria()}</p>
+                            <p>${pro.getNamePlataforma()}</p>
+                            <!-- Modal Trigger -->
+                            <a class="waves-effect waves-light btn modal-trigger" href="#modal1" onclick="cargarDatosModal('${pro.getId()}','${pro.getNombre()}','${pro.getDetalle()}','${pro.getImagen()}','${pro.getPrecio()}','${pro.getNameCategoria()}','${pro.getNamePlataforma()}')">Comprar</a>
+                        </div>
+                    </div>
+                </c:forEach>
+                </div>                
             </div>
-        </div>
-        <div class="row">
-            <div class="itemProducto col s4">
-                <img src="images/caratulas/wowlegion.jpg" alt="Norway" id="imagenItem">
-                <div class="container">
-                    <p><h5>$ 500.000</h5></p>
-                    <p>Moto G 3ra Gen.</p>
-                    <!-- Modal Trigger -->
-                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Comprar</a>
-                </div>
-            </div>
-            <div class="itemProducto col s4">
-                <img src="images/caratulas/wowlegion.jpg" alt="Norway" id="imagenItem">
-                <div class="container">
-                    <p><h5>$ 500.000</h5></p>
-                    <p>Moto G 3ra Gen.</p>
-                    <!-- Modal Trigger -->
-                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Comprar</a>
 
-                </div>
-            </div>
-            <div class="itemProducto col s4">
-                <img src="images/caratulas/Call-of-Duty-Black-Ops-III.jpg" alt="Norway" id="imagenItem">
-                <div class="container">
-                    <p><h5>$ 500.000</h5></p>
-                    <p>Moto G 3ra Gen.</p>
-                    <!-- Modal Trigger -->
-                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Comprar</a>
+        </c:if>
 
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <%@ include file="footer.jsp" %>
