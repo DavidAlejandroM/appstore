@@ -84,8 +84,9 @@ public class ProductoDAO {
         return productos;
     }
 
-    public Producto obtenerProducto(String id) {
+    public String obtenerProductoJSON(String id) {
         Producto producto = new Producto();
+        String json = null;
         try {
             conn = conexion.getConexion();
             String query = "SELECT * FROM producto WHERE id="+id;
@@ -102,6 +103,8 @@ public class ProductoDAO {
                 producto.setCategoria(rs.getString("categoria"));
                 producto.setPlataforma(rs.getString("plataforma"));
                 
+                json = producto.getJSONProducto();
+                
             }
             
         } catch (Exception e) {
@@ -111,8 +114,12 @@ public class ProductoDAO {
                 rs.close();
             } catch (Exception e) { /* ignored */ }
         }
+<<<<<<< HEAD
         //kks
         return producto;
+=======
+        return json;
+>>>>>>> refs/remotes/origin/alejandro
     }
     
     public String obtenerNombreCategoria(String cat)

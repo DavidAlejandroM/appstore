@@ -71,6 +71,76 @@
                     </tbody>
                 </table>
             </div>
+     <!--ACTUALIZAR JUEGO  ----------------------------------------------------------------------------------->
+         <div id="formUpdateGame">
+                <div class="row">
+                    <div class="col s8">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <select id="select_categoriaU">
+                                    <option value="0" disabled selected>Elija una opción</option>
+                                    <option value="1">Accion</option>
+                                    <option value="2">Estrategia</option>
+                                    <option value="3">Roll</option>
+                                </select>
+                                <label>Categoria</label>
+
+                            </div><div class="input-field col s6">
+                                <select id="select_plataformaU">
+                                    <option value="0" disabled selected>Elija una opción</option>
+                                    <option value="1">PC</option>
+                                    <option value="2">Xbox One</option>
+                                    <option value="3">PS4</option>
+                                </select>
+                            <label>Plataforma</label>
+                        </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="nombre_gameU" type="text" class="validate">
+                                <label for="nombre_game">Nombre Juego</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="precio_gameU" type="text" class="validate" onchange="formatoMoneda(this.value)" onkeyup="formatoMoneda(this.value)">
+                                <label for="precio_game">Precio</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                    <div class="file-field input-field">
+                                        <div class="btn">
+                                            <span>Imagen</span>
+                                            <input type="file">
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text" placeholder="Seleciona una Imagen" id="pathImagenU" onchange="mostrarImagenMiniatura('caratula','pathImagen')" >
+                                        </div>
+                                    </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="text_area_descripcionU" class="materialize-textarea"></textarea>
+                                <label for="text_area_descripcion">Descripción</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col s4">
+                        <img class="z-depth-2" src="" id="caratulaU" width="150" height="200">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s2 offset-s6">
+                        <a class="waves-effect waves-light btn" onclick="actualizarJuego()">Actualizar</a>
+                    </div>
+                </div>
+
+            </div>
 
      <!--AGREGAR JUEGO  ----------------------------------------------------------------------------------->
          <div id="formAddGame">

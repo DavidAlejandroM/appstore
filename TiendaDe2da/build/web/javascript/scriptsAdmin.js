@@ -101,6 +101,7 @@ function hiddenDivs()
     document.getElementById('formListar').style.display = "none";
     document.getElementById('formAddGame').style.display = "none";
     document.getElementById('formListarEliminar').style.display = "none";
+    document.getElementById('formUpdateGame').style.display = "none";
 
 }
 
@@ -109,7 +110,7 @@ $(document).ready(function() {
         console.log(this.id);
         hiddenDivs();
         alert(this.id);
-        showDiv('formAddGame')
+        showDiv('formUpdateGame');
         var juego = obtenerJuego(this.id);
     });
 });
@@ -136,19 +137,31 @@ function guardarJuego(){
       alert(response);
   } 
 });
+    alert("El Juego "+nombre+" se guardó exitosamente");
     location.reload();
 } 
 
 function obtenerJuego(id){
-
-    
+ 
     $.ajax({
   method: "POST",
   url: "./getGame",
   data: { id : id },
-  succes : function(response){
-      alert(response);
+  success : function(response){
+      
+      llenarForUpdate(response);
   } 
 });
     //location.reload();
+    
 } 
+
+function actualizarJuego(){
+    alert("se esta Actualizando");
+}
+
+function llenarForUpdate(dato)
+{   
+    document.getElementById('select_categoriaU').selectedIndex = dato.categoria;
+    document.getElementById('nombre_gameU').value = dato.nombre;
+}

@@ -118,7 +118,7 @@ div.itemProducto {
 /********CSS BY ALEJANDRO**************************************************/
 
 
-#formAddGame , #formListar, #formListarEliminar{
+#formAddGame , #formListar, #formListarEliminar, #formUpdateGame{
     padding-top: 30px;
     display: none;
 

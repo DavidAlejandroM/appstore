@@ -27,29 +27,13 @@ public class GetGameServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Producto producto = new Producto();
-        /*String nombre = req.getParameter("nom");
-        String categoria = req.getParameter("cat");
-        String plataforma = req.getParameter("plat");
-        String descripcion = req.getParameter("des");
-        String precio = req.getParameter("prec");
-        String imagen = req.getParameter("img");
+        String producto;
         
-        System.out.println(nombre);
+        producto = productoDAO.obtenerProductoJSON(req.getParameter("id"));
+        resp.setContentType("application/json");
+        resp.setCharacterEncoding("UTF-8");
+        resp.getWriter().write(producto);
         
-        producto.setNombre(nombre);
-        producto.setCategoria(categoria);
-        producto.setPlataforma(plataforma);
-        producto.setDetalle(descripcion);
-        producto.setPrecio(precio);
-        producto.setImagen(imagen);
-        
-        productoDAO.agregarJuego(producto);*/
-        System.out.println(req.getParameter("id"));
-        
-        producto = productoDAO.obtenerProducto(req.getParameter("id"));
-        
-        resp.getWriter().write("yes");
         
     }
     
