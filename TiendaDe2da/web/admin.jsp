@@ -11,7 +11,11 @@
         <div class="col s3" id="categoriaBar">
             <ul class="collapsible" data-collapsible="accordion">
                 <li>
+<<<<<<< HEAD
                     <div class="collapsible-header"><i class="material-icons">Juegos</i></div>
+=======
+                    <div class="collapsible-header"><i class="material-icons">Administrar Juegos</i></div>
+>>>>>>> refs/remotes/origin/master
                     <div class="collapsible-body adminJuego">
                         <a class="waves-effect waves-red btn btnAdmin" onclick="showDiv('formAddGame')">Registrar</a><br>
                         <a id="btnActualizar" class="waves-effect waves-red btn btnAdmin" onclick="showDiv('formListar'), cambiarDivDinamico()" >Actualizar</a><br>
