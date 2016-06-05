@@ -5,7 +5,9 @@
 --%>
 
 <%@ include file="header.jsp" %>
-
+<div id="divDinamico">
+    hola
+</div>
 <div id="contenedorAdmin">
     <div class="row" id="contenedor">
         <div class="col s3" id="categoriaBar">
@@ -18,7 +20,7 @@
 >>>>>>> refs/remotes/origin/master
                     <div class="collapsible-body adminJuego">
                         <a class="waves-effect waves-red btn btnAdmin" onclick="showDiv('formAddGame')">Registrar</a><br>
-                        <a id="btnActualizar" class="waves-effect waves-red btn btnAdmin" onclick="showDiv('formListar'), cambiarDivDinamico()" >Actualizar</a><br>
+                        <a class="waves-effect waves-red btn btnAdmin" onclick="showDiv('formListar')">Actualizar</a><br>
                         <a class="waves-effect waves-red btn btnAdmin" onclick="showDiv('formListarEliminar')">Eliminar</a><br>
 
                     </div>
@@ -39,7 +41,6 @@
                     </tr>
                     </thead>
                     <tbody>
-                    
                         <c:forEach items="${juegos}" var="juego">
                             <tr class="mouseColor tableItemUpdate" id="${juego.getId()}">
                                 <td>${juego.getNombre()}</td>
@@ -48,8 +49,6 @@
                                 <td>${juego.getPrecio()}</td>
                             </tr>
                         </c:forEach>
-                    
-                        
                         
                            
 <!--
