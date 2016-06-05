@@ -5,12 +5,13 @@
 --%>
 
 <%@ include file="header.jsp" %>
+
 <div id="contenedorAdmin">
     <div class="row" id="contenedor">
         <div class="col s3" id="categoriaBar">
             <ul class="collapsible" data-collapsible="accordion">
                 <li>
-                    <div class="collapsible-header"><i class="material-icons">Administrar Juegos</i></div>
+                    <div class="collapsible-header"><i class="material-icons">Juegos</i></div>
                     <div class="collapsible-body adminJuego">
                         <a class="waves-effect waves-red btn btnAdmin" onclick="showDiv('formAddGame')">Registrar</a><br>
                         <a class="waves-effect waves-red btn btnAdmin" onclick="showDiv('formListar')">Actualizar</a><br>
@@ -36,30 +37,13 @@
                     <tbody>
                         <c:forEach items="${juegos}" var="juego">
                             <tr class="mouseColor tableItemUpdate" id="${juego.getId()}">
-                            <td>${juego.getNombre()}</td>
-                            <td>${juego.getNameCategoria()}</td>
-                            <td >${juego.getNamePlataforma()}</td>
-                            <td>${juego.getPrecio()}</td>
-                        </tr>
+                                <td>${juego.getNombre()}</td>
+                                <td>${juego.getNameCategoria()}</td>
+                                <td >${juego.getNamePlataforma()}</td>
+                                <td>${juego.getPrecio()}</td>
+                            </tr>
                         </c:forEach>
-                        
-                           
-<!--
-                   
-                    <tr class="mouseColor tableItemUpdate" id="1">
-                        <td>Call of Duty Black Ops</td>
-                        <td>Accion</td>
-                        <td >Pc</td>
-                        <td>$ 100000</td>
-                    </tr>
-                    <tr class="mouseColor tableItemUpdate" id="2">
-                        <td>World of Warcraft</td>
-                        <td>Roll</td>
-                        <td>PS4</td>
-                        <td>$ 80000</td>
-                    </tr>
--->
-                    </tbody>
+                     </tbody>
                 </table>
             </div>
 <!----TABLA LISTAR ELIMINAR-->
@@ -75,24 +59,14 @@
                     </thead>
 
                     <tbody>
-                    <tr class="mouseColor tableItemDelete" id="1">
-                        <td>Call of Duty Black Ops</td>
-                        <td>Accion</td>
-                        <td >Pc</td>
-                        <td>$ 100000</td>
-                    </tr>
-                    <tr class="mouseColor tableItemDelete" id="2">
-                        <td>World of Warcraft</td>
-                        <td>Roll</td>
-                        <td>PS4</td>
-                        <td>$ 80000</td>
-                    </tr>
-                    <tr class="mouseColor tableItemDelete" id="3">
-                        <td>World of Warcraft</td>
-                        <td>Roll</td>
-                        <td>PS4</td>
-                        <td>$ 80000</td>
-                    </tr>
+                        <c:forEach items="${juegos}" var="juego">
+                            <tr class="mouseColor tableItemUpdate" id="${juego.getId()}">
+                                <td>${juego.getNombre()}</td>
+                                <td>${juego.getNameCategoria()}</td>
+                                <td >${juego.getNamePlataforma()}</td>
+                                <td>${juego.getPrecio()}</td>
+                            </tr>
+                        </c:forEach>
 
                     </tbody>
                 </table>
