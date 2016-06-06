@@ -168,5 +168,31 @@ public class ProductoDAO {
         }
         return plataforma;
     }
+    
+    public void actualizarJuego(Producto j)
+    {
+        try {
+            conn = conexion.getConexion();
+            String query = "UPDATE producto SET nombre = ?, detalle = ?, precio = ?, categoria = ?, imagen = ?, plataforma = ? WHERE id="+String.valueOf(j.getId());
+            ps = conn.prepareStatement(query);
+            ps.setString(1, j.getNombre());
+            ps.setString(2, j.getDetalle());
+            ps.setString(3, j.getPrecio());
+            ps.setInt(4, Integer.parseInt(j.getCategoria()));
+            ps.setString(5, j.getImagen());
+            ps.setInt(6, Integer.parseInt(j.getPlataforma()));
+            
+            ps.executeUpdate();
+            //ps.executeUpdate(query);
+                    
+       
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                rs.close();
+            } catch (Exception e) { /* ignored */ }
+        }
+    }
 
 }
