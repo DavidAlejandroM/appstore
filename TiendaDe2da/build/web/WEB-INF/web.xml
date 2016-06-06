@@ -40,4 +40,13 @@
         <servlet-name>GetGameServlet</servlet-name>
         <url-pattern>/getGame</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>UpdateGameServlet</servlet-name>
+        <servlet-class>UpdateGameServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateGameServlet</servlet-name>
+        <url-pattern>/updateGame</url-pattern>
+    </servlet-mapping>
 </web-app>

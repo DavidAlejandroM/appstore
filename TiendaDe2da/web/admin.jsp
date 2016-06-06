@@ -25,6 +25,7 @@
         <div class="col s9">
 <!----TABLA LISTAR--->
             <div id="formListar">
+                
                 <table>
                     <thead>
                     <tr>
@@ -55,24 +56,31 @@
                         <th data-field="name">Categoria</th>
                         <th data-field="name">Pataforma</th>
                         <th data-field="price">Precio</th>
+                        <th data-field="price"></th>
                     </tr>
                     </thead>
 
                     <tbody>
                         <c:forEach items="${juegos}" var="juego">
-                            <tr class="mouseColor tableItemUpdate" id="${juego.getId()}">
+                            <tr class="mouseColor tableItemDelete" id="${juego.getId()}">
                                 <td>${juego.getNombre()}</td>
                                 <td>${juego.getNameCategoria()}</td>
                                 <td >${juego.getNamePlataforma()}</td>
                                 <td>${juego.getPrecio()}</td>
+                                <td></td>
                             </tr>
                         </c:forEach>
 
                     </tbody>
                 </table>
             </div>
+<!--DIV PARA ALMACENAR EL ID  ----------------------------------------------------------------------------------->
+            <div id="idJuego" style="display: none">
+                id
+            </div>
      <!--ACTUALIZAR JUEGO  ----------------------------------------------------------------------------------->
          <div id="formUpdateGame">
+             
                 <div class="row">
                     <div class="col s8">
                         <div class="row">
@@ -98,13 +106,13 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="nombre_gameU" type="text" class="validate">
+                                <input placeholder="" id="nombre_gameU" type="text" class="validate">
                                 <label for="nombre_game">Nombre Juego</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s6">
-                                <input id="precio_gameU" type="text" class="validate" onchange="formatoMoneda(this.value)" onkeyup="formatoMoneda(this.value)">
+                                <input placeholder="" id="precio_gameU" type="text" class="validate" onchange="formatoMoneda(this.value,'precio_gameU')" onkeyup="formatoMoneda(this.value,'precio_gameU')">
                                 <label for="precio_game">Precio</label>
                             </div>
                         </div>
@@ -116,7 +124,7 @@
                                             <input type="file">
                                         </div>
                                         <div class="file-path-wrapper">
-                                            <input class="file-path validate" type="text" placeholder="Seleciona una Imagen" id="pathImagenU" onchange="mostrarImagenMiniatura('caratula','pathImagen')" >
+                                            <input class="file-path validate" type="text" placeholder="Seleciona una Imagen" id="pathImagenU" onchange="mostrarImagenMiniatura('caratulaU','pathImagenU')" >
                                         </div>
                                     </div>
                             </div>
@@ -124,7 +132,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="text_area_descripcionU" class="materialize-textarea"></textarea>
+                                <textarea placeholder="" id="text_area_descripcionU" class="materialize-textarea"></textarea>
                                 <label for="text_area_descripcion">Descripción</label>
                             </div>
                         </div>
@@ -175,7 +183,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s6">
-                                <input id="precio_game" type="text" class="validate" onchange="formatoMoneda(this.value)" onkeyup="formatoMoneda(this.value)">
+                                <input id="precio_game" type="text" class="validate" onchange="formatoMoneda(this.value,'precio_game')" onkeyup="formatoMoneda(this.value,'precio_game')">
                                 <label for="precio_game">Precio</label>
                             </div>
                         </div>

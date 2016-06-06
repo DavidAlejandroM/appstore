@@ -37,7 +37,7 @@ public class AdminServlet extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String nombre = req.getParameter("nombre_game");
         
-        System.out.println(nombre);
+        
     }
     
     
