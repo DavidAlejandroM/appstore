@@ -218,6 +218,7 @@
                         <label for="text_area_descripcion">Descripción</label>
                     </div>
                 </div>
+                
 
             </div>
             <div class="col s4">
