@@ -16,27 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `plataforma`
+-- Table structure for table `factura_producto`
 --
 
-DROP TABLE IF EXISTS `plataforma`;
+DROP TABLE IF EXISTS `factura_producto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `plataforma` (
+CREATE TABLE `factura_producto` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `idProducto` bigint(20) NOT NULL,
+  `idFactura` bigint(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idProducto` (`idProducto`),
+  KEY `idFactura` (`idFactura`),
+  CONSTRAINT `factura_producto_ibfk_1` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`id`),
+  CONSTRAINT `factura_producto_ibfk_2` FOREIGN KEY (`idFactura`) REFERENCES `factura` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `plataforma`
+-- Dumping data for table `factura_producto`
 --
 
-LOCK TABLES `plataforma` WRITE;
-/*!40000 ALTER TABLE `plataforma` DISABLE KEYS */;
-INSERT INTO `plataforma` VALUES (1,'Pc'),(2,'Xbox One'),(3,'Ps4');
-/*!40000 ALTER TABLE `plataforma` ENABLE KEYS */;
+LOCK TABLES `factura_producto` WRITE;
+/*!40000 ALTER TABLE `factura_producto` DISABLE KEYS */;
+/*!40000 ALTER TABLE `factura_producto` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-04 20:55:44
+-- Dump completed on 2016-06-06 18:22:20

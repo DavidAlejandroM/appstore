@@ -35,7 +35,7 @@ CREATE TABLE `producto` (
   KEY `plataforma` (`plataforma`),
   CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`id`),
   CONSTRAINT `producto_ibfk_2` FOREIGN KEY (`plataforma`) REFERENCES `plataforma` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `producto` (
 
 LOCK TABLES `producto` WRITE;
 /*!40000 ALTER TABLE `producto` DISABLE KEYS */;
-INSERT INTO `producto` VALUES (1,'lkjñlkjasdf','33eeeee','$  23423424',1,'wowlegion.jpg',1),(2,'hola','asdf','$  10',1,'Call-of-Duty-Black-Ops-III.jpg',2),(3,'hola2','asdff','$  100',1,'wowlegion.jpg',2);
+INSERT INTO `producto` VALUES (1,'lkjñlkjasdf','33eeeee','$  23423424',1,'wowlegion.jpg',1),(2,'hola','asdf','$  10',1,'Call-of-Duty-Black-Ops-III.jpg',2),(3,'hola2','asdff','$  100',1,'wowlegion.jpg',2),(8,'Call Of Duty Black Ops 3','es un super juego','$  50008',2,'images/caratulas/Call-of-Duty-Black-Ops-III.jpg',1),(9,'World of Warcraft Legion','es un juego','$  99000',3,'images/caratulas/wowlegion.jpg',1),(10,'Assasing Creed II','muy bueno','$  50000',1,'images/caratulas/assassins_creed_2-1694124.jpg',2),(11,'Infinite','infinity es un juego para ps4 de mucha accion','$  30000',1,'images/caratulas/fdsafdsadxrgb.png',3),(12,'Grand Theft Auto V','es uno de los mejores juegos del 2014','$  90000',1,'images/caratulas/gta-v-caratula-fan.jpg',1),(13,'Halo 5','Los spartans han atacado la tierra','$  300000',1,'images/caratulas/halo-5-guardians-20151023123031_1.jpg',2),(14,'Rocket League','es un futbolito de carritos','$  50000',3,'images/caratulas/descarga.jpg',2),(15,'League of Legends','lol','$  400000',2,'images/caratulas/league.jpg',1);
 /*!40000 ALTER TABLE `producto` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-04 20:55:44
+-- Dump completed on 2016-06-06 18:22:20
