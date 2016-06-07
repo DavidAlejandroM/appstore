@@ -157,11 +157,15 @@ div.itemProducto {
 }
 
 #contenedorAdmin{
-    size: 100vh;
-    background: rgba(255, 255, 255, 0.5);
-    height: 100%;
-    position: relative;
+   
     
+    width: 100%;
+    /* background: #000; */
+    background: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    position: absolute;
+    top: 64px;
+    left: 0;
 }
 
 #titleH3{
@@ -171,8 +175,11 @@ div.itemProducto {
 
 body
 {
-    background-image: url('../images/Background.jpg');
+    /*background-image: url('../images/Background.jpg');*/
+    background-image: url('../images/bg2.jpg');
+    
     background-size: 100%;
+    
     height: 100%;
     width: 100%;
     background-attachment: fixed;
