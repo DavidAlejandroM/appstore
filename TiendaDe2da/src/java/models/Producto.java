@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package models;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.json.JSONException;
+import org.json.JSONObject;
 /**
  *
  * @author HP VPRO
@@ -89,6 +92,38 @@ public class Producto {
         this.imagen = imagen;
     }
     
-    
+    public String getJSONProducto()
+    {
+        String Json = null;
+        Object id = this.id;
+        Object nombre = this.nombre;
+        Object detalle = this.detalle;
+        Object categoria = this.categoria;
+        Object nameCategoria = this.nameCategoria;
+        Object precio = this.precio;
+        Object imagen = this.imagen;
+        Object plataforma = this.plataforma;
+        Object namePlataforma = this.namePlataforma;
+        
+        JSONObject js = new JSONObject();
+        try {
+            js.put("id", id);
+            js.put("nombre", nombre);
+            js.put("detalle", detalle);
+            js.put("categoria", categoria);
+            js.put("nameCategoria", nameCategoria);
+            js.put("precio", precio);
+            js.put("imagen", imagen);
+            js.put("plataforma", plataforma);
+            js.put("namePlataforma", namePlataforma);
+            
+            Json = js.toString();
+            
+        } catch (JSONException ex) {
+            Logger.getLogger(Producto.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return Json;
+    }
 
 }

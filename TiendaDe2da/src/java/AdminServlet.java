@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import models.*;
-import models.JuegoDAO;
 import models.ProductoDAO;
 
 /*
@@ -38,7 +37,7 @@ public class AdminServlet extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String nombre = req.getParameter("nombre_game");
         
-        System.out.println(nombre);
+        
     }
     
     
