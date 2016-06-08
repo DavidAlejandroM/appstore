@@ -8,13 +8,13 @@
 
 <div class="row">
     <div id="categoriaBar" class="col s3">
-        <ul class="collapsible" data-collapsible="accordion">
-            <li id="categoria">
+        <ul class="collapsible" data-collapsible="accordion" >
+            <li class="listado">
                 <div class="collapsible-header"><i class="fa fa-info" aria-hidden="true"></i>Categoría</div>
 
-                <div class="collapsible-body"><p>Aventura</p></div>
-                <div class="collapsible-body"><p>Defensa</p></div>
-                <div class="collapsible-body"><p>Música</p></div>
+                <div class="collapsible-body"><p><a href="#">Acción</a></p></div>
+                <div class="collapsible-body"><p><a href="#">Estrategia</a></p></div>
+                <div class="collapsible-body"><p><a href="#">Roll</a></p></div>
             </li>
             <li>
                 <div class="collapsible-header"><i class="fa fa-braille" aria-hidden="true"></i>Plataforma</div>
@@ -61,9 +61,9 @@
                 </div>
             </div>
             <div class="row">
-                <div style="margin-right:10%; margin-left: 10%"> 
+                <div style="margin-right:10%; margin-left: 10%" class="item"> 
                     <c:forEach items="${productos}" var="pro">
-                    <div style="float: left;" class="itemProducto">
+                    <div style="float: left;" class="itemProducto" class="$(pro.getNameCategoria())">
                         <img src="${pro.getImagen()}" alt="Norway" id="imagenItem">
                         <div style="text-align:center;" class="container">
                             <h5>${pro.getPrecio()}</h5>

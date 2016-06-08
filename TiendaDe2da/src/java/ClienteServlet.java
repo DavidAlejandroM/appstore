@@ -22,6 +22,7 @@ public class ClienteServlet extends HttpServlet {
 
     ProductoDAO proDAO = new ProductoDAO();
     ArrayList<Producto> productos;
+    
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
