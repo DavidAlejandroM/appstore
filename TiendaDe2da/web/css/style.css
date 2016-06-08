@@ -147,7 +147,7 @@ div.itemProducto {
 
 .mouseColor{
     -webkit-transition: background-color 1s;
-    cursor: pointer !important;
+    /*cursor: pointer !important;*/
 }
 
 .mouseColor:hover

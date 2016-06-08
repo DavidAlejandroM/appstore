@@ -109,19 +109,80 @@ function hiddenDivs()
 
 $(document).ready(function() {
     $('.tableItemUpdate').click(function() {
-        console.log(this.id);
         hiddenDivs();
-        alert(this.id);
         showDiv('formUpdateGame');
         var juego = obtenerJuego(this.id);
     });
 });
 
-$(document).ready(function() {
-    $('.tableItemDelete').click(function() {
-        console.log(this.id);
+
+$(document).ready(function()
+{
+    
+    $.ajax({
+        method: "GET",
+        url: "./getGame",
+        data: "",
+        success : function(response)
+        {
+             llenarSelect(response,'select_categoria');
+             llenarSelect(response,'select_categoriaU');
+        } 
     });
+    $.ajax({
+        method: "GET",
+        url: "./getPlataformaGame",
+        data: "",
+        success : function(response)
+        {
+             llenarSelect(response,'select_plataforma');
+             llenarSelect(response,'select_plataformaU');
+        } 
+    });
+   
 });
+
+function llenarSelect(cat,id)
+{
+    var str = "<option value='0' disabled selected>Elija una opci\u00F3n</option>";
+    var uno = "<option value='";
+    var dos = "'>";
+    var tres = "</option>"
+
+    for(var i=0;i<cat.length;i++)
+    {
+        str = str + uno + cat[i].id + dos + cat[i].nombre + tres;
+    }
+
+    document.getElementById(id).innerHTML = str;
+    $('#'+id).material_select();
+}
+
+
+function eliminar(id,nombre)
+{
+        if(confirm("¿Desea eliminar " + nombre + "para siemrpe?"))
+        {
+            $.ajax({
+            method: "POST",
+            url: "./deleteGame",
+            data: {id: id},
+            success : 
+                    function(response)
+                    {
+                        if(response == "yes")
+                        {
+                            location.reload();
+                        }
+                        //alert(response);
+                    } 
+        });
+        }
+        else
+        {
+            
+        }
+}
 
 function guardarJuego(){
     
@@ -132,14 +193,14 @@ function guardarJuego(){
     var imagen = document.getElementById('pathImagen').value;
     var descripcion= document.getElementById('text_area_descripcion').value;
     $.ajax({
-  method: "POST",
-  url: "./saveGame",
-  data: { cat : categoria, plat: plataforma, prec: precio, nom: nombre, img: "images/caratulas/"+imagen, des: descripcion},
-  succes : function(response){
-      alert(response);
-  } 
+        method: "POST",
+        url: "./saveGame",
+        data: { cat : categoria, plat: plataforma, prec: precio, nom: nombre, img: "images/caratulas/"+imagen, des: descripcion},
+        success : function(response){
+            alert(response);
+        } 
 });
-    alert("El Juego "+nombre+" se ah guardado exitosamente");
+    alert("El Juego "+nombre+" se ah guardad\u00F3 exitosamente");
     location.reload();
 } 
 
@@ -173,7 +234,7 @@ function actualizarJuego(){
   success : function(response){
       if(response == "yes")
       {
-        alert("El Juego "+nombre+" se guardo exitosamente");
+        alert("El Juego "+nombre+" se guard\u00F3 exitosamente");
         location.reload();
       }  
   } 

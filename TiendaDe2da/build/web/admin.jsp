@@ -58,6 +58,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th data-field="name"></th>
                             <th data-field="name">Nombre Juego</th>
                             <th data-field="name">Categoria</th>
                             <th data-field="name">Pataforma</th>
@@ -71,14 +72,15 @@
                             <tr class="mouseColor tableItemDelete" id="${juego.getId()}">
                                 <td>
                                     <img src="${juego.getImagen()}" class="circle responsive-img imagenRedonda">
+                                </td>                          
+                                <td >${juego.getNombre()}</td>
+                                <td>${juego.getNameCategoria()}</td>
+                                <td >${juego.getNamePlataforma()}</td>
+                                <td>${juego.getPrecio()}</td>
+                                <td>
+                                    <a href="#" onclick="eliminar('${juego.getId()}','${juego.getNombre()}')">Eliminar</a>
                                 </td>
-                            </td>                                <td>
-                            ${juego.getNombre()}
-                        </td>
-                        <td>${juego.getNameCategoria()}</td>
-                        <td >${juego.getNamePlataforma()}</td>
-                        <td>${juego.getPrecio()}</td>
-                        <td></td>
+                        
                     </tr>
                 </c:forEach>
 
@@ -168,19 +170,13 @@
                 <div class="row">
                     <div class="input-field col s6">
                         <select id="select_categoria">
-                            <option value="0" disabled selected>Elija una opción</option>
-                            <option value="1">Accion</option>
-                            <option value="2">Estrategia</option>
-                            <option value="3">Roll</option>
+                            
                         </select>
                         <label>Categoria</label>
 
                     </div><div class="input-field col s6">
                         <select id="select_plataforma">
-                            <option value="" disabled selected>Elija una opción</option>
-                            <option value="1">PC</option>
-                            <option value="2">Xbox One</option>
-                            <option value="3">PS4</option>
+                            
                         </select>
                         <label>Plataforma</label>
                     </div>
