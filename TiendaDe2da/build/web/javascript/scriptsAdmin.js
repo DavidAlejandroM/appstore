@@ -109,26 +109,12 @@ function hiddenDivs()
 
 $(document).ready(function() {
     $('.tableItemUpdate').click(function() {
+        console.log(this.id);
         hiddenDivs();
+        alert(this.id);
         showDiv('formUpdateGame');
         var juego = obtenerJuego(this.id);
     });
-});
-
-
-$(document).ready(function()
-{
-    
-    $.ajax({
-  method: "GET",
-  url: "./getGame",
-  data: "",
-  success : function(response){
-      console.log(response);
-      var categoria = response;
-  } 
-});
-   
 });
 
 $(document).ready(function() {

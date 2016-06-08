@@ -6,7 +6,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import models.CategoriaDAO;
 
 import models.Producto;
 import models.ProductoDAO;
@@ -24,7 +23,6 @@ import models.ProductoDAO;
 public class GetGameServlet extends HttpServlet{
     Producto producto = new Producto();
     ProductoDAO productoDAO = new ProductoDAO();
-    CategoriaDAO categoriaDAO = new CategoriaDAO();
 
 
     @Override
@@ -38,17 +36,6 @@ public class GetGameServlet extends HttpServlet{
         
         
     }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String respuesta;
-        respuesta = categoriaDAO.obtenerCategoriasJSON();
-        resp.setContentType("application/json");
-        resp.setCharacterEncoding("UTF-8");
-        resp.getWriter().write(respuesta);
-    }
-    
-    
     
     
     
