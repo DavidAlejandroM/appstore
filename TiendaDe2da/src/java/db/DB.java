@@ -5,6 +5,7 @@
  */
 package db;
 
+
 import com.mysql.jdbc.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -20,7 +21,7 @@ public class DB {
     private static String driver = "com.mysql.jdbc.Driver";
     private static String url = "jdbc:mysql://localhost:3306/dbstore";
     private static String user = "root";
-    private static String password = "root";
+    private static String password = "poioiulkj";
 
     private DB() {
     }
