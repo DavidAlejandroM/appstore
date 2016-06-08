@@ -195,4 +195,23 @@ public class ProductoDAO {
         }
     }
 
+    public void eliminarJuego(String id) {
+        try {
+            conn = conexion.getConexion();
+            String query = "DELETE FROM producto WHERE id="+id;
+            ps = conn.prepareStatement(query);
+                        
+            ps.executeUpdate();
+            //ps.executeUpdate(query);
+                    
+       
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                rs.close();
+            } catch (Exception e) { /* ignored */ }
+        }
+    }
+
 }
