@@ -9,12 +9,11 @@
 <div class="row">
     <div id="categoriaBar" class="col s3">
         <ul class="collapsible" data-collapsible="accordion">
-            <li id="categoria">
-                <div class="collapsible-header"><i class="fa fa-info" aria-hidden="true"></i>Categoría</div>
-
-                <div class="collapsible-body"><p>Aventura</p></div>
-                <div class="collapsible-body"><p>Defensa</p></div>
-                <div class="collapsible-body"><p>Música</p></div>
+            <li class="listadoCategoria">
+                <div class='collapsible-header'><i class='fa fa-info' aria-hidden='true'></i>Categoría</div>
+                <div class="collapsible-body" id="listadoCat">
+                    
+                </div>
             </li>
             <li>
                 <div class="collapsible-header"><i class="fa fa-braille" aria-hidden="true"></i>Plataforma</div>
@@ -63,18 +62,18 @@
             <div class="row">
                 <div style="margin-right:10%; margin-left: 10%"> 
                     <c:forEach items="${productos}" var="pro">
-                    <div style="float: left;" class="itemProducto">
-                        <img src="${pro.getImagen()}" alt="Norway" id="imagenItem">
-                        <div style="text-align:center;" class="container">
-                            <h5>${pro.getPrecio()}</h5>
-                            <p class="p-description">${pro.getNombre()}</p>
-                            <p>${pro.getNameCategoria()}</p>
-                            <p>${pro.getNamePlataforma()}</p>
-                            <!-- Modal Trigger -->
-                            <a class="waves-effect waves-light btn modal-trigger" href="#modal1" onclick="cargarDatosModal('${pro.getId()}','${pro.getNombre()}','${pro.getDetalle()}','${pro.getImagen()}','${pro.getPrecio()}','${pro.getNameCategoria()}','${pro.getNamePlataforma()}')">Comprar</a>
+                        <div style="float: left;" class="itemProducto">
+                            <img src="${pro.getImagen()}" alt="Norway" id="imagenItem">
+                            <div style="text-align:center;" class="container">
+                                <h5>${pro.getPrecio()}</h5>
+                                <p class="p-description">${pro.getNombre()}</p>
+                                <p>${pro.getNameCategoria()}</p>
+                                <p>${pro.getNamePlataforma()}</p>
+                                <!-- Modal Trigger -->
+                                <a class="waves-effect waves-light btn modal-trigger" href="#modal1" onclick="cargarDatosModal('${pro.getId()}', '${pro.getNombre()}', '${pro.getDetalle()}', '${pro.getImagen()}', '${pro.getPrecio()}', '${pro.getNameCategoria()}', '${pro.getNamePlataforma()}')">Comprar</a>
+                            </div>
                         </div>
-                    </div>
-                </c:forEach>
+                    </c:forEach>
                 </div>                
             </div>
 

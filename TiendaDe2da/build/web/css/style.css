@@ -133,14 +133,14 @@ div.itemProducto {
     width: 100%;
 }
 
-.btnAdmin
+.btnAdmin, .btnCat
 {
     width: 100%;
     background-color: white !important;
     color: black !important;
 
 }
-.btnAdmin:hover
+.btnAdmin:hover,  .btnCat:hover
 {
     background-color: #4dd0e1 !important;
 }

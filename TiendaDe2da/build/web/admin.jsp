@@ -99,19 +99,13 @@
                 <div class="row">
                     <div class="input-field col s6">
                         <select id="select_categoriaU">
-                            <option value="0" disabled selected>Elija una opción</option>
-                            <option value="1">Accion</option>
-                            <option value="2">Estrategia</option>
-                            <option value="3">Roll</option>
+                            
                         </select>
                         <label>Categoria</label>
 
                     </div><div class="input-field col s6">
                         <select id="select_plataformaU">
-                            <option value="0" disabled selected>Elija una opción</option>
-                            <option value="1">PC</option>
-                            <option value="2">Xbox One</option>
-                            <option value="3">PS4</option>
+                           
                         </select>
                         <label>Plataforma</label>
                     </div>
