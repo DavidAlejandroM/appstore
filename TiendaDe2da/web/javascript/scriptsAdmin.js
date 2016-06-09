@@ -125,8 +125,11 @@ $(document).ready(function()
         data: "",
         success : function(response)
         {
+         
              llenarSelect(response,'select_categoria');
              llenarSelect(response,'select_categoriaU');
+             llenarCategoria(response, 'listadoCat');
+            
         } 
     });
     $.ajax({
@@ -137,10 +140,12 @@ $(document).ready(function()
         {
              llenarSelect(response,'select_plataforma');
              llenarSelect(response,'select_plataformaU');
+             console.log("entro cargar juego");
         } 
     });
    
 });
+
 
 function llenarSelect(cat,id)
 {
@@ -154,7 +159,7 @@ function llenarSelect(cat,id)
         str = str + uno + cat[i].id + dos + cat[i].nombre + tres;
     }
 
-    document.getElementById(id).innerHTML = str;
+   // document.getElementById(id).innerHTML = str;
     $('#'+id).material_select();
 }
 
