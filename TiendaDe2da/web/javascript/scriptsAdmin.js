@@ -128,6 +128,7 @@ $(document).ready(function()
          
              llenarSelect(response,'select_categoria');
              llenarSelect(response,'select_categoriaU');
+             llenarCategoria(response, 'listadoCat');
             
         } 
     });

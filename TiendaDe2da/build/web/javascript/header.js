@@ -13,12 +13,16 @@ $(document).ready(function () {
             llenarCategoria(response, 'listadoCat');
         }
     });
-    $('.listadoCat').click(function () {
-        var textoFiltro = $(this);
+    $.ajax({
+        method: "GET",
+        url: "./getPlataformaGame",
+        data: "",
+        success: function (response)
+        {
 
-        console.log(textoFiltro);
-
-   
+            llenarPlataforma(response, 'listadoPlat');
+            console.log("entro cargar juego");
+        }
     });
 });
 
@@ -36,30 +40,57 @@ function cargarDatosModal(id, nombre, detalle, imagen, precio, categoria, plataf
 
 function llenarCategoria(cat, id) {
     var cad = "";
+    tamCategoria = cat.length;
     for (var i = 0; i < cat.length; i++)
     {
-      //  cad = cad + "<div class='collapsible-body'><p>XBOX</p></div>"
-       cad = cad + "<a class = 'waves-effect waves-red btn btnCat' onclick= 'FiltrarCategoria('"+cat[i].id+"')'>" + cat[i].nombre + "</a><br>";
+        cad = cad + "<a class = 'waves-effect waves-red btn btnCat' onclick= \u0022 FiltrarCategoria('" + cat[i].id + "')\u0022>" + cat[i].nombre + "</a><br>";
     }
-    console.log(cad);
+    cad = cad + "<a class = 'waves-effect waves-red btn btnCat' onclick= \u0022 FiltrarCategoria('0')\u0022>TODOS</a><br>"
+
     document.getElementById(id).innerHTML = cad;
 }
+function llenarPlataforma(plat, id) {
+    console.log("entro llenar plaforma");
+    var cad = "";
+    tamPlataforma = plat.length;
+    for (var i = 0; i < plat.length; i++) {
+        cad = cad + "<a class = 'waves-effect waves-red btn btnPlat' onclick= \u0022 FiltrarPlataforma('" + plat[i].id + "')\u0022>" + plat[i].nombre + "</a><br>";
 
+    }
+    cad = cad + "<a class = 'waves-effect waves-red btn btnPlat' onclick= \u0022 FiltrarPlataforma('0')\u0022>TODOS</a><br>"
+    document.getElementById(id).innerHTML = cad;
 
-function FiltrarCategoria(nombre) {
-  console.log("entro filtro " + nombre);
-  /*  
-             if (!$(this).hasClass(nombre)) {
-                console.log("paso por aqui");
-                $(this).fadeOut('slow').removeClass('hidden');
-            } else {
-                console.log("paso por aqui2");
-                $(this).fadeIn('slow').addClass('hidden');
-            }*/
-    /*
-     
-     });*/
+}
+var tamCategoria = 0;
+var tamPlataforma = 0;
+
+function FiltrarCategoria(id) {
+    var className = "itemCategoria" + id;
+    console.log("itemCategoria" + id);
+
+    for (var i = 1; i <= tamCategoria; i++)
+    {
+        if (id === '0') {
+            $(".itemCategoria" + i).show();
+        } else {
+            $(".itemCategoria" + i).hide();
+        }
+    }
+    $("." + className).show();
 }
 
-
+function FiltrarPlataforma(id) {
+    var className = "itemPlataforma" + id;
+    console.log("itemPlataforma" + id);
+    console.log(tamPlataforma);
+    for (var i = 1; i <= tamPlataforma; i++)
+    {
+        if (id === '0') {
+            $(".itemPlataforma" + i).show();
+        } else {
+            $(".itemPlataforma" + i).hide();
+        }
+    }
+    $("." + className).show();
+}
 
