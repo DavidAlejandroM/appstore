@@ -16,6 +16,8 @@
                         <a class="waves-effect waves-red btn btnAdmin" onclick="showDiv('formAddGame')">Registrar</a><br>
                         <a class="waves-effect waves-red btn btnAdmin" onclick="showDiv('formListar')">Actualizar</a><br>
                         <a class="waves-effect waves-red btn btnAdmin" onclick="showDiv('formListarEliminar')">Eliminar</a><br>
+                        <a class="waves-effect waves-red btn btnAdmin" onclick="showDiv('formListarPlataformas')">Plataformas</a><br>
+                        <a class="waves-effect waves-red btn btnAdmin" onclick="showDiv('formListarCategorias')">Categorias</a><br>
 
                     </div>
                 </li>
@@ -47,9 +49,7 @@
                                 <td>${juego.getNameCategoria()}</td>
                                 <td >${juego.getNamePlataforma()}</td>
                                 <td>${juego.getPrecio()}</td>
-                                <td>
-                                    <a href="#" onclick="eliminar('${juego.getId()}', '${juego.getNombre()}')">Eliminar</a>
-                                </td>
+                                 
 
                             </tr>
                         </c:forEach>
@@ -88,6 +88,56 @@
                             </tr>
                         </c:forEach>
 
+                    </tbody>
+                </table>
+            </div>
+            <!----TABLA LISTAR PLATAFORMAS-->
+            <div id="formListarPlataformas">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Click aquí para ingresar" id="nombrePlataforma" type="text" class="validate">
+                        <label for="first_name">Nombre de la Plataforma</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <a class="waves-effect waves-light btn" onclick="guardarPlataforma(document.getElementById('nombrePlataforma').value)">Guardar</a>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th> </th>
+                            <th data-field="name">Plataforma</th>
+                            
+                        </tr>
+                    </thead>
+
+                    <tbody id="tbodyPlataforma">
+                        
+                    </tbody>
+                </table>
+            </div>
+            <!----TABLA LISTAR Categorias-->
+            <div id="formListarCategorias">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Click aquí para ingresar" id="nombreCategoria" type="text" class="validate">
+                        <label for="first_name">Nombre de la Categoria</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <a class="waves-effect waves-light btn" onclick="guardarCategoria(document.getElementById('nombreCategoria').value)">Guardar</a>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th> </th>
+                            <th data-field="name">Categorias</th>
+                            
+                        </tr>
+                    </thead>
+
+                    <tbody id="tbodyCategoria">
+                        
                     </tbody>
                 </table>
             </div>

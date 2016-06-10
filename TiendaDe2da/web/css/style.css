@@ -124,7 +124,7 @@ div.itemProducto {
 /********CSS BY ALEJANDRO**************************************************/
 
 
-#formAddGame , #formListar, #formListarEliminar, #formUpdateGame{
+#formAddGame , #formListar, #formListarEliminar, #formUpdateGame, #formListarPlataformas, #formListarCategorias{
     padding-top: 30px;
     display: none;
     background: rgba(255, 255, 255, 0.8);

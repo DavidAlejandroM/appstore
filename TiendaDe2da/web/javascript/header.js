@@ -5,7 +5,7 @@ $(document).ready(function () {
     $('select').material_select();
     $.ajax({
         method: "GET",
-        url: "./getGame",
+        url: "./getCategoriaGame",
         data: "",
         success: function (response)
         {
