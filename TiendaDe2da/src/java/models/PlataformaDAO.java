@@ -72,5 +72,55 @@ public class PlataformaDAO {
                 
         return json;
     }
+
+    public String modificarPlataforma(String id, String nombre) {
+        String a = null;
+        
+        try {
+            conn = conexion.getConexion();
+            String query = "UPDATE plataforma SET nombre = ? WHERE id="+id;
+            ps = conn.prepareStatement(query);
+            ps.setString(1, nombre);
+            
+            
+            ps.executeUpdate();
+            //ps.executeUpdate(query);
+            a = "yes";
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            a = "no";
+        } finally {
+            try {
+                rs.close();
+            } catch (Exception e) { /* ignored */ }
+        }
+        return a;
+    }
+
+    public String agregarPlataforma(String nombre) {
+        String a = null;
+        
+        try {
+            conn = conexion.getConexion();
+            String query = "INSERT INTO plataforma (nombre) values (?)";
+            ps = conn.prepareStatement(query);
+            ps.setString(1, nombre);
+            
+            
+            ps.executeUpdate();
+            //ps.executeUpdate(query);
+            a = "yes";
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            a = "no";
+        } finally {
+            try {
+                rs.close();
+            } catch (Exception e) { /* ignored */ }
+        }
+        return a;
+    }
     
 }

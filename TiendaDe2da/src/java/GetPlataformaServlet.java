@@ -31,11 +31,34 @@ public class GetPlataformaServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String producto;
         
+        String r = null;
+        String id = req.getParameter("id");
+        String nombre = req.getParameter("nombre");
+        boolean a = !id.equals("0");
         
-        
-        
+        if (a) {
+           if (!nombre.isEmpty()) 
+            {
+                r = plataformaDAO.modificarPlataforma(id,nombre);
+            }
+           else
+           {
+               r = "vacio";
+           }
+        }
+        else
+        {
+            if (!nombre.isEmpty()) 
+            {
+                r = plataformaDAO.agregarPlataforma(nombre);
+            }
+            else
+            {
+               r = "vacio";
+            }
+        }
+        resp.getWriter().write(r);
     }
 
     @Override

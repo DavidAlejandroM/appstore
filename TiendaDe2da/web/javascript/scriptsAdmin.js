@@ -97,13 +97,19 @@ function showDiv(id)
     document.getElementById(id).style.display = "block";
 
 }
-
+/**
+ * ESTE METODO BORRA TODOS LOS DIV QUE ESTAN EN LA VISTA DE ADMINISTRADOR
+ * @returns {undefined}
+ */
 function hiddenDivs()
 {
     document.getElementById('formListar').style.display = "none";
     document.getElementById('formAddGame').style.display = "none";
     document.getElementById('formListarEliminar').style.display = "none";
     document.getElementById('formUpdateGame').style.display = "none";
+    document.getElementById('formListarPlataformas').style.display = "none";
+    document.getElementById('formListarCategorias').style.display = "none";
+    
 
 }
 
@@ -121,12 +127,15 @@ $(document).ready(function()
     
     $.ajax({
         method: "GET",
-        url: "./getGame",
+        url: "./getCategoriaGame",
         data: "",
         success : function(response)
         {
+         
              llenarSelect(response,'select_categoria');
              llenarSelect(response,'select_categoriaU');
+             llenarFormCategorias(response);
+            
         } 
     });
     $.ajax({
@@ -137,10 +146,12 @@ $(document).ready(function()
         {
              llenarSelect(response,'select_plataforma');
              llenarSelect(response,'select_plataformaU');
+             llenarFormPlataformas(response);
         } 
     });
    
 });
+
 
 function llenarSelect(cat,id)
 {
@@ -154,7 +165,7 @@ function llenarSelect(cat,id)
         str = str + uno + cat[i].id + dos + cat[i].nombre + tres;
     }
 
-    document.getElementById(id).innerHTML = str;
+   // document.getElementById(id).innerHTML = str;
     $('#'+id).material_select();
 }
 
@@ -262,3 +273,104 @@ function llenarForUpdate(dato)
     
 }
 
+function llenarFormPlataformas(plat){
+    
+//    <tr class="mouseColor tableItemDelete" id="${juego.getId()}">
+//                                <td>
+//                                    
+//                                </td></tr>
+    var size = plat.length;
+    var str = "";
+    var uno = "<tr class='mouseColor tableItemPlat' id='";
+    
+    
+    for(var i = 0; i < size; i++)
+    {
+        
+       str = str + uno + plat[i].id+"'><td> </td><td>"+plat[i].nombre+"</td><td><a href=\u0022 # \u0022 onclick=\u0022 modificarPlataforma("+plat[i].id+",'"+plat[i].nombre+"')\u0022>Modificar</a></td></tr>"
+    }
+    
+    document.getElementById('tbodyPlataforma').innerHTML = str;
+}
+
+function llenarFormCategorias(cat){
+    var size = cat.length;
+    var str = "";
+    var uno = "<tr class='mouseColor tableItemPlat' id='";
+    
+    
+    for(var i = 0; i < size; i++)
+    {
+        
+       str = str + uno +  cat[i].id+"'><td> </td><td>"+ cat[i].nombre+"</td><td><a href=\u0022 # \u0022 onclick=\u0022 modificarCategoria("+cat[i].id+",'"+cat[i].nombre+"')\u0022>Modificar</a></td></tr>"
+    }
+    
+    document.getElementById('tbodyCategoria').innerHTML = str;
+}
+var idPlataforma = 0;
+var idCategoria = 0;
+
+function guardarPlataforma(nombre){
+    
+    var id = idPlataforma;
+    console.log(id + nombre);
+    
+    $.ajax({
+            method: "POST",
+            url: "./getPlataformaGame",
+            data: { id : id, nombre : nombre},
+            success : function(response){
+                if(response == "yes")
+                {
+                  alert("La platarforma "+nombre+" se proces\u00F3 exitosamente");
+                  location.reload();
+                }
+                else
+                {
+                    alert("No se pudo completar la operaci\u00F3n");
+                }
+                    
+            } 
+});
+}
+
+function modificarPlataforma(id,nombre)
+{
+    document.getElementById('nombrePlataforma').value = nombre;
+    idPlataforma = id;
+}
+
+function guardarCategoria(nombre){
+    
+    var id = idPlataforma;
+    console.log(id + nombre);
+    
+    $.ajax({
+            method: "POST",
+            url: "./getCategoriaGame",
+            data: { id : id, nombre : nombre},
+            success : function(response){
+                if(response == "yes")
+                {
+                  alert("La categoria "+nombre+" se proces\u00F3 exitosamente");
+                  location.reload();
+                }
+                else
+                {
+                    alert("No se pudo completar la operaci\u00F3n");
+                }
+                    
+            } 
+});
+}
+
+function modificarCategoria(id,nombre)
+{
+    document.getElementById('nombreCategoria').value = nombre;
+    idCategoria = id;
+}
+
+function postPlataforma(id,nombre)
+{
+    
+}

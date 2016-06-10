@@ -59,6 +59,17 @@
         <url-pattern>/getPlataformaGame</url-pattern>
     </servlet-mapping>
     
+    
+    <servlet>
+        <servlet-name>GetCategoriaServlet</servlet-name>
+        <servlet-class>GetCategoriaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetCategoriaServlet</servlet-name>
+        <url-pattern>/getCategoriaGame</url-pattern>
+    </servlet-mapping>
+    
+    
     <servlet>
         <servlet-name>DeleteGameServlet</servlet-name>
         <servlet-class>DeleteGameServlet</servlet-class>
