@@ -8,12 +8,22 @@
 <div id="numeroCategorias" style="display: none">num</div>
 <div class="row">
     <div id="categoriaBar" class="col s3">
+<<<<<<< HEAD
+        <ul class="collapsible" data-collapsible="accordion" >
+            <li class="listado">
+                <div class="collapsible-header"><i class="fa fa-info" aria-hidden="true"></i>Categoría</div>
+
+                <div class="collapsible-body"><p><a href="#">Acción</a></p></div>
+                <div class="collapsible-body"><p><a href="#">Estrategia</a></p></div>
+                <div class="collapsible-body"><p><a href="#">Roll</a></p></div>
+=======
         <ul class="collapsible" data-collapsible="accordion">
             <li class="listadoCategoria">
                 <div class='collapsible-header'><i class='fa fa-info' aria-hidden='true'></i>Categoría</div>
                 <div class="collapsible-body" id="listadoCat">
                     
                 </div>
+>>>>>>> refs/remotes/origin/alejandro
             </li>
             <li>
                 <div class="collapsible-header"><i class="fa fa-braille" aria-hidden="true"></i>Plataforma</div>
@@ -59,8 +69,19 @@
                 </div>
             </div>
             <div class="row">
-                <div style="margin-right:10%; margin-left: 10%"> 
+                <div style="margin-right:10%; margin-left: 10%" class="item"> 
                     <c:forEach items="${productos}" var="pro">
+<<<<<<< HEAD
+                    <div style="float: left;" class="itemProducto" class="$(pro.getNameCategoria())">
+                        <img src="${pro.getImagen()}" alt="Norway" id="imagenItem">
+                        <div style="text-align:center;" class="container">
+                            <h5>${pro.getPrecio()}</h5>
+                            <p class="p-description">${pro.getNombre()}</p>
+                            <p>${pro.getNameCategoria()}</p>
+                            <p>${pro.getNamePlataforma()}</p>
+                            <!-- Modal Trigger -->
+                            <a class="waves-effect waves-light btn modal-trigger" href="#modal1" onclick="cargarDatosModal('${pro.getId()}','${pro.getNombre()}','${pro.getDetalle()}','${pro.getImagen()}','${pro.getPrecio()}','${pro.getNameCategoria()}','${pro.getNamePlataforma()}')">Comprar</a>
+=======
                         <div style="float: left;" class="itemProducto itemCategoria${pro.getCategoria()} itemPlataforma${pro.getPlataforma()}">
                             <img src="${pro.getImagen()}" alt="Norway" class  ="imgItemClass" id="imagenItem">
                             <div style="text-align:center;" class="container">
@@ -71,6 +92,7 @@
                                 <!-- Modal Trigger --> 
                             </div>
                             <a class="waves-effect waves-light btn modal-trigger btnComprarItem" href="#modal1" onclick="cargarDatosModal('${pro.getId()}', '${pro.getNombre()}', '${pro.getDetalle()}', '${pro.getImagen()}', '${pro.getPrecio()}', '${pro.getNameCategoria()}', '${pro.getNamePlataforma()}')">Comprar</a>
+>>>>>>> refs/remotes/origin/alejandro
                         </div>
                     </c:forEach>
                 </div>                
