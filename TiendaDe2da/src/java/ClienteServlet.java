@@ -22,14 +22,12 @@ public class ClienteServlet extends HttpServlet {
 
     ProductoDAO proDAO = new ProductoDAO();
     ArrayList<Producto> productos;
-    
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //Despliega fomulario para mostrar
         productos = proDAO.obtenerProductos();
-
         RequestDispatcher view = request.getRequestDispatcher("inicio.jsp");
         request.setAttribute("productos", productos);
         view.forward(request, response);
