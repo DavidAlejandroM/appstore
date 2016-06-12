@@ -9,7 +9,7 @@ var imagenes=new Array(
 /**
  * Funcion para cambiar la imagen
  */
-/*function rotarImagenes()
+function rotarImagenes()
 {
     // obtenemos un numero aleatorio entre 0 y la cantidad de imagenes que hay
     var index = Math.floor((Math.random()*imagenes.length));
@@ -22,7 +22,7 @@ var imagenes=new Array(
 /**
  * Función que se ejecuta una vez cargada la página
  */
-/*window.onload=function()
+window.onload=function()
 {
     
     // Cargamos una imagen aleatoria
@@ -36,7 +36,7 @@ var imagenes=new Array(
   $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal-trigger').leanModal();
-  });*/
+  });
 
 /*FUNCION QUE DA FORMATO DE MONEDA EN PESOS*/
 function formatoMoneda(num)

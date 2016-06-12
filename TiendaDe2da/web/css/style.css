@@ -46,7 +46,6 @@ and open the template in the editor.
 
 div.itemProducto {
     width: 200px;
-    height: 500px;
     margin-right: 10px;
     margin-bottom: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -95,12 +94,10 @@ div.itemProducto {
     
 }
 
-.listado{
+#categoria{
     padding-top: 10px;   
     margin-top: 1px;
 }
-
-
 
 .collapsible-body{
     
@@ -108,101 +105,57 @@ div.itemProducto {
     margin-top: 1px; 
 }
 
-  body {
-    display: flex;
-    height: 100%;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-
-  main {
-    flex: 1 0 auto;
-  }
-  
-  
 
 /********CSS BY ALEJANDRO**************************************************/
 
 
-#formAddGame , #formListar, #formListarEliminar, #formUpdateGame, #formListarPlataformas, #formListarCategorias{
+#formAddGame , #formListar, #formListarEliminar{
     padding-top: 30px;
     display: none;
-    background: rgba(255, 255, 255, 0.8);
-    height: 100%;
-    width: 100%;
+
 }
 
-#formLoguin, #formAddUser{
-    background: rgba(255, 255, 255, 0.8);
-    height: 100%;
-    width: 100%;
-}
-
-.btnAdmin, .btnCat, .btnPlat
+.btnAdmin
 {
-    width: 100%;
+    width: 90%;
+    margin-left: 10%;
     background-color: white !important;
     color: black !important;
 
 }
-.btnAdmin:hover,  .btnCat:hover, .btnPlat:hover
+.btnAdmin:hover
 {
-    background-color: #4dd0e1 !important;
+    background-color: #e0e0e0 !important;
 }
 
 .mouseColor{
     -webkit-transition: background-color 1s;
-    /*cursor: pointer !important;*/
+    cursor: pointer !important;
 }
 
 .mouseColor:hover
 {
-    background-color: #4dd0e1;
+    background-color: #e0e0e0;
 
 }
 
 #contenedorAdmin{
-   
-    
+    height: 90%
+}
+
+#footerAdmin{
+    position: fixed;
+    background-color: #b3b3b3;
+    height: 10%;
     width: 100%;
-    /* background: #000; */
-    background: rgba(0, 0, 0, 0.6);
-    height: 100%;
-    position: absolute;
-    top: 64px;
-    left: 0;
+    text-align: center;
+    color: #ffffff;
+    bottom:0;
+    left:0;
 }
 
 #titleH3{
     text-align: center;
      
 }
-
-body
-{
-    /*background-image: url('../images/Background.jpg');*/
-    background-image: url('../images/bg2.jpg');
-    
-    background-size: 100%;
-    
-    height: 100%;
-    width: 100%;
-    background-attachment: fixed;
-}
-html {
-   width: 100%;
-   heigth: 100%;
-}
-
-.imagenRedonda{
-    height: 35px !important;
-    width: 35px !important;
-    margin-left: 20px;
-}
-
-.imgItemClass{
-    height: 220px !important;
-    width: 90% !important;
-}
-
 /********END CSS BY ALEJANDRO**************************************************/

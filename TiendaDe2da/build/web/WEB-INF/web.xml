@@ -33,49 +33,48 @@
     </servlet-mapping>
     
     <servlet>
-        <servlet-name>GetGameServlet</servlet-name>
-        <servlet-class>GetGameServlet</servlet-class>
+        <servlet-name>SaveUserServlet</servlet-name>
+        <servlet-class>SaveUserServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>GetGameServlet</servlet-name>
-        <url-pattern>/getGame</url-pattern>
+        <servlet-name>SaveUserServlet</servlet-name>
+        <url-pattern>/saveUser</url-pattern>
     </servlet-mapping>
     
     <servlet>
-        <servlet-name>UpdateGameServlet</servlet-name>
-        <servlet-class>UpdateGameServlet</servlet-class>
+        <servlet-name>LoginUserServlet</servlet-name>
+        <servlet-class>LoginUserServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>UpdateGameServlet</servlet-name>
-        <url-pattern>/updateGame</url-pattern>
+        <servlet-name>LoginUserServlet</servlet-name>
+        <url-pattern>/loginUser</url-pattern>
     </servlet-mapping>
     
     <servlet>
-        <servlet-name>GetPlataformaServlet</servlet-name>
-        <servlet-class>GetPlataformaServlet</servlet-class>
+        <servlet-name>LogoutUserServlet</servlet-name>
+        <servlet-class>LogoutUserServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>GetPlataformaServlet</servlet-name>
-        <url-pattern>/getPlataformaGame</url-pattern>
+        <servlet-name>LogoutUserServlet</servlet-name>
+        <url-pattern>/logoutUser</url-pattern>
     </servlet-mapping>
-    
     
     <servlet>
-        <servlet-name>GetCategoriaServlet</servlet-name>
-        <servlet-class>GetCategoriaServlet</servlet-class>
+        <servlet-name>AddGameToCarServlet</servlet-name>
+        <servlet-class>AddGameToCarServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>GetCategoriaServlet</servlet-name>
-        <url-pattern>/getCategoriaGame</url-pattern>
+        <servlet-name>AddGameToCarServlet</servlet-name>
+        <url-pattern>/AddGameToCar</url-pattern>
     </servlet-mapping>
-    
     
     <servlet>
-        <servlet-name>DeleteGameServlet</servlet-name>
-        <servlet-class>DeleteGameServlet</servlet-class>
+        <servlet-name>PurchaseGameServlet</servlet-name>
+        <servlet-class>PurchaseGameServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>DeleteGameServlet</servlet-name>
-        <url-pattern>/deleteGame</url-pattern>
+        <servlet-name>PurchaseGameServlet</servlet-name>
+        <url-pattern>/PurchaseGame</url-pattern>
     </servlet-mapping>
+    
 </web-app>

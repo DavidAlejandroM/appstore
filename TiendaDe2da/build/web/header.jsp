@@ -5,7 +5,7 @@
 --%>
 <!DOCTYPE html>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -21,9 +21,17 @@
     </head>
     <nav style="background-color: gray;">
         <ul class="right hide-on-med-and-down">
-      
-                <li><a href="registrarUsuario.jsp">Registrarse</a></li>
-            <li><a href="userAdmin.jsp">Administrador</a></li>
+            <c:choose>
+                <c:when test="${not empty sessionScope.Nombre}">                
+                    <c:out value="Bienvenido ${sessionScope.Nombre}"/>                    
+                    <li><a href="#" onclick="logout()">Salir</a></li>
+                    </c:when>
+                    <c:otherwise>
+                    <li><a href="registrarUsuario.jsp">Registrarse</a></li>
+                    <li><a href="userAdmin.jsp">Administrador</a></li>
+                    <li><a class="waves-effect waves-light btn modal-trigger" href="#modal2">Entrar</a></li>
+                    </c:otherwise>
+                </c:choose>
         </ul>
         <ul id="slide-out" class="side-nav">
             <li><a href="#!">First Sidebar Link</a></li>
