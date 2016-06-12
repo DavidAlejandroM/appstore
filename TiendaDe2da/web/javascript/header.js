@@ -3,25 +3,7 @@ $(document).ready(function () {
         accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
     });
     $('select').material_select();
-<<<<<<< HEAD
-    $('li.listado div p a').click(function () {
-        var textoFiltro = $(this).text().toLowerCase().replace(/\s/g, "-");
-        var textSelect = $(this).text();
-        console.log(textoFiltro);
-        console.log(textSelect);
-        $('.item div').each(function () {
-            if (!$(this).hasClass(textoFiltro)) {
-                console.log("paso por aqui");
-                $(this).fadeOut('slow').removeClass('hidden');
-            } else {
-                  console.log("paso por aqui2");
-                $(this).text().fadeIn('slow').addClass('hidden');
 
-            }
-            return false;
-        });
-
-=======
     $.ajax({
         method: "GET",
         url: "./getCategoriaGame",
@@ -42,7 +24,7 @@ $(document).ready(function () {
             llenarPlataforma(response, 'listadoPlat');
             console.log("entro cargar juego");
         }
->>>>>>> refs/remotes/origin/alejandro
+
     });
 });
 
@@ -54,9 +36,7 @@ function cargarDatosModal(id, nombre, detalle, imagen, precio, categoria, plataf
     document.getElementById('plataforma-producto-modal').innerHTML = plataforma;
     document.getElementById('categoria-producto-modal').innerHTML = categoria;
     document.getElementById('imagenItem').setAttribute("src", imagen);
-<<<<<<< HEAD
-=======
-}
+
 /*Metodo para llenar la barra de categoria, plataforma*/
 
 
@@ -114,6 +94,6 @@ function FiltrarPlataforma(id) {
         }
     }
     $("." + className).show();
->>>>>>> refs/remotes/origin/alejandro
-}
+
+}}
 

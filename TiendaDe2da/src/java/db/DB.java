@@ -21,7 +21,7 @@ public class DB {
     private static String driver = "com.mysql.jdbc.Driver";
     private static String url = "jdbc:mysql://localhost:3306/dbstore";
     private static String user = "root";
-    private static String password = "poioiulkj";
+    private static String password = "marin960712";
 
     private DB() {
     }
