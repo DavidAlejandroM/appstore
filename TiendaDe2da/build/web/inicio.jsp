@@ -8,30 +8,33 @@
 
 <div class="row">
     <div id="categoriaBar" class="col s3">
+        
         <ul class="collapsible" data-collapsible="accordion">
-            <li id="categoria">
-                <div class="collapsible-header"><i class="fa fa-info" aria-hidden="true"></i>Categoría</div>
-                <div class="collapsible-body"><p>Aventura</p></div>
-                <div class="collapsible-body"><p>Defensa</p></div>
-                <div class="collapsible-body"><p>Música</p></div>
+            <li class="listadoCategoria">
+                <div class='collapsible-header'><i class='fa fa-info' aria-hidden='true'></i>Categoría</div>
+                <div class="collapsible-body" id="listadoCat">
+                    
+                </div>
             </li>
             <li>
                 <div class="collapsible-header"><i class="fa fa-braille" aria-hidden="true"></i>Plataforma</div>
-
-                <div class="collapsible-body"><p>XBOX</p></div>
-                <div class="collapsible-body"><p>PC</p></div>
-                <div class="collapsible-body"><p>PS4</p></div>
+                <div class="collapsible-body" id="listadoPlat">
+           
+                </div>
             </li>
             <li class="center-align">
-                <div class="collapsible-header" style="text-align: left;"><i class="fa fa-braille" aria-hidden="true"></i>Carrito</div>
-                <c:choose>
-                    <c:when test="${not empty sessionScope.Carrito}">                
-                        <c:forEach items="${sessionScope.Carrito}" var="juego">
-                            <div>${juego.getNombre()} - ${juego.getPrecio()}</div>
-                        </c:forEach>
-                            <a class="waves-effect waves-light btn" href="#" onclick="purchase()">Comprar</a>
-                    </c:when>
-                </c:choose>
+                <div class="collapsible-header" style="text-align: left;" id="carritoBL"><i class="fa fa-braille" aria-hidden="true"></i>Carrito</div>
+                <div class="collapsible-body" id="listadoCat">
+                    
+                    <c:choose>
+                        <c:when test="${not empty sessionScope.Carrito}">                
+                            <c:forEach items="${sessionScope.Carrito}" var="juego">
+                                <div>${juego.getNombre()} - ${juego.getPrecio()}</div>
+                            </c:forEach>
+                                <a class="waves-effect waves-light btn btCat" href="#" onclick="purchase()">Comprar</a>
+                        </c:when>
+                    </c:choose>
+                </div>
             </li>
         </ul>
     </div>
@@ -94,13 +97,13 @@
                             <a class="waves-effect waves-light btn" onclick="addToCar()"><i class="fa fa-shopping-cart"></i>Añadir al carrito</a>
                         </c:when>
                     </c:choose>                    
-                    <a class="waves-effect waves-light btn" id="botonCancelar"></i>Cancelar</a>
+                            <a class="waves-effect waves-light btn" id="botonCancelar" onclick="closeM()"></i>Cancelar</a>
                 </div>
             </div>
             <div class="row">
                 <div style="margin-right:10%; margin-left: 10%"> 
                     <c:forEach items="${productos}" var="pro">
-                        <div style="float: left;" class="itemProducto" class="center-align">
+                        <div style="float: left;" class="itemProducto itemCategoria${pro.getCategoria()} itemPlataforma${pro.getPlataforma()}">
                             <img src="${pro.getImagen()}" alt="Norway" id="imagenItem">
                             <div style="text-align:center;" class="container">
                                 <h5>${pro.getPrecio()}</h5>
