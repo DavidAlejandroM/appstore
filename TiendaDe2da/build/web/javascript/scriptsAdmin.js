@@ -119,12 +119,12 @@ $(document).ready(function() {
         showDiv('formUpdateGame');
         var juego = obtenerJuego(this.id);
     });
+    selectsOnReady();
 });
 
-
-$(document).ready(function()
+function selectsOnReady()
+//$(document).ready(function()
 {
-    
     $.ajax({
         method: "GET",
         url: "./getCategoriaGame",
@@ -134,8 +134,7 @@ $(document).ready(function()
          
              llenarSelect(response,'select_categoria');
              llenarSelect(response,'select_categoriaU');
-             llenarFormCategorias(response);
-            
+             llenarFormCategorias(response);  
         } 
     });
     $.ajax({
@@ -150,7 +149,7 @@ $(document).ready(function()
         } 
     });
    
-});
+}
 
 
 function llenarSelect(cat,id)
@@ -165,7 +164,7 @@ function llenarSelect(cat,id)
         str = str + uno + cat[i].id + dos + cat[i].nombre + tres;
     }
 
-   // document.getElementById(id).innerHTML = str;
+    document.getElementById(id).innerHTML = str;
     $('#'+id).material_select();
 }
 

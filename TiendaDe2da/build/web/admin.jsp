@@ -27,7 +27,6 @@
         <div class="col s9">
             <!----TABLA LISTAR--->
             <div id="formListar">
-
                 <table>
                     <thead>
                         <tr>
@@ -50,10 +49,8 @@
                                 <td >${juego.getNamePlataforma()}</td>
                                 <td>${juego.getPrecio()}</td>
                                  
-
                             </tr>
                         </c:forEach>
-
                     </tbody>
                 </table>
             </div>
@@ -147,23 +144,18 @@
             </div>
             <!--ACTUALIZAR JUEGO  ----------------------------------------------------------------------------------->
             <div id="formUpdateGame">
-
                 <div class="row">
                     <div class="col s8">
                         <div class="row">
                             <div class="input-field col s6">
                                 <select id="select_categoriaU">
-
                                 </select>
                                 <label>Categoria</label>
-
                             </div><div class="input-field col s6">
                                 <select id="select_plataformaU">
-
                                 </select>
                                 <label>Plataforma</label>
                             </div>
-
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
@@ -189,7 +181,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
@@ -197,7 +188,6 @@
                                 <label for="text_area_descripcion">Descripción</label>
                             </div>
                         </div>
-
                     </div>
                     <div class="col s4">
                         <img class="z-depth-2" src="" id="caratulaU" width="150" height="200">
@@ -208,9 +198,7 @@
                         <a class="waves-effect waves-light btn" onclick="actualizarJuego()">Actualizar</a>
                     </div>
                 </div>
-
             </div>
-
             <!--AGREGAR JUEGO  ----------------------------------------------------------------------------------->
             <div id="formAddGame">
                 <div class="row">
@@ -218,17 +206,13 @@
                         <div class="row">
                             <div class="input-field col s6">
                                 <select id="select_categoria">
-
                                 </select>
                                 <label>Categoria</label>
-
                             </div><div class="input-field col s6">
                                 <select id="select_plataforma">
-
                                 </select>
                                 <label>Plataforma</label>
                             </div>
-
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
@@ -254,7 +238,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
@@ -262,8 +245,6 @@
                                 <label for="text_area_descripcion">Descripción</label>
                             </div>
                         </div>
-
-
                     </div>
                     <div class="col s4">
                         <img class="z-depth-2" src="" id="caratula" width="150" height="200">
@@ -274,11 +255,9 @@
                         <a class="waves-effect waves-light btn" onclick="guardarJuego()">Guardar</a>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </div>
-
 </body>
 </html>
