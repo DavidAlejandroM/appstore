@@ -14,7 +14,7 @@
                 <div class='collapsible-header'><i class='fa fa-info' aria-hidden='true'></i>Categoría</div>
                 <div class="collapsible-body" id="listadoCat">
                     
-                </div>o
+                </div>
             </li>
             <li>
                 <div class="collapsible-header"><i class="fa fa-braille" aria-hidden="true"></i>Plataforma</div>
@@ -23,15 +23,18 @@
                 </div>
             </li>
             <li class="center-align">
-                <div class="collapsible-header" style="text-align: left;"><i class="fa fa-braille" aria-hidden="true"></i>Carrito</div>
-                <c:choose>
-                    <c:when test="${not empty sessionScope.Carrito}">                
-                        <c:forEach items="${sessionScope.Carrito}" var="juego">
-                            <div>${juego.getNombre()} - ${juego.getPrecio()}</div>
-                        </c:forEach>
-                            <a class="waves-effect waves-light btn" href="#" onclick="purchase()">Comprar</a>
-                    </c:when>
-                </c:choose>
+                <div class="collapsible-header" style="text-align: left;" id="carritoBL"><i class="fa fa-braille" aria-hidden="true"></i>Carrito</div>
+                <div class="collapsible-body" id="listadoCat">
+                    
+                    <c:choose>
+                        <c:when test="${not empty sessionScope.Carrito}">                
+                            <c:forEach items="${sessionScope.Carrito}" var="juego">
+                                <div>${juego.getNombre()} - ${juego.getPrecio()}</div>
+                            </c:forEach>
+                                <a class="waves-effect waves-light btn btCat" href="#" onclick="purchase()">Comprar</a>
+                        </c:when>
+                    </c:choose>
+                </div>
             </li>
         </ul>
     </div>

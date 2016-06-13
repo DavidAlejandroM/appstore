@@ -164,6 +164,8 @@ function logout() {
 }
 
 function addToCar() {
+    
+    document.getElementById("listadoCat").style.backgroundColor = "lightblue !important";
     var id = $('#input-id').val();
     var nombre = $('#nombre-producto-modal').text();
     var precio = $('#precio-producto-modal').text();
