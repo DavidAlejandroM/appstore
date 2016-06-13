@@ -125,4 +125,13 @@
         <url-pattern>/PurchaseGame</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>LoginUserAdminServlet</servlet-name>
+        <servlet-class>LoginUserAdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginUserAdminServlet</servlet-name>
+        <url-pattern>/LoginAdmin</url-pattern>
+    </servlet-mapping>
+    
 </web-app>

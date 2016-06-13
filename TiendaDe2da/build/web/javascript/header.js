@@ -204,3 +204,20 @@ function purchase() {
 function closeM(){
     $('#modal1').closeModal();
 }
+
+function loginAdmin(){
+    var usuario = $('#usuario_admin').val();
+    var pass = $('#contrasena_admin').val();
+    $.ajax({
+        method: "POST",
+        url: "./LoginAdmin",
+        data: {user: usuario, pass: pass},
+        success: function (response) {
+            if (response == "no") {
+                alert("Usuario o contraseña incorrectos");
+            } else {
+                window.location="./admin";
+            }
+        }
+    });
+}

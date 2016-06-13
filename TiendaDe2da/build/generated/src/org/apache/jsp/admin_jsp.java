@@ -17,6 +17,7 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
   }
 
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_forEach_var_items;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_redirect_url_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_out_value_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_choose;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_otherwise;
@@ -30,6 +31,7 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   public void _jspInit() {
     _jspx_tagPool_c_forEach_var_items = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_redirect_url_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_out_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_choose = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_otherwise = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
@@ -38,6 +40,7 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   public void _jspDestroy() {
     _jspx_tagPool_c_forEach_var_items.release();
+    _jspx_tagPool_c_redirect_url_nobody.release();
     _jspx_tagPool_c_out_value_nobody.release();
     _jspx_tagPool_c_choose.release();
     _jspx_tagPool_c_otherwise.release();
@@ -100,242 +103,11 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("    </nav>\r\n");
       out.write("    <body>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<div id=\"contenedorAdmin\">\r\n");
-      out.write("    <div class=\"row\" id=\"contenedor\">\r\n");
-      out.write("        <div class=\"col s3\" id=\"categoriaBar\">\r\n");
-      out.write("            <ul class=\"collapsible\" data-collapsible=\"accordion\">\r\n");
-      out.write("                <li>\r\n");
-      out.write("                    <div class=\"collapsible-header\"><i class=\"material-icons\">Juegos</i></div>\r\n");
-      out.write("                    <div class=\"collapsible-body adminJuego\">\r\n");
-      out.write("                        <a class=\"waves-effect waves-red btn btnAdmin\" onclick=\"showDiv('formAddGame')\">Registrar</a><br>\r\n");
-      out.write("                        <a class=\"waves-effect waves-red btn btnAdmin\" onclick=\"showDiv('formListar')\">Actualizar</a><br>\r\n");
-      out.write("                        <a class=\"waves-effect waves-red btn btnAdmin\" onclick=\"showDiv('formListarEliminar')\">Eliminar</a><br>\r\n");
-      out.write("                        <a class=\"waves-effect waves-red btn btnAdmin\" onclick=\"showDiv('formListarPlataformas')\">Plataformas</a><br>\r\n");
-      out.write("                        <a class=\"waves-effect waves-red btn btnAdmin\" onclick=\"showDiv('formListarCategorias')\">Categorias</a><br>\r\n");
-      out.write("\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                </li>\r\n");
-      out.write("            </ul>\r\n");
-      out.write("        </div>\r\n");
-      out.write("\r\n");
-      out.write("        <div class=\"col s9\">\r\n");
-      out.write("            <!----TABLA LISTAR--->\r\n");
-      out.write("            <div id=\"formListar\">\r\n");
-      out.write("                <table>\r\n");
-      out.write("                    <thead>\r\n");
-      out.write("                        <tr>\r\n");
-      out.write("                            <th data-field=\"name\"></th>\r\n");
-      out.write("                            <th data-field=\"name\">Nombre Juego</th>\r\n");
-      out.write("                            <th data-field=\"name\">Categoria</th>\r\n");
-      out.write("                            <th data-field=\"name\">Pataforma</th>\r\n");
-      out.write("                            <th data-field=\"price\">Precio</th>\r\n");
-      out.write("                        </tr>\r\n");
-      out.write("                    </thead>\r\n");
-      out.write("                    <tbody>\r\n");
-      out.write("                       \r\n");
-      out.write("                        ");
-      if (_jspx_meth_c_forEach_0(_jspx_page_context))
+      out.write('\r');
+      out.write('\n');
+      if (_jspx_meth_c_choose_1(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("                    </tbody>\r\n");
-      out.write("                </table>\r\n");
-      out.write("            </div>\r\n");
-      out.write("            <!----TABLA LISTAR ELIMINAR-->\r\n");
-      out.write("            <div id=\"formListarEliminar\">\r\n");
-      out.write("                <table>\r\n");
-      out.write("                    <thead>\r\n");
-      out.write("                        <tr>\r\n");
-      out.write("                            <th data-field=\"name\"></th>\r\n");
-      out.write("                            <th data-field=\"name\">Nombre Juego</th>\r\n");
-      out.write("                            <th data-field=\"name\">Categoria</th>\r\n");
-      out.write("                            <th data-field=\"name\">Pataforma</th>\r\n");
-      out.write("                            <th data-field=\"price\">Precio</th>\r\n");
-      out.write("                            <th data-field=\"price\"></th>\r\n");
-      out.write("                        </tr>\r\n");
-      out.write("                    </thead>\r\n");
-      out.write("\r\n");
-      out.write("                    <tbody>\r\n");
-      out.write("                        ");
-      if (_jspx_meth_c_forEach_1(_jspx_page_context))
-        return;
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("                    </tbody>\r\n");
-      out.write("                </table>\r\n");
-      out.write("            </div>\r\n");
-      out.write("            <!----TABLA LISTAR PLATAFORMAS-->\r\n");
-      out.write("            <div id=\"formListarPlataformas\">\r\n");
-      out.write("                <div class=\"row\">\r\n");
-      out.write("                    <div class=\"input-field col s6\">\r\n");
-      out.write("                        <input placeholder=\"Click aquí para ingresar\" id=\"nombrePlataforma\" type=\"text\" class=\"validate\">\r\n");
-      out.write("                        <label for=\"first_name\">Nombre de la Plataforma</label>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <div class=\"input-field col s6\">\r\n");
-      out.write("                        <a class=\"waves-effect waves-light btn\" onclick=\"guardarPlataforma(document.getElementById('nombrePlataforma').value)\">Guardar</a>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                </div>\r\n");
-      out.write("                <table>\r\n");
-      out.write("                    <thead>\r\n");
-      out.write("                        <tr>\r\n");
-      out.write("                            <th> </th>\r\n");
-      out.write("                            <th data-field=\"name\">Plataforma</th>\r\n");
-      out.write("                            \r\n");
-      out.write("                        </tr>\r\n");
-      out.write("                    </thead>\r\n");
-      out.write("\r\n");
-      out.write("                    <tbody id=\"tbodyPlataforma\">\r\n");
-      out.write("                        \r\n");
-      out.write("                    </tbody>\r\n");
-      out.write("                </table>\r\n");
-      out.write("            </div>\r\n");
-      out.write("            <!----TABLA LISTAR Categorias-->\r\n");
-      out.write("            <div id=\"formListarCategorias\">\r\n");
-      out.write("                <div class=\"row\">\r\n");
-      out.write("                    <div class=\"input-field col s6\">\r\n");
-      out.write("                        <input placeholder=\"Click aquí para ingresar\" id=\"nombreCategoria\" type=\"text\" class=\"validate\">\r\n");
-      out.write("                        <label for=\"first_name\">Nombre de la Categoria</label>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <div class=\"input-field col s6\">\r\n");
-      out.write("                        <a class=\"waves-effect waves-light btn\" onclick=\"guardarCategoria(document.getElementById('nombreCategoria').value)\">Guardar</a>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                </div>\r\n");
-      out.write("                <table>\r\n");
-      out.write("                    <thead>\r\n");
-      out.write("                        <tr>\r\n");
-      out.write("                            <th> </th>\r\n");
-      out.write("                            <th data-field=\"name\">Categorias</th>\r\n");
-      out.write("                            \r\n");
-      out.write("                        </tr>\r\n");
-      out.write("                    </thead>\r\n");
-      out.write("\r\n");
-      out.write("                    <tbody id=\"tbodyCategoria\">\r\n");
-      out.write("                        \r\n");
-      out.write("                    </tbody>\r\n");
-      out.write("                </table>\r\n");
-      out.write("            </div>\r\n");
-      out.write("            <!--DIV PARA ALMACENAR EL ID  ----------------------------------------------------------------------------------->\r\n");
-      out.write("            <div id=\"idJuego\" style=\"display: none\">\r\n");
-      out.write("                id\r\n");
-      out.write("            </div>\r\n");
-      out.write("            <!--ACTUALIZAR JUEGO  ----------------------------------------------------------------------------------->\r\n");
-      out.write("            <div id=\"formUpdateGame\">\r\n");
-      out.write("                <div class=\"row\">\r\n");
-      out.write("                    <div class=\"col s8\">\r\n");
-      out.write("                        <div class=\"row\">\r\n");
-      out.write("                            <div class=\"input-field col s6\">\r\n");
-      out.write("                                <select id=\"select_categoriaU\">\r\n");
-      out.write("                                </select>\r\n");
-      out.write("                                <label>Categoria</label>\r\n");
-      out.write("                            </div><div class=\"input-field col s6\">\r\n");
-      out.write("                                <select id=\"select_plataformaU\">\r\n");
-      out.write("                                </select>\r\n");
-      out.write("                                <label>Plataforma</label>\r\n");
-      out.write("                            </div>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("                        <div class=\"row\">\r\n");
-      out.write("                            <div class=\"input-field col s12\">\r\n");
-      out.write("                                <input placeholder=\"\" id=\"nombre_gameU\" type=\"text\" class=\"validate\">\r\n");
-      out.write("                                <label for=\"nombre_game\">Nombre Juego</label>\r\n");
-      out.write("                            </div>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("                        <div class=\"row\">\r\n");
-      out.write("                            <div class=\"input-field col s6\">\r\n");
-      out.write("                                <input placeholder=\"\" id=\"precio_gameU\" type=\"text\" class=\"validate\" onchange=\"formatoMoneda(this.value, 'precio_gameU')\" onkeyup=\"formatoMoneda(this.value, 'precio_gameU')\">\r\n");
-      out.write("                                <label for=\"precio_game\">Precio</label>\r\n");
-      out.write("                            </div>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("                        <div class=\"row\">\r\n");
-      out.write("                            <div class=\"input-field col s12\">\r\n");
-      out.write("                                <div class=\"file-field input-field\">\r\n");
-      out.write("                                    <div class=\"btn\">\r\n");
-      out.write("                                        <span>Imagen</span>\r\n");
-      out.write("                                        <input type=\"file\">\r\n");
-      out.write("                                    </div>\r\n");
-      out.write("                                    <div class=\"file-path-wrapper\">\r\n");
-      out.write("                                        <input class=\"file-path validate\" type=\"text\" placeholder=\"Seleciona una Imagen\" id=\"pathImagenU\" onchange=\"mostrarImagenMiniatura('caratulaU', 'pathImagenU')\" >\r\n");
-      out.write("                                    </div>\r\n");
-      out.write("                                </div>\r\n");
-      out.write("                            </div>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("                        <div class=\"row\">\r\n");
-      out.write("                            <div class=\"input-field col s12\">\r\n");
-      out.write("                                <textarea placeholder=\"\" id=\"text_area_descripcionU\" class=\"materialize-textarea\"></textarea>\r\n");
-      out.write("                                <label for=\"text_area_descripcion\">Descripción</label>\r\n");
-      out.write("                            </div>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <div class=\"col s4\">\r\n");
-      out.write("                        <img class=\"z-depth-2\" src=\"\" id=\"caratulaU\" width=\"150\" height=\"200\">\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                </div>\r\n");
-      out.write("                <div class=\"row\">\r\n");
-      out.write("                    <div class=\"col s2 offset-s6\">\r\n");
-      out.write("                        <a class=\"waves-effect waves-light btn\" onclick=\"actualizarJuego()\">Actualizar</a>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                </div>\r\n");
-      out.write("            </div>\r\n");
-      out.write("            <!--AGREGAR JUEGO  ----------------------------------------------------------------------------------->\r\n");
-      out.write("            <div id=\"formAddGame\">\r\n");
-      out.write("                <div class=\"row\">\r\n");
-      out.write("                    <div class=\"col s8\">\r\n");
-      out.write("                        <div class=\"row\">\r\n");
-      out.write("                            <div class=\"input-field col s6\">\r\n");
-      out.write("                                <select id=\"select_categoria\">\r\n");
-      out.write("                                </select>\r\n");
-      out.write("                                <label>Categoria</label>\r\n");
-      out.write("                            </div><div class=\"input-field col s6\">\r\n");
-      out.write("                                <select id=\"select_plataforma\">\r\n");
-      out.write("                                </select>\r\n");
-      out.write("                                <label>Plataforma</label>\r\n");
-      out.write("                            </div>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("                        <div class=\"row\">\r\n");
-      out.write("                            <div class=\"input-field col s12\">\r\n");
-      out.write("                                <input id=\"nombre_game\" type=\"text\" class=\"validate\">\r\n");
-      out.write("                                <label for=\"nombre_game\">Nombre Juego</label>\r\n");
-      out.write("                            </div>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("                        <div class=\"row\">\r\n");
-      out.write("                            <div class=\"input-field col s6\">\r\n");
-      out.write("                                <input id=\"precio_game\" type=\"text\" class=\"validate\" onchange=\"formatoMoneda(this.value, 'precio_game')\" onkeyup=\"formatoMoneda(this.value, 'precio_game')\">\r\n");
-      out.write("                                <label for=\"precio_game\">Precio</label>\r\n");
-      out.write("                            </div>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("                        <div class=\"row\">\r\n");
-      out.write("                            <div class=\"input-field col s12\">\r\n");
-      out.write("                                <div class=\"file-field input-field\">\r\n");
-      out.write("                                    <div class=\"btn\">\r\n");
-      out.write("                                        <span>Imagen</span>\r\n");
-      out.write("                                        <input type=\"file\">\r\n");
-      out.write("                                    </div>\r\n");
-      out.write("                                    <div class=\"file-path-wrapper\">\r\n");
-      out.write("                                        <input class=\"file-path validate\" type=\"text\" placeholder=\"Seleciona una Imagen\" id=\"pathImagen\" onchange=\"mostrarImagenMiniatura('caratula', 'pathImagen')\" >\r\n");
-      out.write("                                    </div>\r\n");
-      out.write("                                </div>\r\n");
-      out.write("                            </div>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("                        <div class=\"row\">\r\n");
-      out.write("                            <div class=\"input-field col s12\">\r\n");
-      out.write("                                <textarea id=\"text_area_descripcion\" class=\"materialize-textarea\"></textarea>\r\n");
-      out.write("                                <label for=\"text_area_descripcion\">Descripción</label>\r\n");
-      out.write("                            </div>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                    <div class=\"col s4\">\r\n");
-      out.write("                        <img class=\"z-depth-2\" src=\"\" id=\"caratula\" width=\"150\" height=\"200\">\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                </div>\r\n");
-      out.write("                <div class=\"row\">\r\n");
-      out.write("                    <div class=\"col s2 offset-s6\">\r\n");
-      out.write("                        <a class=\"waves-effect waves-light btn\" onclick=\"guardarJuego()\">Guardar</a>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                </div>\r\n");
-      out.write("            </div>\r\n");
-      out.write("        </div>\r\n");
-      out.write("    </div>\r\n");
-      out.write("</div>\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {
@@ -464,14 +236,309 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_c_forEach_0(PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_choose_1(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:choose
+    org.apache.taglibs.standard.tag.common.core.ChooseTag _jspx_th_c_choose_1 = (org.apache.taglibs.standard.tag.common.core.ChooseTag) _jspx_tagPool_c_choose.get(org.apache.taglibs.standard.tag.common.core.ChooseTag.class);
+    _jspx_th_c_choose_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_choose_1.setParent(null);
+    int _jspx_eval_c_choose_1 = _jspx_th_c_choose_1.doStartTag();
+    if (_jspx_eval_c_choose_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("    ");
+        if (_jspx_meth_c_when_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_1, _jspx_page_context))
+          return true;
+        out.write("\r\n");
+        out.write("    ");
+        if (_jspx_meth_c_otherwise_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_1, _jspx_page_context))
+          return true;
+        out.write('\r');
+        out.write('\n');
+        int evalDoAfterBody = _jspx_th_c_choose_1.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_choose_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_choose.reuse(_jspx_th_c_choose_1);
+      return true;
+    }
+    _jspx_tagPool_c_choose.reuse(_jspx_th_c_choose_1);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_when_1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_choose_1, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:when
+    org.apache.taglibs.standard.tag.rt.core.WhenTag _jspx_th_c_when_1 = (org.apache.taglibs.standard.tag.rt.core.WhenTag) _jspx_tagPool_c_when_test.get(org.apache.taglibs.standard.tag.rt.core.WhenTag.class);
+    _jspx_th_c_when_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_when_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_1);
+    _jspx_th_c_when_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${not empty sessionScope.NombreAdmin}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_when_1 = _jspx_th_c_when_1.doStartTag();
+    if (_jspx_eval_c_when_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("                \r\n");
+        out.write("        <div id=\"contenedorAdmin\">\r\n");
+        out.write("            <div class=\"row\" id=\"contenedor\">\r\n");
+        out.write("                <div class=\"col s3\" id=\"categoriaBar\">\r\n");
+        out.write("                    <ul class=\"collapsible\" data-collapsible=\"accordion\">\r\n");
+        out.write("                        <li>\r\n");
+        out.write("                            <div class=\"collapsible-header\"><i class=\"material-icons\">Juegos</i></div>\r\n");
+        out.write("                            <div class=\"collapsible-body adminJuego\">\r\n");
+        out.write("                                <a class=\"waves-effect waves-red btn btnAdmin\" onclick=\"showDiv('formAddGame')\">Registrar</a><br>\r\n");
+        out.write("                                <a class=\"waves-effect waves-red btn btnAdmin\" onclick=\"showDiv('formListar')\">Actualizar</a><br>\r\n");
+        out.write("                                <a class=\"waves-effect waves-red btn btnAdmin\" onclick=\"showDiv('formListarEliminar')\">Eliminar</a><br>\r\n");
+        out.write("                                <a class=\"waves-effect waves-red btn btnAdmin\" onclick=\"showDiv('formListarPlataformas')\">Plataformas</a><br>\r\n");
+        out.write("                                <a class=\"waves-effect waves-red btn btnAdmin\" onclick=\"showDiv('formListarCategorias')\">Categorias</a><br>\r\n");
+        out.write("\r\n");
+        out.write("                            </div>\r\n");
+        out.write("                        </li>\r\n");
+        out.write("                    </ul>\r\n");
+        out.write("                </div>\r\n");
+        out.write("\r\n");
+        out.write("                <div class=\"col s9\">\r\n");
+        out.write("                    <!----TABLA LISTAR--->\r\n");
+        out.write("                    <div id=\"formListar\">\r\n");
+        out.write("                        <table>\r\n");
+        out.write("                            <thead>\r\n");
+        out.write("                                <tr>\r\n");
+        out.write("                                    <th data-field=\"name\"></th>\r\n");
+        out.write("                                    <th data-field=\"name\">Nombre Juego</th>\r\n");
+        out.write("                                    <th data-field=\"name\">Categoria</th>\r\n");
+        out.write("                                    <th data-field=\"name\">Pataforma</th>\r\n");
+        out.write("                                    <th data-field=\"price\">Precio</th>\r\n");
+        out.write("                                </tr>\r\n");
+        out.write("                            </thead>\r\n");
+        out.write("                            <tbody>\r\n");
+        out.write("\r\n");
+        out.write("                                ");
+        if (_jspx_meth_c_forEach_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_1, _jspx_page_context))
+          return true;
+        out.write("\r\n");
+        out.write("                            </tbody>\r\n");
+        out.write("                        </table>\r\n");
+        out.write("                    </div>\r\n");
+        out.write("                    <!----TABLA LISTAR ELIMINAR-->\r\n");
+        out.write("                    <div id=\"formListarEliminar\">\r\n");
+        out.write("                        <table>\r\n");
+        out.write("                            <thead>\r\n");
+        out.write("                                <tr>\r\n");
+        out.write("                                    <th data-field=\"name\"></th>\r\n");
+        out.write("                                    <th data-field=\"name\">Nombre Juego</th>\r\n");
+        out.write("                                    <th data-field=\"name\">Categoria</th>\r\n");
+        out.write("                                    <th data-field=\"name\">Pataforma</th>\r\n");
+        out.write("                                    <th data-field=\"price\">Precio</th>\r\n");
+        out.write("                                    <th data-field=\"price\"></th>\r\n");
+        out.write("                                </tr>\r\n");
+        out.write("                            </thead>\r\n");
+        out.write("\r\n");
+        out.write("                            <tbody>\r\n");
+        out.write("                                ");
+        if (_jspx_meth_c_forEach_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_1, _jspx_page_context))
+          return true;
+        out.write("\r\n");
+        out.write("\r\n");
+        out.write("                            </tbody>\r\n");
+        out.write("                        </table>\r\n");
+        out.write("                    </div>\r\n");
+        out.write("                    <!----TABLA LISTAR PLATAFORMAS-->\r\n");
+        out.write("                    <div id=\"formListarPlataformas\">\r\n");
+        out.write("                        <div class=\"row\">\r\n");
+        out.write("                            <div class=\"input-field col s6\">\r\n");
+        out.write("                                <input placeholder=\"Click aquí para ingresar\" id=\"nombrePlataforma\" type=\"text\" class=\"validate\">\r\n");
+        out.write("                                <label for=\"first_name\">Nombre de la Plataforma</label>\r\n");
+        out.write("                            </div>\r\n");
+        out.write("                            <div class=\"input-field col s6\">\r\n");
+        out.write("                                <a class=\"waves-effect waves-light btn\" onclick=\"guardarPlataforma(document.getElementById('nombrePlataforma').value)\">Guardar</a>\r\n");
+        out.write("                            </div>\r\n");
+        out.write("                        </div>\r\n");
+        out.write("                        <table>\r\n");
+        out.write("                            <thead>\r\n");
+        out.write("                                <tr>\r\n");
+        out.write("                                    <th> </th>\r\n");
+        out.write("                                    <th data-field=\"name\">Plataforma</th>\r\n");
+        out.write("\r\n");
+        out.write("                                </tr>\r\n");
+        out.write("                            </thead>\r\n");
+        out.write("\r\n");
+        out.write("                            <tbody id=\"tbodyPlataforma\">\r\n");
+        out.write("\r\n");
+        out.write("                            </tbody>\r\n");
+        out.write("                        </table>\r\n");
+        out.write("                    </div>\r\n");
+        out.write("                    <!----TABLA LISTAR Categorias-->\r\n");
+        out.write("                    <div id=\"formListarCategorias\">\r\n");
+        out.write("                        <div class=\"row\">\r\n");
+        out.write("                            <div class=\"input-field col s6\">\r\n");
+        out.write("                                <input placeholder=\"Click aquí para ingresar\" id=\"nombreCategoria\" type=\"text\" class=\"validate\">\r\n");
+        out.write("                                <label for=\"first_name\">Nombre de la Categoria</label>\r\n");
+        out.write("                            </div>\r\n");
+        out.write("                            <div class=\"input-field col s6\">\r\n");
+        out.write("                                <a class=\"waves-effect waves-light btn\" onclick=\"guardarCategoria(document.getElementById('nombreCategoria').value)\">Guardar</a>\r\n");
+        out.write("                            </div>\r\n");
+        out.write("                        </div>\r\n");
+        out.write("                        <table>\r\n");
+        out.write("                            <thead>\r\n");
+        out.write("                                <tr>\r\n");
+        out.write("                                    <th> </th>\r\n");
+        out.write("                                    <th data-field=\"name\">Categorias</th>\r\n");
+        out.write("\r\n");
+        out.write("                                </tr>\r\n");
+        out.write("                            </thead>\r\n");
+        out.write("\r\n");
+        out.write("                            <tbody id=\"tbodyCategoria\">\r\n");
+        out.write("\r\n");
+        out.write("                            </tbody>\r\n");
+        out.write("                        </table>\r\n");
+        out.write("                    </div>\r\n");
+        out.write("                    <!--DIV PARA ALMACENAR EL ID  ----------------------------------------------------------------------------------->\r\n");
+        out.write("                    <div id=\"idJuego\" style=\"display: none\">\r\n");
+        out.write("                        id\r\n");
+        out.write("                    </div>\r\n");
+        out.write("                    <!--ACTUALIZAR JUEGO  ----------------------------------------------------------------------------------->\r\n");
+        out.write("                    <div id=\"formUpdateGame\">\r\n");
+        out.write("                        <div class=\"row\">\r\n");
+        out.write("                            <div class=\"col s8\">\r\n");
+        out.write("                                <div class=\"row\">\r\n");
+        out.write("                                    <div class=\"input-field col s6\">\r\n");
+        out.write("                                        <select id=\"select_categoriaU\">\r\n");
+        out.write("                                        </select>\r\n");
+        out.write("                                        <label>Categoria</label>\r\n");
+        out.write("                                    </div><div class=\"input-field col s6\">\r\n");
+        out.write("                                        <select id=\"select_plataformaU\">\r\n");
+        out.write("                                        </select>\r\n");
+        out.write("                                        <label>Plataforma</label>\r\n");
+        out.write("                                    </div>\r\n");
+        out.write("                                </div>\r\n");
+        out.write("                                <div class=\"row\">\r\n");
+        out.write("                                    <div class=\"input-field col s12\">\r\n");
+        out.write("                                        <input placeholder=\"\" id=\"nombre_gameU\" type=\"text\" class=\"validate\">\r\n");
+        out.write("                                        <label for=\"nombre_game\">Nombre Juego</label>\r\n");
+        out.write("                                    </div>\r\n");
+        out.write("                                </div>\r\n");
+        out.write("                                <div class=\"row\">\r\n");
+        out.write("                                    <div class=\"input-field col s6\">\r\n");
+        out.write("                                        <input placeholder=\"\" id=\"precio_gameU\" type=\"text\" class=\"validate\" onchange=\"formatoMoneda(this.value, 'precio_gameU')\" onkeyup=\"formatoMoneda(this.value, 'precio_gameU')\">\r\n");
+        out.write("                                        <label for=\"precio_game\">Precio</label>\r\n");
+        out.write("                                    </div>\r\n");
+        out.write("                                </div>\r\n");
+        out.write("                                <div class=\"row\">\r\n");
+        out.write("                                    <div class=\"input-field col s12\">\r\n");
+        out.write("                                        <div class=\"file-field input-field\">\r\n");
+        out.write("                                            <div class=\"btn\">\r\n");
+        out.write("                                                <span>Imagen</span>\r\n");
+        out.write("                                                <input type=\"file\">\r\n");
+        out.write("                                            </div>\r\n");
+        out.write("                                            <div class=\"file-path-wrapper\">\r\n");
+        out.write("                                                <input class=\"file-path validate\" type=\"text\" placeholder=\"Seleciona una Imagen\" id=\"pathImagenU\" onchange=\"mostrarImagenMiniatura('caratulaU', 'pathImagenU')\" >\r\n");
+        out.write("                                            </div>\r\n");
+        out.write("                                        </div>\r\n");
+        out.write("                                    </div>\r\n");
+        out.write("                                </div>\r\n");
+        out.write("                                <div class=\"row\">\r\n");
+        out.write("                                    <div class=\"input-field col s12\">\r\n");
+        out.write("                                        <textarea placeholder=\"\" id=\"text_area_descripcionU\" class=\"materialize-textarea\"></textarea>\r\n");
+        out.write("                                        <label for=\"text_area_descripcion\">Descripción</label>\r\n");
+        out.write("                                    </div>\r\n");
+        out.write("                                </div>\r\n");
+        out.write("                            </div>\r\n");
+        out.write("                            <div class=\"col s4\">\r\n");
+        out.write("                                <img class=\"z-depth-2\" src=\"\" id=\"caratulaU\" width=\"150\" height=\"200\">\r\n");
+        out.write("                            </div>\r\n");
+        out.write("                        </div>\r\n");
+        out.write("                        <div class=\"row\">\r\n");
+        out.write("                            <div class=\"col s2 offset-s6\">\r\n");
+        out.write("                                <a class=\"waves-effect waves-light btn\" onclick=\"actualizarJuego()\">Actualizar</a>\r\n");
+        out.write("                            </div>\r\n");
+        out.write("                        </div>\r\n");
+        out.write("                    </div>\r\n");
+        out.write("                    <!--AGREGAR JUEGO  ----------------------------------------------------------------------------------->\r\n");
+        out.write("                    <div id=\"formAddGame\">\r\n");
+        out.write("                        <div class=\"row\">\r\n");
+        out.write("                            <div class=\"col s8\">\r\n");
+        out.write("                                <div class=\"row\">\r\n");
+        out.write("                                    <div class=\"input-field col s6\">\r\n");
+        out.write("                                        <select id=\"select_categoria\">\r\n");
+        out.write("                                        </select>\r\n");
+        out.write("                                        <label>Categoria</label>\r\n");
+        out.write("                                    </div><div class=\"input-field col s6\">\r\n");
+        out.write("                                        <select id=\"select_plataforma\">\r\n");
+        out.write("                                        </select>\r\n");
+        out.write("                                        <label>Plataforma</label>\r\n");
+        out.write("                                    </div>\r\n");
+        out.write("                                </div>\r\n");
+        out.write("                                <div class=\"row\">\r\n");
+        out.write("                                    <div class=\"input-field col s12\">\r\n");
+        out.write("                                        <input id=\"nombre_game\" type=\"text\" class=\"validate\">\r\n");
+        out.write("                                        <label for=\"nombre_game\">Nombre Juego</label>\r\n");
+        out.write("                                    </div>\r\n");
+        out.write("                                </div>\r\n");
+        out.write("                                <div class=\"row\">\r\n");
+        out.write("                                    <div class=\"input-field col s6\">\r\n");
+        out.write("                                        <input id=\"precio_game\" type=\"text\" class=\"validate\" onchange=\"formatoMoneda(this.value, 'precio_game')\" onkeyup=\"formatoMoneda(this.value, 'precio_game')\">\r\n");
+        out.write("                                        <label for=\"precio_game\">Precio</label>\r\n");
+        out.write("                                    </div>\r\n");
+        out.write("                                </div>\r\n");
+        out.write("                                <div class=\"row\">\r\n");
+        out.write("                                    <div class=\"input-field col s12\">\r\n");
+        out.write("                                        <div class=\"file-field input-field\">\r\n");
+        out.write("                                            <div class=\"btn\">\r\n");
+        out.write("                                                <span>Imagen</span>\r\n");
+        out.write("                                                <input type=\"file\">\r\n");
+        out.write("                                            </div>\r\n");
+        out.write("                                            <div class=\"file-path-wrapper\">\r\n");
+        out.write("                                                <input class=\"file-path validate\" type=\"text\" placeholder=\"Seleciona una Imagen\" id=\"pathImagen\" onchange=\"mostrarImagenMiniatura('caratula', 'pathImagen')\" >\r\n");
+        out.write("                                            </div>\r\n");
+        out.write("                                        </div>\r\n");
+        out.write("                                    </div>\r\n");
+        out.write("                                </div>\r\n");
+        out.write("                                <div class=\"row\">\r\n");
+        out.write("                                    <div class=\"input-field col s12\">\r\n");
+        out.write("                                        <textarea id=\"text_area_descripcion\" class=\"materialize-textarea\"></textarea>\r\n");
+        out.write("                                        <label for=\"text_area_descripcion\">Descripción</label>\r\n");
+        out.write("                                    </div>\r\n");
+        out.write("                                </div>\r\n");
+        out.write("                            </div>\r\n");
+        out.write("                            <div class=\"col s4\">\r\n");
+        out.write("                                <img class=\"z-depth-2\" src=\"\" id=\"caratula\" width=\"150\" height=\"200\">\r\n");
+        out.write("                            </div>\r\n");
+        out.write("                        </div>\r\n");
+        out.write("                        <div class=\"row\">\r\n");
+        out.write("                            <div class=\"col s2 offset-s6\">\r\n");
+        out.write("                                <a class=\"waves-effect waves-light btn\" onclick=\"guardarJuego()\">Guardar</a>\r\n");
+        out.write("                            </div>\r\n");
+        out.write("                        </div>\r\n");
+        out.write("                    </div>\r\n");
+        out.write("                </div>\r\n");
+        out.write("            </div>\r\n");
+        out.write("        </div>\r\n");
+        out.write("    ");
+        int evalDoAfterBody = _jspx_th_c_when_1.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_when_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_1);
+      return true;
+    }
+    _jspx_tagPool_c_when_test.reuse(_jspx_th_c_when_1);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_forEach_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_when_1, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:forEach
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
-    _jspx_th_c_forEach_0.setParent(null);
+    _jspx_th_c_forEach_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_1);
     _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${juegos}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     _jspx_th_c_forEach_0.setVar("juego");
     int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
@@ -480,29 +547,29 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("                            <tr class=\"mouseColor tableItemDelete\" id =\"");
+          out.write("                                    <tr class=\"mouseColor tableItemDelete\" id =\"");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${juego.getId()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\">\r\n");
-          out.write("                                <td>\r\n");
-          out.write("                                    <img src=\"");
+          out.write("                                        <td>\r\n");
+          out.write("                                            <img src=\"");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${juego.getImagen()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\" class=\"circle responsive-img imagenRedonda\">\r\n");
-          out.write("                                </td>                          \r\n");
-          out.write("                                <td >");
+          out.write("                                        </td>                          \r\n");
+          out.write("                                        <td >");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${juego.getNombre()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\r\n");
-          out.write("                                <td>");
+          out.write("                                        <td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${juego.getNameCategoria()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\r\n");
-          out.write("                                <td >");
+          out.write("                                        <td >");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${juego.getNamePlataforma()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\r\n");
-          out.write("                                <td>");
+          out.write("                                        <td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${juego.getPrecio()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\r\n");
-          out.write("                                 \r\n");
-          out.write("                            </tr>\r\n");
-          out.write("                        ");
+          out.write("\r\n");
+          out.write("                                    </tr>\r\n");
+          out.write("                                ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -522,14 +589,14 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_c_forEach_1(PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_forEach_1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_when_1, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:forEach
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_1 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_forEach_1.setPageContext(_jspx_page_context);
-    _jspx_th_c_forEach_1.setParent(null);
+    _jspx_th_c_forEach_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_1);
     _jspx_th_c_forEach_1.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${juegos}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     _jspx_th_c_forEach_1.setVar("juego");
     int[] _jspx_push_body_count_c_forEach_1 = new int[] { 0 };
@@ -538,36 +605,36 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_eval_c_forEach_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("                            <tr class=\"mouseColor tableItemDelete\" id=\"");
+          out.write("                                    <tr class=\"mouseColor tableItemDelete\" id=\"");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${juego.getId()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\">\r\n");
-          out.write("                                <td>\r\n");
-          out.write("                                    <img src=\"");
+          out.write("                                        <td>\r\n");
+          out.write("                                            <img src=\"");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${juego.getImagen()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\" class=\"circle responsive-img imagenRedonda\">\r\n");
-          out.write("                                </td>                          \r\n");
-          out.write("                                <td >");
+          out.write("                                        </td>                          \r\n");
+          out.write("                                        <td >");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${juego.getNombre()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\r\n");
-          out.write("                                <td>");
+          out.write("                                        <td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${juego.getNameCategoria()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\r\n");
-          out.write("                                <td >");
+          out.write("                                        <td >");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${juego.getNamePlataforma()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\r\n");
-          out.write("                                <td>");
+          out.write("                                        <td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${juego.getPrecio()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</td>\r\n");
-          out.write("                                <td>\r\n");
-          out.write("                                    <a href=\"#\" onclick=\"eliminar('");
+          out.write("                                        <td>\r\n");
+          out.write("                                            <a href=\"#\" onclick=\"eliminar('");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${juego.getId()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("', '");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${juego.getNombre()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("')\">Eliminar</a>\r\n");
-          out.write("                                </td>\r\n");
+          out.write("                                        </td>\r\n");
           out.write("\r\n");
-          out.write("                            </tr>\r\n");
-          out.write("                        ");
+          out.write("                                    </tr>\r\n");
+          out.write("                                ");
           int evalDoAfterBody = _jspx_th_c_forEach_1.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -584,6 +651,54 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_th_c_forEach_1.doFinally();
       _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_1);
     }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_otherwise_1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_choose_1, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:otherwise
+    org.apache.taglibs.standard.tag.common.core.OtherwiseTag _jspx_th_c_otherwise_1 = (org.apache.taglibs.standard.tag.common.core.OtherwiseTag) _jspx_tagPool_c_otherwise.get(org.apache.taglibs.standard.tag.common.core.OtherwiseTag.class);
+    _jspx_th_c_otherwise_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_otherwise_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_choose_1);
+    int _jspx_eval_c_otherwise_1 = _jspx_th_c_otherwise_1.doStartTag();
+    if (_jspx_eval_c_otherwise_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("        ");
+        if (_jspx_meth_c_redirect_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_otherwise_1, _jspx_page_context))
+          return true;
+        out.write("\r\n");
+        out.write("    ");
+        int evalDoAfterBody = _jspx_th_c_otherwise_1.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_otherwise_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_otherwise.reuse(_jspx_th_c_otherwise_1);
+      return true;
+    }
+    _jspx_tagPool_c_otherwise.reuse(_jspx_th_c_otherwise_1);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_redirect_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_otherwise_1, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:redirect
+    org.apache.taglibs.standard.tag.rt.core.RedirectTag _jspx_th_c_redirect_0 = (org.apache.taglibs.standard.tag.rt.core.RedirectTag) _jspx_tagPool_c_redirect_url_nobody.get(org.apache.taglibs.standard.tag.rt.core.RedirectTag.class);
+    _jspx_th_c_redirect_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_redirect_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_otherwise_1);
+    _jspx_th_c_redirect_0.setUrl("./userAdmin.jsp");
+    int _jspx_eval_c_redirect_0 = _jspx_th_c_redirect_0.doStartTag();
+    if (_jspx_th_c_redirect_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_redirect_url_nobody.reuse(_jspx_th_c_redirect_0);
+      return true;
+    }
+    _jspx_tagPool_c_redirect_url_nobody.reuse(_jspx_th_c_redirect_0);
     return false;
   }
 }

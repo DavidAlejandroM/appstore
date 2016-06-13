@@ -12,8 +12,7 @@ public final class userAdmin_jsp extends org.apache.jasper.runtime.HttpJspBase
   private static java.util.List<String> _jspx_dependants;
 
   static {
-    _jspx_dependants = new java.util.ArrayList<String>(2);
-    _jspx_dependants.add("/header.jsp");
+    _jspx_dependants = new java.util.ArrayList<String>(1);
     _jspx_dependants.add("/footer.jsp");
   }
 
@@ -47,10 +46,6 @@ public final class userAdmin_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write('\n');
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("\n");
       out.write("\n");
       out.write("<html lang=\"en\">\n");
       out.write("    <head>\n");
@@ -59,26 +54,12 @@ public final class userAdmin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <script src=\"javascript/jquery-2.2.4.min.js\" type=\"text/javascript\"></script>   \n");
       out.write("        <script src=\"javascript/header.js\" type=\"text/javascript\"></script>\n");
       out.write("        <script src=\"javascript/materialize.js\" type=\"text/javascript\"></script>\n");
-      out.write("        <script src=\"javascript/itemProducoPublicidad.js\" type=\"text/javascript\"></script>\n");
       out.write("        <script src=\"javascript/scriptsAdmin.js\" type=\"text/javascript\"></script>\n");
       out.write("        <link href=\"css/style.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
       out.write("        <link href=\"css/materialize.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
       out.write("        <link href=\"iconos/css3/font-awesome.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
       out.write("    </head>\n");
-      out.write("    <nav style=\"background-color: gray;\">\n");
-      out.write("        <ul class=\"right hide-on-med-and-down\">\n");
-      out.write("      \n");
-      out.write("                <li><a href=\"registrarUsuario.jsp\">Registrarse</a></li>\n");
-      out.write("            <li><a href=\"userAdmin.jsp\">Administrador</a></li>\n");
-      out.write("        </ul>\n");
-      out.write("        <ul id=\"slide-out\" class=\"side-nav\">\n");
-      out.write("            <li><a href=\"#!\">First Sidebar Link</a></li>\n");
-      out.write("            <li><a href=\"#!\">Second Sidebar Link</a></li>\n");
-      out.write("        </ul>\n");
-      out.write("\n");
-      out.write("    </nav>\n");
       out.write("    <body>\n");
-      out.write("\n");
       out.write("           <div id=\"formLoguin\">\n");
       out.write("                <div class=\"row col s6 offset-s3\">\n");
       out.write("                    <h3 id=\"titleH3\">INICIO SESIÓN ADMIN</h3>\n");
@@ -95,14 +76,14 @@ public final class userAdmin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </div>\n");
       out.write("                <div class=\"row\">\n");
       out.write("                    <div class=\"input-field col s4 offset-s4\">\n");
-      out.write("                        <input id=\"contraseña_admin\" type=\"password\" class=\"validate\">\n");
-      out.write("                        <label for=\"contraseña_admin\">Contraseña</label>\n");
+      out.write("                        <input id=\"contrasena_admin\" type=\"password\" class=\"validate\">\n");
+      out.write("                        <label for=\"contrasena_admin\">Contraseña</label>\n");
       out.write("                    </div>\n");
       out.write("\n");
       out.write("                </div>\n");
       out.write("                <div class=\"row\">\n");
       out.write("                    <div class=\"col s4 offset-s4\">\n");
-      out.write("                        <a class=\"waves-effect waves-light btn\" href=\"./admin\">Ingresar</a>\n");
+      out.write("                        <a class=\"waves-effect waves-light btn\" href=\"#\" onclick=\"loginAdmin()\">Ingresar</a>\n");
       out.write("                    </div>\n");
       out.write("                </div>\n");
       out.write("\n");

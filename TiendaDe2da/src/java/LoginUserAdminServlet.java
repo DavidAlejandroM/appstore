@@ -22,7 +22,7 @@ import models.UsuarioDAO;
  *
  * @author HP VPRO
  */
-public class LoginUserServlet extends HttpServlet{
+public class LoginUserAdminServlet extends HttpServlet{
     Usuario usuario = new Usuario();
     UsuarioDAO usuarioDAO = new UsuarioDAO();
 
@@ -37,14 +37,11 @@ public class LoginUserServlet extends HttpServlet{
 
         HttpSession session1 = req.getSession(true);
         HttpSession session2 = req.getSession(true);
-        HttpSession session3 = req.getSession(true);
         String name = usuarioDAO.obtenerSesion(usuario);
         int id = usuarioDAO.obtenerId(usuario);
-        if(name!=null){  
-        ArrayList juegosCar = new ArrayList();
-        session1.setAttribute("Nombre", name);
-        session2.setAttribute("Carrito",juegosCar);
-        session3.setAttribute("IdUser",id);
+        if(name!=null){ 
+        session1.setAttribute("NombreAdmin", name);
+        session2.setAttribute("IdUser",id);
         resp.setContentType("text/plain");  // Set content type of the response so that jQuery knows what it can expect.
         resp.setCharacterEncoding("UTF-8");
         resp.getWriter().write("yes");
