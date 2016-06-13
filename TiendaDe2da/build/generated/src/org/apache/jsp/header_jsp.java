@@ -60,37 +60,36 @@ public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<html lang=\"en\">\n");
-      out.write("    <head>\n");
-      out.write("        <meta charset=\"utf-8\">\n");
-      out.write("        <title>Tienda De2da</title>\n");
-      out.write("        <script src=\"javascript/jquery-2.2.4.min.js\" type=\"text/javascript\"></script>   \n");
-      out.write("        <script src=\"javascript/header.js\" type=\"text/javascript\"></script>\n");
-      out.write("        <script src=\"javascript/materialize.js\" type=\"text/javascript\"></script>\n");
-      out.write("        <script src=\"javascript/itemProducoPublicidad.js\" type=\"text/javascript\"></script>\n");
-      out.write("        <script src=\"javascript/scriptsAdmin.js\" type=\"text/javascript\"></script>\n");
-      out.write("        <link href=\"css/style.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
-      out.write("        <link href=\"css/materialize.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
-      out.write("        <link href=\"iconos/css3/font-awesome.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
-      out.write("    </head>\n");
-      out.write("    <nav style=\"background-color: gray;\">\n");
-      out.write("        <ul class=\"right hide-on-med-and-down\">\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<html lang=\"en\">\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta charset=\"utf-8\">\r\n");
+      out.write("        <title>Tienda De2da</title>\r\n");
+      out.write("        <script src=\"javascript/jquery-2.2.4.min.js\" type=\"text/javascript\"></script>   \r\n");
+      out.write("        <script src=\"javascript/header.js\" type=\"text/javascript\"></script>\r\n");
+      out.write("        <script src=\"javascript/materialize.js\" type=\"text/javascript\"></script>\r\n");
+      out.write("        <script src=\"javascript/scriptsAdmin.js\" type=\"text/javascript\"></script>\r\n");
+      out.write("        <link href=\"css/style.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
+      out.write("        <link href=\"css/materialize.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
+      out.write("        <link href=\"iconos/css3/font-awesome.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <nav style=\"background-color: gray;\">\r\n");
+      out.write("        <ul class=\"right hide-on-med-and-down\">\r\n");
       out.write("            ");
       if (_jspx_meth_c_choose_0(_jspx_page_context))
         return;
-      out.write("\n");
-      out.write("        </ul>\n");
-      out.write("        <ul id=\"slide-out\" class=\"side-nav\">\n");
-      out.write("            <li><a href=\"#!\">First Sidebar Link</a></li>\n");
-      out.write("            <li><a href=\"#!\">Second Sidebar Link</a></li>\n");
-      out.write("        </ul>\n");
-      out.write("\n");
-      out.write("    </nav>\n");
-      out.write("    <body>\n");
+      out.write("\r\n");
+      out.write("        </ul>\r\n");
+      out.write("        <ul id=\"slide-out\" class=\"side-nav\">\r\n");
+      out.write("            <li><a href=\"#!\">First Sidebar Link</a></li>\r\n");
+      out.write("            <li><a href=\"#!\">Second Sidebar Link</a></li>\r\n");
+      out.write("        </ul>\r\n");
+      out.write("\r\n");
+      out.write("    </nav>\r\n");
+      out.write("    <body>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
@@ -115,15 +114,15 @@ public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
     int _jspx_eval_c_choose_0 = _jspx_th_c_choose_0.doStartTag();
     if (_jspx_eval_c_choose_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\n");
+        out.write("\r\n");
         out.write("                ");
         if (_jspx_meth_c_when_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
-        out.write("\n");
+        out.write("\r\n");
         out.write("                    ");
         if (_jspx_meth_c_otherwise_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_0, _jspx_page_context))
           return true;
-        out.write("\n");
+        out.write("\r\n");
         out.write("                ");
         int evalDoAfterBody = _jspx_th_c_choose_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -150,12 +149,12 @@ public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
     int _jspx_eval_c_when_0 = _jspx_th_c_when_0.doStartTag();
     if (_jspx_eval_c_when_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("                \n");
+        out.write("                \r\n");
         out.write("                    ");
         if (_jspx_meth_c_out_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_0, _jspx_page_context))
           return true;
-        out.write("                    \n");
-        out.write("                    <li><a href=\"#\" onclick=\"logout()\">Salir</a></li>\n");
+        out.write("                    \r\n");
+        out.write("                    <li><a href=\"#\" onclick=\"logout()\">Salir</a></li>\r\n");
         out.write("                    ");
         int evalDoAfterBody = _jspx_th_c_when_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -199,10 +198,10 @@ public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
     int _jspx_eval_c_otherwise_0 = _jspx_th_c_otherwise_0.doStartTag();
     if (_jspx_eval_c_otherwise_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\n");
-        out.write("                    <li><a href=\"registrarUsuario.jsp\">Registrarse</a></li>\n");
-        out.write("                    <li><a href=\"userAdmin.jsp\">Administrador</a></li>\n");
-        out.write("                    <li><a class=\"waves-effect waves-light btn modal-trigger\" href=\"#modal2\">Entrar</a></li>\n");
+        out.write("\r\n");
+        out.write("                    <li><a href=\"registrarUsuario.jsp\">Registrarse</a></li>\r\n");
+        out.write("                    <li><a href=\"userAdmin.jsp\">Administrador</a></li>\r\n");
+        out.write("                    <li><a class=\"waves-effect waves-light btn modal-trigger\" href=\"#modal2\">Entrar</a></li>\r\n");
         out.write("                    ");
         int evalDoAfterBody = _jspx_th_c_otherwise_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)

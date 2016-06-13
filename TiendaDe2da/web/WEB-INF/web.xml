@@ -33,6 +33,54 @@
     </servlet-mapping>
     
     <servlet>
+        <servlet-name>GetGameServlet</servlet-name>
+        <servlet-class>GetGameServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetGameServlet</servlet-name>
+        <url-pattern>/getGame</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>UpdateGameServlet</servlet-name>
+        <servlet-class>UpdateGameServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateGameServlet</servlet-name>
+        <url-pattern>/updateGame</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>GetPlataformaServlet</servlet-name>
+        <servlet-class>GetPlataformaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetPlataformaServlet</servlet-name>
+        <url-pattern>/getPlataformaGame</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>GetCategoriaServlet</servlet-name>
+        <servlet-class>GetCategoriaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetCategoriaServlet</servlet-name>
+        <url-pattern>/getCategoriaGame</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>DeleteGameServlet</servlet-name>
+        <servlet-class>DeleteGameServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteGameServlet</servlet-name>
+        <url-pattern>/deleteGame</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
         <servlet-name>SaveUserServlet</servlet-name>
         <servlet-class>SaveUserServlet</servlet-class>
     </servlet>

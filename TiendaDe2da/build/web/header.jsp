@@ -13,7 +13,6 @@
         <script src="javascript/jquery-2.2.4.min.js" type="text/javascript"></script>   
         <script src="javascript/header.js" type="text/javascript"></script>
         <script src="javascript/materialize.js" type="text/javascript"></script>
-        <script src="javascript/itemProducoPublicidad.js" type="text/javascript"></script>
         <script src="javascript/scriptsAdmin.js" type="text/javascript"></script>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
         <link href="css/materialize.css" rel="stylesheet" type="text/css"/>

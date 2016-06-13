@@ -3,8 +3,9 @@ $(document).ready(function () {
         accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
     });
     $('select').material_select();
-
-<<<<<<< HEAD
+    $('.slider').slider({full_width: true});
+   $('.modal-trigger').leanModal();
+    
     $.ajax({
         method: "GET",
         url: "./getCategoriaGame",
@@ -27,9 +28,6 @@ $(document).ready(function () {
         }
 
     });
-=======
-    $('.slider').slider({full_width: true});
->>>>>>> refs/remotes/origin/esteban
 });
 
 function cargarDatosModal(id, nombre, detalle, imagen, precio, categoria, plataforma) {
@@ -40,12 +38,66 @@ function cargarDatosModal(id, nombre, detalle, imagen, precio, categoria, plataf
     document.getElementById('categoria-producto-modal').innerHTML = categoria;
     document.getElementById('input-id').setAttribute("value", id);
     document.getElementById('imagenItem').setAttribute("src", imagen);
-<<<<<<< HEAD
+}
 
 /*Metodo para llenar la barra de categoria, plataforma*/
-=======
+
+
+function llenarCategoria(cat, id) {
+    var cad = "";
+    tamCategoria = cat.length;
+    for (var i = 0; i < cat.length; i++)
+    {
+        cad = cad + "<a class = 'waves-effect waves-red btn btnCat' onclick= \u0022 FiltrarCategoria('" + cat[i].id + "')\u0022>" + cat[i].nombre + "</a><br>";
+    }
+    cad = cad + "<a class = 'waves-effect waves-red btn btnCat' onclick= \u0022 FiltrarCategoria('0')\u0022>TODOS</a><br>"
+
+    document.getElementById(id).innerHTML = cad;
 }
->>>>>>> refs/remotes/origin/esteban
+function llenarPlataforma(plat, id) {
+    console.log("entro llenar plaforma");
+    var cad = "";
+    tamPlataforma = plat.length;
+    for (var i = 0; i < plat.length; i++) {
+        cad = cad + "<a class = 'waves-effect waves-red btn btnPlat' onclick= \u0022 FiltrarPlataforma('" + plat[i].id + "')\u0022>" + plat[i].nombre + "</a><br>";
+
+    }
+    cad = cad + "<a class = 'waves-effect waves-red btn btnPlat' onclick= \u0022 FiltrarPlataforma('0')\u0022>TODOS</a><br>"
+    document.getElementById(id).innerHTML = cad;
+
+}
+var tamCategoria = 0;
+var tamPlataforma = 0;
+
+function FiltrarCategoria(id) {
+    var className = "itemCategoria" + id;
+    console.log("itemCategoria" + id);
+
+    for (var i = 1; i <= tamCategoria; i++)
+    {
+        if (id === '0') {
+            $(".itemCategoria" + i).show();
+        } else {
+            $(".itemCategoria" + i).hide();
+        }
+    }
+    $("." + className).show();
+}
+
+function FiltrarPlataforma(id) {
+    var className = "itemPlataforma" + id;
+    console.log("itemPlataforma" + id);
+    console.log(tamPlataforma);
+    for (var i = 1; i <= tamPlataforma; i++)
+    {
+        if (id === '0') {
+            $(".itemPlataforma" + i).show();
+        } else {
+            $(".itemPlataforma" + i).hide();
+        }
+    }
+    $("." + className).show();
+}
 
 function registrarUsuario() {
     var nombre = $('#nombre_usuario-registro').val();
@@ -142,19 +194,11 @@ function purchase() {
                 location.reload();
             }
         }
-<<<<<<< HEAD
-    }
-    $("." + className).show();
-
-}}
-=======
     });
     else
     return;
 }
->>>>>>> refs/remotes/origin/esteban
 
-
-
-
-
+function closeM(){
+    $('#modal1').closeModal();
+}
