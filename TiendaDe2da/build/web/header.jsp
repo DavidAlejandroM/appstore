@@ -25,6 +25,10 @@
                     <c:out value="Bienvenido ${sessionScope.Nombre}"/>                    
                     <li><a href="#" onclick="logout()">Salir</a></li>
                     </c:when>
+                    <c:when test="${not empty sessionScope.NombreAdmin}">                
+                    <c:out value="Bienvenido ${sessionScope.Nombre}"/>                    
+                    <li><a href="#" onclick="logout()">Salir</a></li>
+                    </c:when>
                     <c:otherwise>
                     <li><a href="registrarUsuario.jsp">Registrarse</a></li>
                     <li><a href="userAdmin.jsp">Administrador</a></li>

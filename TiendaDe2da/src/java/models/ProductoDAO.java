@@ -198,7 +198,7 @@ public class ProductoDAO {
     public void eliminarJuego(String id) {
         try {
             conn = conexion.getConexion();
-            String query = "DELETE FROM producto WHERE id="+id;
+            String query = "DELETE FROM producto WHERE id = "+id;
             ps = conn.prepareStatement(query);
                         
             ps.executeUpdate();

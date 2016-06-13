@@ -43,7 +43,6 @@ public class UpdateGameServlet extends HttpServlet{
         producto.setDetalle(descripcion);
         producto.setPrecio(precio);
         producto.setImagen(imagen);
-        
         productoDAO.actualizarJuego(producto);
         resp.getWriter().write("yes");
         
