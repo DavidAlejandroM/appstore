@@ -4,7 +4,32 @@ $(document).ready(function () {
     });
     $('select').material_select();
 
+<<<<<<< HEAD
+    $.ajax({
+        method: "GET",
+        url: "./getCategoriaGame",
+        data: "",
+        success: function (response)
+        {
+            console.log("va por ajax cat")
+            llenarCategoria(response, 'listadoCat');
+        }
+    });
+    $.ajax({
+        method: "GET",
+        url: "./getPlataformaGame",
+        data: "",
+        success: function (response)
+        {
+
+            llenarPlataforma(response, 'listadoPlat');
+            console.log("entro cargar juego");
+        }
+
+    });
+=======
     $('.slider').slider({full_width: true});
+>>>>>>> refs/remotes/origin/esteban
 });
 
 function cargarDatosModal(id, nombre, detalle, imagen, precio, categoria, plataforma) {
@@ -15,7 +40,12 @@ function cargarDatosModal(id, nombre, detalle, imagen, precio, categoria, plataf
     document.getElementById('categoria-producto-modal').innerHTML = categoria;
     document.getElementById('input-id').setAttribute("value", id);
     document.getElementById('imagenItem').setAttribute("src", imagen);
+<<<<<<< HEAD
+
+/*Metodo para llenar la barra de categoria, plataforma*/
+=======
 }
+>>>>>>> refs/remotes/origin/esteban
 
 function registrarUsuario() {
     var nombre = $('#nombre_usuario-registro').val();
@@ -112,10 +142,17 @@ function purchase() {
                 location.reload();
             }
         }
+<<<<<<< HEAD
+    }
+    $("." + className).show();
+
+}}
+=======
     });
     else
     return;
 }
+>>>>>>> refs/remotes/origin/esteban
 
 
 
