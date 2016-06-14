@@ -8,30 +8,30 @@
 
 <div class="row">
     <div id="categoriaBar" class="col s3">
-        
+
         <ul class="collapsible" data-collapsible="accordion">
             <li class="listadoCategoria">
                 <div class='collapsible-header'><i class='fa fa-info' aria-hidden='true'></i>Categoría</div>
                 <div class="collapsible-body" id="listadoCat">
-                    
+
                 </div>
             </li>
             <li>
                 <div class="collapsible-header"><i class="fa fa-braille" aria-hidden="true"></i>Plataforma</div>
                 <div class="collapsible-body" id="listadoPlat">
-           
+
                 </div>
             </li>
             <li class="center-align">
                 <div class="collapsible-header" style="text-align: left;" id="carritoBL"><i class="fa fa-braille" aria-hidden="true"></i>Carrito</div>
                 <div class="collapsible-body" id="listadoCat">
-                    
+
                     <c:choose>
                         <c:when test="${not empty sessionScope.Carrito}">                
                             <c:forEach items="${sessionScope.Carrito}" var="juego">
                                 <div>${juego.getNombre()} - ${juego.getPrecio()}</div>
                             </c:forEach>
-                                <a class="waves-effect waves-light btn btCat" href="#" onclick="purchase()">Comprar</a>
+                            <a class="waves-effect waves-light btn btCat" href="#modalFactura" onclick=" purchase()">Comprar</a>
                         </c:when>
                     </c:choose>
                 </div>
@@ -97,7 +97,7 @@
                             <a class="waves-effect waves-light btn" onclick="addToCar()"><i class="fa fa-shopping-cart"></i>Añadir al carrito</a>
                         </c:when>
                     </c:choose>                    
-                            <a class="waves-effect waves-light btn" id="botonCancelar" onclick="closeM()"></i>Cancelar</a>
+                    <a class="waves-effect waves-light btn" id="botonCancelar" onclick="closeM()"></i>Cancelar</a>
                 </div>
             </div>
             <div class="row">
@@ -138,6 +138,32 @@
                 </div>
             </div>
         </div>
+        <!--Mostrar factura -->
+
+        <div id="modalFactura" class="modal">
+            <input type="hidden" id="input-id-factura" value=""/>
+            <div class="modal-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th data-field="id">Nombre Juego</th>
+                            <th data-field="name">Categoria</th>
+                            <th data-field="name">Plaforma</th>
+                            <th data-field="price">Precio</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="bodyProductosFactura">
+                                             
+                      
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+            </div>
+        </div>
+
     </div>
 </div>
 <%@ include file="footer.jsp" %>

@@ -125,4 +125,23 @@
         <url-pattern>/PurchaseGame</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>GetProductosFacturaServlet</servlet-name>
+        <servlet-class>GetProductosFacturaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetProductosFacturaServlet</servlet-name>
+        <url-pattern>/getProductosFacturaGame</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>GetFacturaServlet</servlet-name>
+        <servlet-class>GetFacturaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetFacturaServlet</servlet-name>
+        <url-pattern>/getFacturaGame</url-pattern>
+    </servlet-mapping>
+    
 </web-app>

@@ -108,26 +108,29 @@ public final class inicio_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("<div class=\"row\">\r\n");
       out.write("    <div id=\"categoriaBar\" class=\"col s3\">\r\n");
-      out.write("        \r\n");
+      out.write("\r\n");
       out.write("        <ul class=\"collapsible\" data-collapsible=\"accordion\">\r\n");
       out.write("            <li class=\"listadoCategoria\">\r\n");
       out.write("                <div class='collapsible-header'><i class='fa fa-info' aria-hidden='true'></i>Categoría</div>\r\n");
       out.write("                <div class=\"collapsible-body\" id=\"listadoCat\">\r\n");
-      out.write("                    \r\n");
-      out.write("                </div>o\r\n");
+      out.write("\r\n");
+      out.write("                </div>\r\n");
       out.write("            </li>\r\n");
       out.write("            <li>\r\n");
       out.write("                <div class=\"collapsible-header\"><i class=\"fa fa-braille\" aria-hidden=\"true\"></i>Plataforma</div>\r\n");
       out.write("                <div class=\"collapsible-body\" id=\"listadoPlat\">\r\n");
-      out.write("           \r\n");
+      out.write("\r\n");
       out.write("                </div>\r\n");
       out.write("            </li>\r\n");
       out.write("            <li class=\"center-align\">\r\n");
-      out.write("                <div class=\"collapsible-header\" style=\"text-align: left;\"><i class=\"fa fa-braille\" aria-hidden=\"true\"></i>Carrito</div>\r\n");
-      out.write("                ");
+      out.write("                <div class=\"collapsible-header\" style=\"text-align: left;\" id=\"carritoBL\"><i class=\"fa fa-braille\" aria-hidden=\"true\"></i>Carrito</div>\r\n");
+      out.write("                <div class=\"collapsible-body\" id=\"listadoCat\">\r\n");
+      out.write("\r\n");
+      out.write("                    ");
       if (_jspx_meth_c_choose_1(_jspx_page_context))
         return;
       out.write("\r\n");
+      out.write("                </div>\r\n");
       out.write("            </li>\r\n");
       out.write("        </ul>\r\n");
       out.write("    </div>\r\n");
@@ -188,6 +191,32 @@ public final class inicio_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
       out.write("        </div>\r\n");
+      out.write("        <!--Mostrar factura -->\r\n");
+      out.write("\r\n");
+      out.write("        <div id=\"modalFactura\" class=\"modal\">\r\n");
+      out.write("            <input type=\"hidden\" id=\"input-id-factura\" value=\"\"/>\r\n");
+      out.write("            <div class=\"modal-content\">\r\n");
+      out.write("                <table>\r\n");
+      out.write("                    <thead>\r\n");
+      out.write("                        <tr>\r\n");
+      out.write("                            <th data-field=\"id\">Nombre Juego</th>\r\n");
+      out.write("                            <th data-field=\"name\">Categoria</th>\r\n");
+      out.write("                            <th data-field=\"name\">Plaforma</th>\r\n");
+      out.write("                            <th data-field=\"price\">Precio</th>\r\n");
+      out.write("                        </tr>\r\n");
+      out.write("                    </thead>\r\n");
+      out.write("\r\n");
+      out.write("                    <tbody id=\"bodyProductosFactura\">\r\n");
+      out.write("                                             \r\n");
+      out.write("                      \r\n");
+      out.write("                    </tbody>\r\n");
+      out.write("                </table>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div class=\"modal-footer\">\r\n");
+      out.write("                <a href=\"#!\" class=\" modal-action modal-close waves-effect waves-green btn-flat\">Aceptar</a>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("\r\n");
       out.write("    </div>\r\n");
       out.write("</div>\r\n");
       out.write("\n");
@@ -357,11 +386,11 @@ public final class inicio_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_choose_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\r\n");
-        out.write("                    ");
+        out.write("                        ");
         if (_jspx_meth_c_when_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_choose_1, _jspx_page_context))
           return true;
         out.write("\r\n");
-        out.write("                ");
+        out.write("                    ");
         int evalDoAfterBody = _jspx_th_c_choose_1.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -388,12 +417,12 @@ public final class inicio_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_when_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("                \r\n");
-        out.write("                        ");
+        out.write("                            ");
         if (_jspx_meth_c_forEach_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_1, _jspx_page_context))
           return true;
         out.write("\r\n");
-        out.write("                            <a class=\"waves-effect waves-light btn\" href=\"#\" onclick=\"purchase()\">Comprar</a>\r\n");
-        out.write("                    ");
+        out.write("                            <a class=\"waves-effect waves-light btn btCat\" href=\"#modalFactura\" onclick=\" purchase()\">Comprar</a>\r\n");
+        out.write("                        ");
         int evalDoAfterBody = _jspx_th_c_when_1.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -423,12 +452,12 @@ public final class inicio_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("                            <div>");
+          out.write("                                <div>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${juego.getNombre()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write(" - ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${juego.getPrecio()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</div>\r\n");
-          out.write("                        ");
+          out.write("                            ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -484,7 +513,7 @@ public final class inicio_jsp extends org.apache.jasper.runtime.HttpJspBase
         if (_jspx_meth_c_choose_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_0, _jspx_page_context))
           return true;
         out.write("                    \r\n");
-        out.write("                            <a class=\"waves-effect waves-light btn\" id=\"botonCancelar\" onclick=\"closeM()\"></i>Cancelar</a>\r\n");
+        out.write("                    <a class=\"waves-effect waves-light btn\" id=\"botonCancelar\" onclick=\"closeM()\"></i>Cancelar</a>\r\n");
         out.write("                </div>\r\n");
         out.write("            </div>\r\n");
         out.write("            <div class=\"row\">\r\n");
