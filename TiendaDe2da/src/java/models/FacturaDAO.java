@@ -92,5 +92,39 @@ public class FacturaDAO {
         }
         return id;
     }
+    
+    public String obtenerFactura() {
+        Factura factura = new Factura();
+        String json = null;
+        try {
+            conn = conexion.getConexion();
+            String query = "SELECT * FROM factura WHERE id="+obtenerUltimaFactura();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            
+            while (rs.next()) {
+                
+                factura.setId(rs.getInt("id"));
+                factura.setFecha(rs.getString("fecha"));
+                factura.setHora(rs.getString("hora"));
+                factura.setIdCliente(rs.getInt("idCliente"));
+                factura.setTotal(rs.getInt("total"));
+              
+                
+                json = factura.getJSONFactura();
+                
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                rs.close();
+            } catch (Exception e) { /* ignored */ }
+        }
+
+        return json;
+
+    }
 
 }
