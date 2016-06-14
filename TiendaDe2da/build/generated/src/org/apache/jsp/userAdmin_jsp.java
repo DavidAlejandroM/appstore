@@ -4,12 +4,17 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class footer_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class userAdmin_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
+
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(1);
+    _jspx_dependants.add("/footer.jsp");
+  }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -41,15 +46,57 @@ public final class footer_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\r\n");
+      out.write("<html lang=\"en\">\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta charset=\"utf-8\">\r\n");
+      out.write("        <title>Tienda De2da</title>\r\n");
+      out.write("        <script src=\"javascript/jquery-2.2.4.min.js\" type=\"text/javascript\"></script>   \r\n");
+      out.write("        <script src=\"javascript/header.js\" type=\"text/javascript\"></script>\r\n");
+      out.write("        <script src=\"javascript/materialize.js\" type=\"text/javascript\"></script>\r\n");
+      out.write("        <script src=\"javascript/scriptsAdmin.js\" type=\"text/javascript\"></script>\r\n");
+      out.write("        <link href=\"css/style.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
+      out.write("        <link href=\"css/materialize.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
+      out.write("        <link href=\"iconos/css3/font-awesome.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
+      out.write("           <div id=\"formLoguin\">\r\n");
+      out.write("                <div class=\"row col s6 offset-s3\">\r\n");
+      out.write("                    <h3 id=\"titleH3\">INICIO SESIÓN ADMIN</h3>\r\n");
+      out.write("                </div>\r\n");
+      out.write("\r\n");
+      out.write("                <div class=\"row col s12 divider\"></div>\r\n");
+      out.write("\r\n");
+      out.write("                <div class=\"row\">\r\n");
+      out.write("                    <div class=\"input-field col s4 offset-s4\">\r\n");
+      out.write("                        <input id=\"usuario_admin\" type=\"text\" class=\"validate\">\r\n");
+      out.write("                        <label for=\"usuario_admin\">Usuario</label>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("\r\n");
+      out.write("                </div>\r\n");
+      out.write("                <div class=\"row\">\r\n");
+      out.write("                    <div class=\"input-field col s4 offset-s4\">\r\n");
+      out.write("                        <input id=\"contrasena_admin\" type=\"password\" class=\"validate\">\r\n");
+      out.write("                        <label for=\"contrasena_admin\">Contraseña</label>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("\r\n");
+      out.write("                </div>\r\n");
+      out.write("                <div class=\"row\">\r\n");
+      out.write("                    <div class=\"col s4 offset-s4\">\r\n");
+      out.write("                        <a class=\"waves-effect waves-light btn\" href=\"#\" onclick=\"loginAdmin()\">Ingresar</a>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </div>\r\n");
+      out.write("\r\n");
+      out.write("            </div>\r\n");
       out.write("\n");
       out.write("\n");
       out.write("</body>\n");
-      out.write(" <footer class=\"page-footer\" style=\"background-color: gray;\">\n");
+      out.write(" <footer class=\"page-footer\">\n");
       out.write("          <div class=\"container\">\n");
       out.write("            <div class=\"row\">\n");
       out.write("              <div class=\"col l6 s12\">\n");
-      out.write("                <h5 class=\"white-text\">HardCore Game</h5>\n");
-      out.write("                <p class=\"grey-text text-lighten-4\">Tienda en linea para videojuegos</p>\n");
+      out.write("                <h5 class=\"white-text\">VideoGame Store</h5>\n");
+      out.write("                <p class=\"grey-text text-lighten-4\">Tienda virtual para video juegos</p>\n");
       out.write("              </div>\n");
       out.write("              <div class=\"col l4 offset-l2 s12\">\n");
       out.write("                <h5 class=\"white-text\">Links</h5>\n");

@@ -4,12 +4,18 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
+
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(2);
+    _jspx_dependants.add("/header.jsp");
+    _jspx_dependants.add("/footer.jsp");
+  }
 
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_out_value_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_choose;
@@ -49,7 +55,7 @@ public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html;charset=UTF-8");
+      response.setContentType("text/html");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -60,6 +66,8 @@ public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write('\r');
+      out.write('\n');
       out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("\r\n");
@@ -87,7 +95,68 @@ public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <li><a href=\"#!\">First Sidebar Link</a></li>\r\n");
       out.write("            <li><a href=\"#!\">Second Sidebar Link</a></li>\r\n");
       out.write("        </ul>\r\n");
-      out.write("        <div style=\"width:300px\" id=\"modal2\" class=\"modal\">\r\n");
+      out.write("\r\n");
+      out.write("    </nav>\r\n");
+      out.write("    <body>\r\n");
+      out.write("\r\n");
+      out.write("    <div id=\"formAddUser\">\r\n");
+      out.write("                <div class=\"row col s6 offset-s4\">\r\n");
+      out.write("                    <h3 id=\"titleH3\">REGISTRO</h3>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                <div class=\"row col s12 divider\"></div>\r\n");
+      out.write("                <div class=\"row\">\r\n");
+      out.write("                    <div class=\"col s6 offset-s3\">\r\n");
+      out.write("                        <div class=\"row\">\r\n");
+      out.write("                            <div class=\"input-field col s12\">\r\n");
+      out.write("                                <input id=\"nombre_usuario-registro\" type=\"text\" class=\"validate\" required/>\r\n");
+      out.write("                                <label for=\"nombre_usuario\">*Nombre</label>\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        <div class=\"row\">\r\n");
+      out.write("                            <div class=\"input-field col s12\">\r\n");
+      out.write("                                <input id=\"apellido_usuario-registro\" type=\"text\" class=\"validate\" required />\r\n");
+      out.write("                                <label for=\"apellido_usuario\">*Apellido</label>\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        <div class=\"row\">\r\n");
+      out.write("                            <div class=\"input-field col s12\">\r\n");
+      out.write("                                <input id=\"correo-registro\" type=\"email\" class=\"validate\"/>\r\n");
+      out.write("                                <label for=\"correo\">Correo Electronico</label>\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        <div class=\"row\">\r\n");
+      out.write("                            <div class=\"input-field col s12\">\r\n");
+      out.write("                                <input id=\"telefono-registro\" type=\"text\" class=\"validate\"/>\r\n");
+      out.write("                                <label for=\"telefono\">Teléfono</label>\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        <div class=\"row\">\r\n");
+      out.write("                            <div class=\"input-field col s12\">\r\n");
+      out.write("                                <input id=\"usuario-registro\" type=\"text\" class=\"validate\" required/>\r\n");
+      out.write("                                <label for=\"usuario-registro\">*Usuario</label>\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        <div class=\"row\">\r\n");
+      out.write("                            <div class=\"input-field col s12\">\r\n");
+      out.write("                                <input id=\"contrasena-registro\" type=\"password\" class=\"validate\" required/>\r\n");
+      out.write("                                <label for=\"contrasena-registro\">*Contraseña</label>\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        <div class=\"row\">\r\n");
+      out.write("                            <div class=\"input-field col s12\">\r\n");
+      out.write("                                <input id=\"repeat-contrasena\" type=\"password\" class=\"validate\" required/>\r\n");
+      out.write("                                <label for=\"repeat-contrasena\">*Repetir contraseña</label>\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                        <div class=\"row\">\r\n");
+      out.write("                            <div class=\"col s2 offset-s6\">\r\n");
+      out.write("                                <a class=\"waves-effect waves-light btn\" onclick=\"registrarUsuario()\">Guardar</a>\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div style=\"width:300px\" id=\"modal2\" class=\"modal\">\r\n");
       out.write("            <div class=\"modal-content\">\r\n");
       out.write("                <div class=\"row\">\r\n");
       out.write("                    <div class=\"input-field col s12\">\r\n");
@@ -97,8 +166,8 @@ public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </div>\r\n");
       out.write("                <div class=\"row\">\r\n");
       out.write("                    <div class=\"input-field col s12\">\r\n");
-      out.write("                        <input type=\"password\" id=\"contrasena-login\"/>\r\n");
-      out.write("                        <label for=\"contrasena-login\">Contraseña:</label>\r\n");
+      out.write("                        <input type=\"password\" id=\"contraseña-login\"/>\r\n");
+      out.write("                        <label for=\"contraseña-login\">Contraseña:</label>\r\n");
       out.write("                    </div>\r\n");
       out.write("                </div>\r\n");
       out.write("                <div class=\"modal-footer center-align\">\r\n");
@@ -106,8 +175,38 @@ public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
       out.write("        </div>\r\n");
-      out.write("    </nav>\r\n");
-      out.write("    <body>\r\n");
+      out.write("\r\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("</body>\n");
+      out.write(" <footer class=\"page-footer\">\n");
+      out.write("          <div class=\"container\">\n");
+      out.write("            <div class=\"row\">\n");
+      out.write("              <div class=\"col l6 s12\">\n");
+      out.write("                <h5 class=\"white-text\">VideoGame Store</h5>\n");
+      out.write("                <p class=\"grey-text text-lighten-4\">Tienda virtual para video juegos</p>\n");
+      out.write("              </div>\n");
+      out.write("              <div class=\"col l4 offset-l2 s12\">\n");
+      out.write("                <h5 class=\"white-text\">Links</h5>\n");
+      out.write("                <ul>\n");
+      out.write("                  <li><a class=\"grey-text text-lighten-3\" href=\"#!\">Contactenos</a></li>\n");
+      out.write("                  <li><a class=\"grey-text text-lighten-3\" href=\"#!\">Pedido</a></li>\n");
+      out.write("                  <li><a class=\"grey-text text-lighten-3\" href=\"#!\">Registro</a></li>\n");
+      out.write("                  <li><a class=\"grey-text text-lighten-3\" href=\"#!\">Direccion</a></li>\n");
+      out.write("                </ul>\n");
+      out.write("              </div>\n");
+      out.write("            </div>\n");
+      out.write("          </div>\n");
+      out.write("          <div class=\"footer-copyright\">\n");
+      out.write("            <div class=\"container\">\n");
+      out.write("            © 2014 Copyright Text\n");
+      out.write("            <a class=\"grey-text text-lighten-4 right\" href=\"#!\">Redes sociales</a>\n");
+      out.write("            </div>\n");
+      out.write("          </div>\n");
+      out.write("        </footer>\n");
+      out.write("</html>\n");
+      out.write('\r');
+      out.write('\n');
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
@@ -222,7 +321,7 @@ public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_when_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("                \r\n");
-        out.write("                        ");
+        out.write("                    ");
         if (_jspx_meth_c_out_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_1, _jspx_page_context))
           return true;
         out.write("                    \r\n");
@@ -273,10 +372,7 @@ public final class header_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("\r\n");
         out.write("                    <li><a href=\"registrarUsuario.jsp\">Registrarse</a></li>\r\n");
         out.write("                    <li><a href=\"userAdmin.jsp\">Administrador</a></li>\r\n");
-        out.write("\r\n");
         out.write("                    <li><a class=\"waves-effect waves-light btn modal-trigger\" href=\"#modal2\">Entrar</a></li>\r\n");
-        out.write("\r\n");
-        out.write("                \r\n");
         out.write("                    ");
         int evalDoAfterBody = _jspx_th_c_otherwise_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)

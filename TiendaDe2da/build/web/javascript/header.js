@@ -1,3 +1,5 @@
+/* global Materialize */
+
 $(document).ready(function () {
     $('.collapsible').collapsible({
         accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
@@ -5,13 +7,13 @@ $(document).ready(function () {
     $('select').material_select();
     $('.slider').slider({full_width: true});
     $('.modal-trigger').leanModal();
+    $('.tooltipped').tooltip({delay: 50});
     $.ajax({
         method: "GET",
         url: "./getCategoriaGame",
         data: "",
         success: function (response)
         {
-            console.log("va por ajax cat")
             llenarCategoria(response, 'listadoCat');
         }
     });
@@ -21,9 +23,8 @@ $(document).ready(function () {
         data: "",
         success: function (response)
         {
-
             llenarPlataforma(response, 'listadoPlat');
-            console.log("entro cargar juego");
+
         }
 
     });
@@ -134,7 +135,7 @@ function enter() {
         data: {user: usuario, pass: pass},
         success: function (response) {
             if (response == "no") {
-                alert("Usuario o contraseña incorrectos");
+            Materialize.toast('Usuario o contraseña incorrecta', 3000, 'rounded');
             } else {
                 location.reload();
             }
@@ -161,36 +162,38 @@ function addToCar() {
     var id = $('#input-id').val();
     var nombre = $('#nombre-producto-modal').text();
     var precio = $('#precio-producto-modal').text();
+    var i = 0;
     $.ajax({
         method: "POST",
         url: "./AddGameToCar",
         data: {id: id, nom: nombre, prec: precio},
         success: function (response) {
             if (response === "yes") {
-                alert('Juego registrado')
+              
                 location.reload();
+                Materialize.toast('Juego Registrado!', 10, 'rounded');
+
             }
         }
     });
 }
-
+var compra;
 function purchase() {
-    confirmar = confirm("¿Desea comprar los productos en su carrito?");
-    if (confirmar)
+    
         $.ajax({
             method: "POST",
             url: "./PurchaseGame",
             data: {},
             success: function (response) {
                 if (response === "yes") {
+                    compra = true;
                     // alert('Compra realizada con exito.')
                     generarFactura();
-                    // location.reload();
+                    
                 }
             }
         });
-    else
-        return;
+ 
 }
 
 function generarFactura() {
@@ -202,7 +205,7 @@ function generarFactura() {
         success: function (response)
         {
             console.log("generar factura " + response.total);
-            
+
             //mostrarFactura(response);
             openModal(response);
         }
@@ -210,55 +213,68 @@ function generarFactura() {
 }
 
 //Metodo para mostrar la factura
-function mostrarFactura(fact) {
-
-  
-    
-    $('#modalFactura').show();
-
-}
 
 function openModal(fact) {
-    
+
     $.ajax({
         method: "GET",
         url: "./getProductosFacturaGame",
         data: {id: fact.id},
         success: function (response)
         {
-            listarProductosFactura(response, fact.total)
+            listarProductosFactura(response, fact.total, fact.fecha, fact.hora);
         }
     });
-    
+
     $('#modalFactura').openModal();
 }
 
-function listarProductosFactura(pro, price){
-    var tabla = "";
-    for(var i=0; i<pro.length; i++){
-        tabla = tabla +"</tr>";
-        tabla = tabla + "<td>"+pro[i].nombre+"</td>";
-        tabla = tabla + "<td>"+pro[i].nameCategoria+"</td>";
-        tabla = tabla + "<td>"+pro[i].namePlataforma+"</td>";
-        tabla = tabla + "<td>"+pro[i].precio+"</td>";
+function confirmarCompra(){
+    if(compra == true){
+        Materialize.toast('Compra realizada exitosamente', 3000, 'rounded');
+        $('#modalFactura').closeModal();
+    }
+}
+
+function listarProductosFactura(pro, price, fecha, hora) {
+    var tabla = "<p>Fecha: "+fecha + " Hora: "+hora+"</p>";
+    tabla = tabla + "<table><thead><tr><th data-field='id'>Nombre Juego</th>"+
+                            "<th data-field='name'>Categoria</th>"+
+                            "<th data-field='name'>Plaforma</th>"+
+                            "<th data-field='price'>Precio</th>"+
+                        "</tr>"+
+                    "</thead><tbody>";
+
+                    
+                                             
+                    
+    for (var i = 0; i < pro.length; i++) {
+        tabla = tabla + "</tr>";
+        tabla = tabla + "<td> <img src='" + pro[i].imagen + "' class='circle responsive-img imagenRedonda'></td>";
+        tabla = tabla + "<td>" + pro[i].nombre + "</td>";
+        tabla = tabla + "<td>" + pro[i].nameCategoria + "</td>";
+        tabla = tabla + "<td>" + pro[i].namePlataforma + "</td>";
+        tabla = tabla + "<td>" + pro[i].precio + "</td>";
         tabla = tabla + "</tr>";
     }
-        tabla = tabla +"</tr>";
-        tabla = tabla + "<td></td>";
-        tabla = tabla + "<td></td>";
-        tabla = tabla + "<td>TOTAL:</td>";
-        tabla = tabla + "<td>$ "+price+"</td>";
-        tabla = tabla + "</tr>";
-    
-    document.getElementById('bodyProductosFactura').innerHTML = tabla;
-    
+    tabla = tabla + "</tr>";
+    tabla = tabla + "<td></td>";
+    tabla = tabla + "<td></td>";
+    tabla = tabla + "<td></td>";
+    tabla = tabla + "<td>TOTAL:</td>";
+    tabla = tabla + "<td>$ " + price + "</td>";
+    tabla = tabla + "</tr></tbody></table>";
+
+    document.getElementById('divFactura').innerHTML = tabla;
+
 }
 
 function closeM() {
     $('#modal1').closeModal();
 }
 
-function loginAdmin(){
+
+function loginAdmin() {
     var usuario = $('#usuario_admin').val();
     var pass = $('#contrasena_admin').val();
     $.ajax({
@@ -267,9 +283,9 @@ function loginAdmin(){
         data: {user: usuario, pass: pass},
         success: function (response) {
             if (response == "no") {
-                alert("Usuario o contraseña incorrectos");
+                 Materialize.toast('Usuario o contraseña incorrecta', 3000, 'rounded');
             } else {
-                window.location="./admin";
+                window.location = "./admin";
             }
         }
     });

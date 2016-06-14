@@ -26,13 +26,16 @@
                     <li><a href="#" onclick="logout()">Salir</a></li>
                     </c:when>
                     <c:when test="${not empty sessionScope.NombreAdmin}">                
-                    <c:out value="Bienvenido ${sessionScope.Nombre}"/>                    
+                        <c:out value="Bienvenido ${sessionScope.Nombre}"/>                    
                     <li><a href="#" onclick="logout()">Salir</a></li>
                     </c:when>
                     <c:otherwise>
                     <li><a href="registrarUsuario.jsp">Registrarse</a></li>
                     <li><a href="userAdmin.jsp">Administrador</a></li>
+
                     <li><a class="waves-effect waves-light btn modal-trigger" href="#modal2">Entrar</a></li>
+
+                
                     </c:otherwise>
                 </c:choose>
         </ul>
@@ -40,6 +43,24 @@
             <li><a href="#!">First Sidebar Link</a></li>
             <li><a href="#!">Second Sidebar Link</a></li>
         </ul>
-
+        <div style="width:300px" id="modal2" class="modal">
+            <div class="modal-content">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" id="usuario-login"/>
+                        <label for="usuario-login">Usuario:</label>
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="password" id="contrasena-login"/>
+                        <label for="contrasena-login">Contraseña:</label>
+                    </div>
+                </div>
+                <div class="modal-footer center-align">
+                    <button class="waves-effect waves-light center btn cyan" style="float:none" type="submit" onclick="enter()">Entrar</button>
+                </div>
+            </div>
+        </div>
     </nav>
     <body>
