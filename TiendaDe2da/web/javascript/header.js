@@ -3,9 +3,11 @@ $(document).ready(function () {
         accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
     });
     $('select').material_select();
+    $('.slider').slider({full_width: true});
+    $('.modal-trigger').leanModal();
     $.ajax({
         method: "GET",
-        url: "./getGame",
+        url: "./getCategoriaGame",
         data: "",
         success: function (response)
         {
@@ -23,18 +25,19 @@ $(document).ready(function () {
             llenarPlataforma(response, 'listadoPlat');
             console.log("entro cargar juego");
         }
+
     });
 });
-
 function cargarDatosModal(id, nombre, detalle, imagen, precio, categoria, plataforma) {
-    alert(imagen)
     document.getElementById('nombre-producto-modal').innerHTML = nombre;
     document.getElementById('detalle-producto-modal').innerHTML = detalle;
     document.getElementById('precio-producto-modal').innerHTML = precio;
     document.getElementById('plataforma-producto-modal').innerHTML = plataforma;
     document.getElementById('categoria-producto-modal').innerHTML = categoria;
+    document.getElementById('input-id').setAttribute("value", id);
     document.getElementById('imagenItem').setAttribute("src", imagen);
 }
+
 /*Metodo para llenar la barra de categoria, plataforma*/
 
 
@@ -55,19 +58,15 @@ function llenarPlataforma(plat, id) {
     tamPlataforma = plat.length;
     for (var i = 0; i < plat.length; i++) {
         cad = cad + "<a class = 'waves-effect waves-red btn btnPlat' onclick= \u0022 FiltrarPlataforma('" + plat[i].id + "')\u0022>" + plat[i].nombre + "</a><br>";
-
     }
     cad = cad + "<a class = 'waves-effect waves-red btn btnPlat' onclick= \u0022 FiltrarPlataforma('0')\u0022>TODOS</a><br>"
     document.getElementById(id).innerHTML = cad;
-
 }
 var tamCategoria = 0;
 var tamPlataforma = 0;
-
 function FiltrarCategoria(id) {
     var className = "itemCategoria" + id;
     console.log("itemCategoria" + id);
-
     for (var i = 1; i <= tamCategoria; i++)
     {
         if (id === '0') {
@@ -94,3 +93,167 @@ function FiltrarPlataforma(id) {
     $("." + className).show();
 }
 
+function registrarUsuario() {
+    var nombre = $('#nombre_usuario-registro').val();
+    var apellido = $('#apellido_usuario-registro').val();
+    var correo = $('#correo-registro').val();
+    var telefono = $('#telefono-registro').val();
+    var usuario = $('#usuario-registro').val();
+    var contrasena = $('#contrasena-registro').val();
+    var recontrasena = $('#repeat-contrasena').val();
+    $.ajax({
+        method: "POST",
+        url: "./saveUser",
+        data: {nom: nombre, ape: apellido, corr: correo, tel: telefono, usr: usuario, pass: contrasena, repass: recontrasena},
+        success: function (response) {
+            if (response == "yes") {
+                alert('Usuario guardado con exito')
+                $('#nombre_usuario-registro').val("");
+                $('#apellido_usuario-registro').val("");
+                $('#correo-registro').val("");
+                $('#telefono-registro').val("");
+                $('#usuario-registro').val("");
+                $('#contrasena-registro').val("");
+                $('#repeat-contrasena').val("");
+            } else {
+                alert('Las contraseñas no coinciden')
+                $('#contrasena-registro').val("");
+                $('#repeat-contrasena').val("");
+            }
+        }
+    });
+}
+
+
+function enter() {
+    var usuario = $('#usuario-login').val();
+    var pass = $('#contrasena-login').val();
+    $.ajax({
+        method: "POST",
+        url: "./loginUser",
+        data: {user: usuario, pass: pass},
+        success: function (response) {
+            if (response == "no") {
+                alert("Usuario o contraseña incorrectos");
+            } else {
+                location.reload();
+            }
+        }
+    });
+}
+
+function logout() {
+    $.ajax({
+        method: "POST",
+        url: "./logoutUser",
+        data: {},
+        success: function (response) {
+            if (response === "yes") {
+                location.reload();
+            }
+        }
+    });
+}
+
+function addToCar() {
+
+    document.getElementById("listadoCat").style.backgroundColor = "lightblue !important";
+    var id = $('#input-id').val();
+    var nombre = $('#nombre-producto-modal').text();
+    var precio = $('#precio-producto-modal').text();
+    $.ajax({
+        method: "POST",
+        url: "./AddGameToCar",
+        data: {id: id, nom: nombre, prec: precio},
+        success: function (response) {
+            if (response === "yes") {
+                alert('Juego registrado')
+                location.reload();
+            }
+        }
+    });
+}
+
+function purchase() {
+    confirmar = confirm("¿Desea comprar los productos en su carrito?");
+    if (confirmar)
+        $.ajax({
+            method: "POST",
+            url: "./PurchaseGame",
+            data: {},
+            success: function (response) {
+                if (response === "yes") {
+                    // alert('Compra realizada con exito.')
+                    generarFactura();
+                    // location.reload();
+                }
+            }
+        });
+    else
+        return;
+}
+
+function generarFactura() {
+
+    $.ajax({
+        method: "GET",
+        url: "./getFacturaGame",
+        data: {},
+        success: function (response)
+        {
+            console.log("generar factura " + response.total);
+            
+            //mostrarFactura(response);
+            openModal(response);
+        }
+    });
+}
+
+//Metodo para mostrar la factura
+function mostrarFactura(fact) {
+
+  
+    
+    $('#modalFactura').show();
+
+}
+
+function openModal(fact) {
+    
+    $.ajax({
+        method: "GET",
+        url: "./getProductosFacturaGame",
+        data: {id: fact.id},
+        success: function (response)
+        {
+            listarProductosFactura(response, fact.total)
+        }
+    });
+    
+    $('#modalFactura').openModal();
+}
+
+function listarProductosFactura(pro, price){
+    var tabla = "";
+    for(var i=0; i<pro.length; i++){
+        tabla = tabla +"</tr>";
+        tabla = tabla + "<td>"+pro[i].nombre+"</td>";
+        tabla = tabla + "<td>"+pro[i].nameCategoria+"</td>";
+        tabla = tabla + "<td>"+pro[i].namePlataforma+"</td>";
+        tabla = tabla + "<td>"+pro[i].precio+"</td>";
+        tabla = tabla + "</tr>";
+    }
+        tabla = tabla +"</tr>";
+        tabla = tabla + "<td></td>";
+        tabla = tabla + "<td></td>";
+        tabla = tabla + "<td>TOTAL:</td>";
+        tabla = tabla + "<td>$ "+price+"</td>";
+        tabla = tabla + "</tr>";
+    
+    document.getElementById('bodyProductosFactura').innerHTML = tabla;
+    
+}
+
+function closeM() {
+    $('#modal1').closeModal();
+}

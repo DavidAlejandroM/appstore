@@ -19,6 +19,40 @@ import java.util.ArrayList;
  */
 public class ProductoDAO {
 
+    public String getProductosFactura(String idFactura) {
+        
+        String idProducto;
+        Producto producto = new Producto();
+        String json = "[";
+        int contador = 0;
+        try {
+            conn = conexion.getConexion();
+            String query = "SELECT * FROM factura_producto WHERE idFactura="+idFactura;
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            
+            while (rs.next()) {
+                if (contador != 0) {
+                    json = json + ",";
+                }
+                idProducto = rs.getString("idProducto");
+                json = json + obtenerProductoJSON(idProducto); 
+                contador++;
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                rs.close();
+            } catch (Exception e) { /* ignored */ }
+        }
+        
+        json = json + "]";
+        
+        return json;
+    }
+
     PreparedStatement ps = null;
     ResultSet rs = null;
     Connection conn = null;
@@ -114,7 +148,9 @@ public class ProductoDAO {
                 rs.close();
             } catch (Exception e) { /* ignored */ }
         }
+
         return json;
+
     }
     
     public String obtenerNombreCategoria(String cat)

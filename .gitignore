@@ -1,1 +1,7 @@
 /TiendaDe2da/dist/
+TiendaDe2da/build/web/admin.jsp
+TiendaDe2da/build/web/css/materialize.css
+TiendaDe2da/build/web/css/style.css
+TiendaDe2da/build/web/footer.jsp
+TiendaDe2da/build/web/WEB-INF/classes/AdminServlet.class
+TiendaDe2da/nbproject/private/private.xml
