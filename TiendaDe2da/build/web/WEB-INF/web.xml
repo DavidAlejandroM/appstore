@@ -126,14 +126,14 @@
     </servlet-mapping>
     
     <servlet>
-<<<<<<< HEAD
+
         <servlet-name>LoginUserAdminServlet</servlet-name>
         <servlet-class>LoginUserAdminServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginUserAdminServlet</servlet-name>
         <url-pattern>/LoginAdmin</url-pattern>
-=======
+
         <servlet-name>GetProductosFacturaServlet</servlet-name>
         <servlet-class>GetProductosFacturaServlet</servlet-class>
     </servlet>
@@ -150,7 +150,6 @@
     <servlet-mapping>
         <servlet-name>GetFacturaServlet</servlet-name>
         <url-pattern>/getFacturaGame</url-pattern>
->>>>>>> origin/Sofia
     </servlet-mapping>
     
 </web-app>
