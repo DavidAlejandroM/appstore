@@ -4,8 +4,7 @@ $(document).ready(function () {
     });
     $('select').material_select();
     $('.slider').slider({full_width: true});
-   $('.modal-trigger').leanModal();
-    
+    $('.modal-trigger').leanModal();
     $.ajax({
         method: "GET",
         url: "./getCategoriaGame",
@@ -29,7 +28,6 @@ $(document).ready(function () {
 
     });
 });
-
 function cargarDatosModal(id, nombre, detalle, imagen, precio, categoria, plataforma) {
     document.getElementById('nombre-producto-modal').innerHTML = nombre;
     document.getElementById('detalle-producto-modal').innerHTML = detalle;
@@ -60,19 +58,15 @@ function llenarPlataforma(plat, id) {
     tamPlataforma = plat.length;
     for (var i = 0; i < plat.length; i++) {
         cad = cad + "<a class = 'waves-effect waves-red btn btnPlat' onclick= \u0022 FiltrarPlataforma('" + plat[i].id + "')\u0022>" + plat[i].nombre + "</a><br>";
-
     }
     cad = cad + "<a class = 'waves-effect waves-red btn btnPlat' onclick= \u0022 FiltrarPlataforma('0')\u0022>TODOS</a><br>"
     document.getElementById(id).innerHTML = cad;
-
 }
 var tamCategoria = 0;
 var tamPlataforma = 0;
-
 function FiltrarCategoria(id) {
     var className = "itemCategoria" + id;
     console.log("itemCategoria" + id);
-
     for (var i = 1; i <= tamCategoria; i++)
     {
         if (id === '0') {
@@ -107,7 +101,6 @@ function registrarUsuario() {
     var usuario = $('#usuario-registro').val();
     var contrasena = $('#contrasena-registro').val();
     var recontrasena = $('#repeat-contrasena').val();
-
     $.ajax({
         method: "POST",
         url: "./saveUser",
@@ -122,7 +115,6 @@ function registrarUsuario() {
                 $('#usuario-registro').val("");
                 $('#contrasena-registro').val("");
                 $('#repeat-contrasena').val("");
-
             } else {
                 alert('Las contraseñas no coinciden')
                 $('#contrasena-registro').val("");
@@ -130,8 +122,8 @@ function registrarUsuario() {
             }
         }
     });
-
 }
+
 
 function enter() {
     var usuario = $('#usuario-login').val();
@@ -164,7 +156,7 @@ function logout() {
 }
 
 function addToCar() {
-    
+
     document.getElementById("listadoCat").style.backgroundColor = "lightblue !important";
     var id = $('#input-id').val();
     var nombre = $('#nombre-producto-modal').text();
@@ -175,33 +167,94 @@ function addToCar() {
         data: {id: id, nom: nombre, prec: precio},
         success: function (response) {
             if (response === "yes") {
-                alert('Añadido')
+                alert('Juego registrado')
                 location.reload();
             }
         }
     });
-
 }
 
 function purchase() {
     confirmar = confirm("¿Desea comprar los productos en su carrito?");
     if (confirmar)
         $.ajax({
-        method: "POST",
-        url: "./PurchaseGame",
-        data: {},
-        success: function (response) {
-            if (response === "yes") {
-                alert('Compra realizada con exito.')
-                location.reload();
+            method: "POST",
+            url: "./PurchaseGame",
+            data: {},
+            success: function (response) {
+                if (response === "yes") {
+                    // alert('Compra realizada con exito.')
+                    generarFactura();
+                    // location.reload();
+                }
             }
-        }
-    });
+        });
     else
-    return;
+        return;
 }
 
-function closeM(){
+function generarFactura() {
+
+    $.ajax({
+        method: "GET",
+        url: "./getFacturaGame",
+        data: {},
+        success: function (response)
+        {
+            console.log("generar factura " + response.total);
+            
+            //mostrarFactura(response);
+            openModal(response);
+        }
+    });
+}
+
+//Metodo para mostrar la factura
+function mostrarFactura(fact) {
+
+  
+    
+    $('#modalFactura').show();
+
+}
+
+function openModal(fact) {
+    
+    $.ajax({
+        method: "GET",
+        url: "./getProductosFacturaGame",
+        data: {id: fact.id},
+        success: function (response)
+        {
+            listarProductosFactura(response, fact.total)
+        }
+    });
+    
+    $('#modalFactura').openModal();
+}
+
+function listarProductosFactura(pro, price){
+    var tabla = "";
+    for(var i=0; i<pro.length; i++){
+        tabla = tabla +"</tr>";
+        tabla = tabla + "<td>"+pro[i].nombre+"</td>";
+        tabla = tabla + "<td>"+pro[i].nameCategoria+"</td>";
+        tabla = tabla + "<td>"+pro[i].namePlataforma+"</td>";
+        tabla = tabla + "<td>"+pro[i].precio+"</td>";
+        tabla = tabla + "</tr>";
+    }
+        tabla = tabla +"</tr>";
+        tabla = tabla + "<td></td>";
+        tabla = tabla + "<td></td>";
+        tabla = tabla + "<td>TOTAL:</td>";
+        tabla = tabla + "<td>$ "+price+"</td>";
+        tabla = tabla + "</tr>";
+    
+    document.getElementById('bodyProductosFactura').innerHTML = tabla;
+    
+}
+
+function closeM() {
     $('#modal1').closeModal();
 }
 
