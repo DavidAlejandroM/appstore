@@ -100,7 +100,25 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <li><a href=\"#!\">First Sidebar Link</a></li>\r\n");
       out.write("            <li><a href=\"#!\">Second Sidebar Link</a></li>\r\n");
       out.write("        </ul>\r\n");
-      out.write("\r\n");
+      out.write("        <div style=\"width:300px\" id=\"modal2\" class=\"modal\">\r\n");
+      out.write("            <div class=\"modal-content\">\r\n");
+      out.write("                <div class=\"row\">\r\n");
+      out.write("                    <div class=\"input-field col s12\">\r\n");
+      out.write("                        <input type=\"text\" id=\"usuario-login\"/>\r\n");
+      out.write("                        <label for=\"usuario-login\">Usuario:</label>\r\n");
+      out.write("                    </div> \r\n");
+      out.write("                </div>\r\n");
+      out.write("                <div class=\"row\">\r\n");
+      out.write("                    <div class=\"input-field col s12\">\r\n");
+      out.write("                        <input type=\"password\" id=\"contrasena-login\"/>\r\n");
+      out.write("                        <label for=\"contrasena-login\">Contraseña:</label>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                <div class=\"modal-footer center-align\">\r\n");
+      out.write("                    <button class=\"waves-effect waves-light center btn cyan\" style=\"float:none\" type=\"submit\" onclick=\"enter()\">Entrar</button>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
       out.write("    </nav>\r\n");
       out.write("    <body>\r\n");
       out.write('\r');
@@ -224,7 +242,7 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
     if (_jspx_eval_c_when_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("                \r\n");
-        out.write("                    ");
+        out.write("                        ");
         if (_jspx_meth_c_out_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_1, _jspx_page_context))
           return true;
         out.write("                    \r\n");
@@ -275,7 +293,10 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("\r\n");
         out.write("                    <li><a href=\"registrarUsuario.jsp\">Registrarse</a></li>\r\n");
         out.write("                    <li><a href=\"userAdmin.jsp\">Administrador</a></li>\r\n");
+        out.write("\r\n");
         out.write("                    <li><a class=\"waves-effect waves-light btn modal-trigger\" href=\"#modal2\">Entrar</a></li>\r\n");
+        out.write("\r\n");
+        out.write("                \r\n");
         out.write("                    ");
         int evalDoAfterBody = _jspx_th_c_otherwise_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)

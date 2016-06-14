@@ -42,28 +42,28 @@
         <div class="slider" id="divSlider" style="">
             <ul class="slides">
                 <li>
-                    <img src="images/caratulas/Call-of-Duty-Black-Ops-III.jpg"> <!-- random image -->
+                    <img class="imgSlider" src="images/caratulas/Call-of-Duty-Black-Ops-III.jpg"> <!-- random image -->
                     <div class="caption center-align">
                         <h3>Call of Duty BlackOps III</h3>
                         <h5 class="light grey-text text-lighten-3">En Promoción</h5>
                     </div>
                 </li>
                 <li>
-                    <img src="images/caratulas/gta-v-caratula-fan.jpg"> <!-- random image -->
+                    <img class="imgSlider" src="images/caratulas/gta-v-caratula-fan.jpg"> <!-- random image -->
                     <div class="caption left-align">
                         <h3>GTA V</h3>
                         <h5 class="light grey-text text-lighten-3">El precio mas bajo del mercado</h5>
                     </div>
                 </li>
                 <li>
-                    <img src="/images/caratulas/Call-of-Duty-Black-Ops-III"> <!-- random image -->
+                    <img class="imgSlider" src="images/caratulas/Call-of-Duty-Black-Ops-III.jpg"> <!-- random image -->
                     <div class="caption right-align">
                         <h3>Right Aligned Caption</h3>
                         <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
                     </div>
                 </li>
                 <li>
-                    <img src="/images/caratulas/Call-of-Duty-Black-Ops-III"> <!-- random image -->
+                    <img class="imgSlider" src="images/caratulas/Call-of-Duty-Black-Ops-III.jpg"> <!-- random image -->
                     <div class="caption center-align">
                         <h3>This is our big Tagline!</h3>
                         <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>

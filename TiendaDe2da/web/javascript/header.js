@@ -238,8 +238,8 @@ function confirmarCompra(){
 
 function listarProductosFactura(pro, price, fecha, hora) {
     var tabla = "<p>Fecha: "+fecha + " Hora: "+hora+"</p>";
-    tabla = tabla + "<table><thead><tr><th data-field='id'>Nombre Juego</th>"+
-                            "<th data-field='name'>Categoria</th>"+
+    tabla = tabla + "<table><thead><tr><th></th><th data-field='id'>Nombre Juego</th>"+
+                            "<th data-field='name'>Categor\u00EDa</th>"+
                             "<th data-field='name'>Plaforma</th>"+
                             "<th data-field='price'>Precio</th>"+
                         "</tr>"+
