@@ -95,7 +95,7 @@ div.itemProducto {
     
 }
 
-#categoria{
+.listado{
     padding-top: 10px;   
     margin-top: 1px;
 }
@@ -108,23 +108,16 @@ div.itemProducto {
     margin-top: 1px; 
 }
 
-  body {
-    display: flex;
-    height: 100%;
-    min-height: 100vh;
-    flex-direction: column;
-  }
 
-  main {
-    flex: 1 0 auto;
-  }
+
+ 
   
   
 
 /********CSS BY ALEJANDRO**************************************************/
 
 
-#formAddGame , #formListar, #formListarEliminar, #formUpdateGame{
+#formAddGame , #formListar, #formListarEliminar, #formUpdateGame, #formListarPlataformas, #formListarCategorias{
     padding-top: 30px;
     display: none;
     background: rgba(255, 255, 255, 0.8);
@@ -203,6 +196,11 @@ html {
 .imgItemClass{
     height: 220px !important;
     width: 90% !important;
+}
+
+#listadoCat
+{
+    background-color: #ffffff !important;
 }
 
 /********END CSS BY ALEJANDRO**************************************************/

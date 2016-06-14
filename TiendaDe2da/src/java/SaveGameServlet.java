@@ -6,7 +6,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import models.Producto;
 import models.ProductoDAO;
 
@@ -23,7 +22,11 @@ import models.ProductoDAO;
 public class SaveGameServlet extends HttpServlet{
     Producto producto = new Producto();
     ProductoDAO productoDAO = new ProductoDAO();
-
+    
+    //JuegoDAO productoDAO = new JuegoDAO();
+    //Juego producto = new Juego();
+    
+    
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

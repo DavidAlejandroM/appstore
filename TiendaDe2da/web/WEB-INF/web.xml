@@ -59,6 +59,17 @@
         <url-pattern>/getPlataformaGame</url-pattern>
     </servlet-mapping>
     
+    
+    <servlet>
+        <servlet-name>GetCategoriaServlet</servlet-name>
+        <servlet-class>GetCategoriaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetCategoriaServlet</servlet-name>
+        <url-pattern>/getCategoriaGame</url-pattern>
+    </servlet-mapping>
+    
+    
     <servlet>
         <servlet-name>DeleteGameServlet</servlet-name>
         <servlet-class>DeleteGameServlet</servlet-class>
@@ -67,4 +78,60 @@
         <servlet-name>DeleteGameServlet</servlet-name>
         <url-pattern>/deleteGame</url-pattern>
     </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>SaveUserServlet</servlet-name>
+        <servlet-class>SaveUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SaveUserServlet</servlet-name>
+        <url-pattern>/saveUser</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>LoginUserServlet</servlet-name>
+        <servlet-class>LoginUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginUserServlet</servlet-name>
+        <url-pattern>/loginUser</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>LogoutUserServlet</servlet-name>
+        <servlet-class>LogoutUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutUserServlet</servlet-name>
+        <url-pattern>/logoutUser</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AddGameToCarServlet</servlet-name>
+        <servlet-class>AddGameToCarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddGameToCarServlet</servlet-name>
+        <url-pattern>/AddGameToCar</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>PurchaseGameServlet</servlet-name>
+        <servlet-class>PurchaseGameServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PurchaseGameServlet</servlet-name>
+        <url-pattern>/PurchaseGame</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>LoginUserAdminServlet</servlet-name>
+        <servlet-class>LoginUserAdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginUserAdminServlet</servlet-name>
+        <url-pattern>/LoginAdmin</url-pattern>
+    </servlet-mapping>
+    
 </web-app>

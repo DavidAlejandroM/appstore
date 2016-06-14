@@ -73,4 +73,54 @@ public class CategoriaDAO {
         return json;
     }
     
+    public String modificarCategoria(String id, String nombre) {
+        String a = null;
+        
+        try {
+            conn = conexion.getConexion();
+            String query = "UPDATE categoria SET nombre = ? WHERE id="+id;
+            ps = conn.prepareStatement(query);
+            ps.setString(1, nombre);
+            
+            
+            ps.executeUpdate();
+            //ps.executeUpdate(query);
+            a = "yes";
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            a = "no";
+        } finally {
+            try {
+                rs.close();
+            } catch (Exception e) { /* ignored */ }
+        }
+        return a;
+    }
+
+    public String agregarCategoria(String nombre) {
+        String a = null;
+        
+        try {
+            conn = conexion.getConexion();
+            String query = "INSERT INTO categoria (nombre) values (?)";
+            ps = conn.prepareStatement(query);
+            ps.setString(1, nombre);
+            
+            
+            ps.executeUpdate();
+            //ps.executeUpdate(query);
+            a = "yes";
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            a = "no";
+        } finally {
+            try {
+                rs.close();
+            } catch (Exception e) { /* ignored */ }
+        }
+        return a;
+    }
+    
 }

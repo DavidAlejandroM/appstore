@@ -28,7 +28,6 @@ public class ClienteServlet extends HttpServlet {
             throws ServletException, IOException {
         //Despliega fomulario para mostrar
         productos = proDAO.obtenerProductos();
-
         RequestDispatcher view = request.getRequestDispatcher("inicio.jsp");
         request.setAttribute("productos", productos);
         view.forward(request, response);
